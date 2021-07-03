@@ -5,7 +5,7 @@
 1) `vax_malaysia.csv`: Static name; file is updated by 0200hrs daily
 2) `vax_state.csv`: Static name; file is updated by 0200hrs daily
 
-## Variables
+### Variables
 
 1) `date`: yyyy-mm-dd format; data correct as of 2359hrs on that date
 2) `state`: Name of state (present in state file, but not country file)
