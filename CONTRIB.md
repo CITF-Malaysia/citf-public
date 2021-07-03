@@ -12,7 +12,9 @@ _Share and flex work which builds on our data! Submit a pull request to add to t
 
 1) Amin Husni - Project Kururugi 
 Analysis and plotting of the official vaccination statistics data from JKJAV Malaysia.
+
 https://github.com/aminhusni/project_kururugi_offline 
+
 Live version: https://kururugi.blob.core.windows.net/kururugi/index.html
 
 
