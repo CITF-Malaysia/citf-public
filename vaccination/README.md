@@ -15,3 +15,5 @@
 6) `dose1_cumul` = sum of `dose1_daily` for all T <= `date`
 7) `dose2_cumul` = sum of `dose2_daily` for all T <= `date`
 8) `total_cumul` = `dose1_cumul` + `dose2_cumul`
+
+**Note:** There may be occassional backseries revisions causing vaccination counts to marginally increase (never decrease) if more data is reported for dates already contained within the datasets. This is especially due to outreach efforts and/or vaccination in areas with poor internet access, which necessitates offline documentation of vaccinations delivered.
