@@ -1,5 +1,5 @@
 # CITF Public Dataset
-Official data on the National Covid-​19 Immunisation Programme (PICK) in Malaysia. Powered by MySejahtera.
+Official data on the National Covid-​19 Immunisation Programme (PICK) in Malaysia. Documentation contained within subfolders. Powered by MySejahtera.
 
 **Vaccination**
 1) vax_malaysia: Daily and cumulative vaccination at country level, as at 2359 of date.
