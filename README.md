@@ -2,8 +2,8 @@
 
 **We will continually maintain and improve the breadth and granularity of data in this repo.**
 + Documentation and data descriptions contained within subfolders. 
-+ In the spirit of open sourcing, we welcome pull requests to share scripts, algorithms, and other neat tricks - these will be merged into `main/contrib/`. However, CITF does not guarantee the veracity or functionality of any code or data at that path.
-+ To request more data, submit a pull request to [the public wishlist](https://github.com/CITF-Malaysia/citf-public/blob/main/WISHLIST.md).
++ In the spirit of open sourcing, we are happy to document any work which builds on our data and give it more reach. Simply submit a pull request to add to the [projects list](https://github.com/CITF-Malaysia/citf-public/blob/main/CONTRIB.md).
++ To request more data, submit a pull request to add to the [data wishlist](https://github.com/CITF-Malaysia/citf-public/blob/main/CONTRIB.md).
 
 ---
 
