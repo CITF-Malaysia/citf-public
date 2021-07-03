@@ -1,0 +1,20 @@
+{
+  "name": "citf-vaccination-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Li Wei Lee",
+    "email": "leeliwei930@gmail.com",
+    "url": "https://techrino.net"
+  },
+  "dependencies": {
+    "danfojs": "^0.2.7",
+    "danfojs-node": "^0.2.7",
+    "dotenv": "^10.0.0",
+    "expressjs": "^1.0.1"
+  },
+  "scripts": {
+    "serve": "node index.js"
+  }
+}
