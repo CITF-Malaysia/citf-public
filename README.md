@@ -13,8 +13,9 @@
 
 **Static data**
 
+_Static data will (probably) remain unchanged for the duration of the program, barring an update from the source, e.g. if DOSM makes an update to population estimates. We provide this data here not to supersede the source, but rather to be transparent about the data we use to compute key statistics e.g. the % of the population that is vaccinated. We also hope this ensures synchronisation (across various independent analysts) of key statistics down to the Nth decimal place._
+
 1) `population.csv`: Total, adult (18+), and elderly (60+) population at state level.
 
-_Unlike the datasets above, this data will (probably) be unchanged for the duration of the program, barring an update from the source, e.g. if DOSM makes an update to population estimates. We provide this data here not to supersede the source, but rather to synchronise computation of statistics down to the Nth decimal place, e.g. % of population that is vaccinated._
 
 **We will maintain and continually build upon this repo.**
