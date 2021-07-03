@@ -1,9 +1,13 @@
 # Open data on the National Covid-​19 Immunisation Programme (PICK) in Malaysia 
-Documentation contained within subfolders. Powered by MySejahtera.
+Documentation and data descriptions contained within subfolders.
 
 **Vaccination**
 1) `vax_malaysia.csv`: Daily and cumulative vaccination at country level, as at 2359 of date.
 2) `vax_state.csv`: Daily and cumulative vaccination at state level, as at 2359 of date.
+
+**Registration**
+1) `vaxreg_malaysia.csv`: Cumulative registrations for vaccination at country level, as at 2359 of date.
+2) `vaxreg_state.csv`: Cumulative registrations vaccination at state level, as at 2359 of date.
 
 **Static data**
 
