@@ -2,8 +2,8 @@
 
 ### File naming convention
 
-1) `vax_malaysia.csv`: Static name; file is updated at about 0030hrs daily
-2) `vax_state.csv`: Static name; file is updated at about 0030hrs daily
+1) `vax_malaysia.csv`: Static name; file is updated by 0200hrs daily
+2) `vax_state.csv`: Static name; file is updated by 0200hrs daily
 
 ## Variables
 
