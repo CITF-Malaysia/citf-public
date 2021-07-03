@@ -1,4 +1,4 @@
-# Open data on the National Covid-​19 Immunisation Programme (PICK) in Malaysia. 
+# Open data on the National Covid-​19 Immunisation Programme (PICK) in Malaysia 
 Documentation contained within subfolders. Powered by MySejahtera.
 
 **Vaccination**
