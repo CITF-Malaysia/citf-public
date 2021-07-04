@@ -17,3 +17,7 @@ Project Kururugi, by Amin Husni. Analysis and plotting of vaccination data.
 
 2) [[Git repo]](https://github.com/leeliwei930/citf-express-api)
 CITF Express API server, by Li Wei Lee. A RestFUL API server written in NodeJS to parse the CSV-formatted data into JSON format, allowing for a variety of query via HTTP requests.
+
+
+3) [[Live Version]](https://twitter.com/MYVaccineCount)
+Malaysia Vaccine Tracker Twitter Bot, by Henry Lim. Tweets daily COVID-19 vaccination progress, as well as the vaccination rate for the whole country and each state.
