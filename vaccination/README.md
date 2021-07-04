@@ -17,4 +17,4 @@
 8) `total_cumul` = `dose1_cumul` + `dose2_cumul`
 
 ### Methodological choices
-+ There may be occassional backseries revisions causing vaccination counts to marginally increase (never decrease) if more data is reported for dates already contained within the datasets. This is especially due to outreach efforts and/or vaccination in areas with poor internet access, which necessitates offline documentation that may only be consolidated after the initial daily report is extracted.
++ With substantial outreach efforts in areas with poor internet access, vaccinations (which are normally tracked in real time) have to be documented offline (think Excel sheets and paper forms). Given that outreach programs may last days at a time, records of these vaccinations may only be uploaded and consolidated a few days after the day on which they occured. Consequently, we may revise the dataset from time to time if more data is reported for dates already contained within the datasets. These revisions will only cause vaccination counts to increase (never decrease).
