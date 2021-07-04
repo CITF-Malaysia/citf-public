@@ -26,3 +26,7 @@ Malaysia Vaccine Tracker Twitter Bot, by [Henry Lim](https://twitter.com/henryli
 [[Live Version]](https://pokgak.github.io/citf-graphs)
 citf-graphs, by Aiman Ismail. Interactive graph of vaccination data showing changes over time.
 
+5) [[Git repo]](https://github.com/firdausly/Citf-State-Map)
+[[Live Version]](https://firdausly.github.io/Citf-State-Map/)
+Citf-state-map, by Firdaus Rosly. Latest Cumulative Vaccination data map for each state.
+
