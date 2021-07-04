@@ -31,3 +31,7 @@ citf-graphs, by Aiman Ismail. Interactive graph of vaccination data showing chan
 5) [[Live Version]](https://mshumayl.github.io/malaysia-vaccination/)
 Simple and digestible Malay language dashboard, by [Shumayl Asmawi](https://twitter.com/Shumayl_). Visualizes the vaccination progress in terms of percentages of population by state.
 
+6) [[Git repo]](https://github.com/firdausly/Citf-State-Map)
+[[Live Version]](https://firdausly.github.io/Citf-State-Map/)
+Citf-state-map, by Firdaus Rosly. Latest Cumulative Vaccination data map for each state.
+
