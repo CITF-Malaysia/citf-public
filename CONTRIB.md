@@ -2,7 +2,8 @@
 
 _This section is non-promisory. Rather, it is a way for us (and the community) to systematically surveil the analytical thinking surrounding the programme, and collate data constraints facing the open community. Submit a pull request to add to this list._
 
-1)
+1) Add number of single-dose or double-dose vaccine in relation to the dose1_daily count. Accurate data regarding vaccination progress could be derived from this. 
+2) Add number of types/brand of vaccine used in relation to dose1_daily and dose2_daily. Could be beneficial in research citations regarding population's real-world efficiacy rates. 
 
 ---
 
