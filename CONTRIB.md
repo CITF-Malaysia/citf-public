@@ -20,4 +20,4 @@ CITF Express API server, by Li Wei Lee. A RestFUL API server written in NodeJS t
 
 
 3) [[Live Version]](https://twitter.com/MYVaccineCount)
-Malaysia Vaccine Tracker Twitter Bot, by [Henry Lim](https://twitter.com/henrylim96). Tweets daily COVID-19 vaccination progress, as well as the vaccination rate for the whole country and each state.
+Malaysia Vaccine Tracker Twitter Bot, by [Henry Lim](https://twitter.com/henrylim96). Auto-tweets daily COVID-19 vaccination progress for the country, as well as each state.
