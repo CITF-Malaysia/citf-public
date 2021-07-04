@@ -21,3 +21,8 @@ CITF Express API server, by Li Wei Lee. A RestFUL API server written in NodeJS t
 
 3) [[Live Version]](https://twitter.com/MYVaccineCount)
 Malaysia Vaccine Tracker Twitter Bot, by [Henry Lim](https://twitter.com/henrylim96). Auto-tweets daily COVID-19 vaccination progress for the country, as well as each state.
+
+4) [[Git repo]](https://github.com/pokgak/citf-graphs)
+[[Live Version]](https://pokgak.github.io/citf-graphs)
+citf-graphs, by Aiman Ismail. Interactive graph of vaccination data showing changes over time.
+
