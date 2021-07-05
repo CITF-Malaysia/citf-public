@@ -35,5 +35,5 @@ Simple and digestible Malay language dashboard, by [Shumayl Asmawi](https://twit
 [[Live Version]](https://firdausly.github.io/Citf-State-Map/)
 Citf-state-map, by Firdaus Rosly. Latest Cumulative Vaccination data map for each state.
 
-7) [VaccineMY 101 Android App](https://play.google.com/store/apps/details?id=net.techrino.vaccinemy_101)
+7) [[VaccineMY 101 Android App]](https://play.google.com/store/apps/details?id=net.techrino.vaccinemy_101)
 VaccineMY 101, by [Li Wei Lee](https://techrino.net). A mobile app built using Flutter that allows citizen to follow the latest vaccination progression statistic.
