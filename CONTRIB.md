@@ -3,6 +3,7 @@
 _This section is non-promisory. Rather, it is a way for us (and the community) to systematically surveil the analytical thinking surrounding the programme, and collate data constraints facing the open community. Submit a pull request to add to this list._
 
 1) Brand of vaccine used in relation to `dose1_daily` and `dose2_daily`. Required to derive completion rates once single-dose vaccines are used, and could be beneficial for research regarding vax efficacy.
+2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
 
 ---
 
@@ -16,7 +17,7 @@ Project Kururugi, by Amin Husni. Analysis and plotting of vaccination data.
 
 
 2) [[Git repo]](https://github.com/leeliwei930/citf-express-api)
-CITF Express API server, by Li Wei Lee. A RestFUL API server written in NodeJS to parse the CSV-formatted data into JSON format, allowing for a variety of query via HTTP requests.
+CITF Express API server, by [Li Wei Lee](https://techrino.net). A RestFUL API server written in NodeJS to parse the CSV-formatted data into JSON format, allowing for a variety of query via HTTP requests.
 
 
 3) [[Live Version]](https://twitter.com/MYVaccineCount)
@@ -35,3 +36,5 @@ Simple and digestible Malay language dashboard, by [Shumayl Asmawi](https://twit
 [[Live Version]](https://firdausly.github.io/Citf-State-Map/)
 Citf-state-map, by Firdaus Rosly. Latest Cumulative Vaccination data map for each state.
 
+7) [[VaccineMY 101 Android App]](https://play.google.com/store/apps/details?id=net.techrino.vaccinemy_101)
+VaccineMY 101, by [Li Wei Lee](https://techrino.net). A mobile app built using Flutter that gives users the latest vaccination progress updates.
