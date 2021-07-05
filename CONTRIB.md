@@ -16,7 +16,7 @@ Project Kururugi, by Amin Husni. Analysis and plotting of vaccination data.
 
 
 2) [[Git repo]](https://github.com/leeliwei930/citf-express-api)
-CITF Express API server, by Li Wei Lee. A RestFUL API server written in NodeJS to parse the CSV-formatted data into JSON format, allowing for a variety of query via HTTP requests.
+CITF Express API server, by [Li Wei Lee](https://techrino.net). A RestFUL API server written in NodeJS to parse the CSV-formatted data into JSON format, allowing for a variety of query via HTTP requests.
 
 
 3) [[Live Version]](https://twitter.com/MYVaccineCount)
@@ -35,3 +35,5 @@ Simple and digestible Malay language dashboard, by [Shumayl Asmawi](https://twit
 [[Live Version]](https://firdausly.github.io/Citf-State-Map/)
 Citf-state-map, by Firdaus Rosly. Latest Cumulative Vaccination data map for each state.
 
+7) [VaccineMY 101 Android App](https://play.google.com/store/apps/details?id=net.techrino.vaccinemy_101)
+VaccineMY 101, by [Li Wei Lee](https://techrino.net). A mobile app built using Flutter that allows citizen to follow the latest vaccination progression statistic.
