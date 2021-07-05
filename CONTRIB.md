@@ -8,7 +8,7 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 
 # Share your work!
 
-_Flex work which builds on our data - submit a pull request to add to this list. Preferably with a link to your repo, but this is not a requirement._
+_If you're using our data to do something cool and useful (just cool also fine) - submit a pull request to add to this list. Preferably (but not mandatorily) with a link to your repo._
 
 1) [[Git repo]](https://github.com/aminhusni/project_kururugi_offline)
 [[Live Version]](https://kururugi.blob.core.windows.net/kururugi/index.html)
