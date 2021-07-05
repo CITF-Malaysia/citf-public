@@ -3,7 +3,7 @@
 **We will continually maintain and improve the scope and granularity of data in this repo.**
 + Documentation and data descriptions contained within subfolders. 
 + To request more data, submit a pull request to add to the [data wishlist](https://github.com/CITF-Malaysia/citf-public/blob/main/CONTRIB.md#data-requests).
-+ In the spirit of community, we are happy to document any work which builds on our data - submit a pull request to add to the [projects list](https://github.com/CITF-Malaysia/citf-public/blob/main/CONTRIB.md#share-your-work).
++ We are happy to collate work which builds on our data - submit a pull request to add to the [projects list](https://github.com/CITF-Malaysia/citf-public/blob/main/CONTRIB.md#share-your-work).
 
 ---
 
