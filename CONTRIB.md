@@ -3,7 +3,7 @@
 _This section is non-promisory. Rather, it is a way for us (and the community) to systematically surveil the analytical thinking surrounding the programme, and collate data constraints facing the open community. Submit a pull request to add to this list._
 
 1) Brand of vaccine used in relation to `dose1_daily` and `dose2_daily`. Required to derive completion rates once single-dose vaccines are used, and could be beneficial for research regarding vax efficacy.
-2) As there are form fields in `vaxreg_state.csv` data, can we add those fields on `vax_state.csv` as well? This will help to compare the registration data with those vaccinated.
+2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
 
 ---
 
