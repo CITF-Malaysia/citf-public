@@ -38,3 +38,6 @@ Citf-state-map, by Firdaus Rosly. Latest Cumulative Vaccination data map for eac
 
 7) [[VaccineMY 101 Android App]](https://play.google.com/store/apps/details?id=net.techrino.vaccinemy_101)
 VaccineMY 101, by [Li Wei Lee](https://techrino.net). A mobile app built using Flutter that gives users the latest vaccination progress updates.
+
+8) [[Live Version]](https://vax.covfefe.my/)
+Simple visualizations (maps, graphs, and charts) to keep track of daily vaccination data. Valid PWa (Progressive Web App) - can be added to smartphones' home screens. By [Calum Lim](https://www.linkedin.com/in/calumlim/)
