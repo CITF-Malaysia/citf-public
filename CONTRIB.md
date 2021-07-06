@@ -4,6 +4,7 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 
 1) Brand of vaccine used in relation to `dose1_daily` and `dose2_daily`. Required to derive completion rates once single-dose vaccines are used, and could be beneficial for research regarding vax efficacy.
 2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
+3) As per https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv, please add `per_hundred` and `per_million` to show the ratio of the vaccination data
 
 ---
 
