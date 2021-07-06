@@ -41,3 +41,6 @@ VaccineMY 101, by [Li Wei Lee](https://techrino.net). A mobile app built using F
 
 8) [[Live Version]](https://vax.covfefe.my/)
 Simple visualizations (maps, graphs, and charts) to keep track of daily vaccination data. Valid PWa (Progressive Web App) - can be added to smartphones' home screens. By [Calum Lim](https://www.linkedin.com/in/calumlim/)
+
+9) [[Observablehq]](https://observablehq.com/@minimumness/malaysias-covid-vaccination-progress)
+An interactive infographic to visualise Malaysia's vaccination progress. By [Huan Min Gan](https://ministrudels.github.io/)
