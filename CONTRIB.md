@@ -4,7 +4,9 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 
 1) Brand of vaccine used in relation to `dose1_daily` and `dose2_daily`. Required to derive completion rates once single-dose vaccines are used, and could be beneficial for research regarding vax efficacy.
 2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
-3) Indicate which program is the vaccine administered under, it being the Program Imunisasi COVID-19 Kebangsaan (PICK), Selangor State Government Covid-19 Vaccine Program (Selangkah Vax) or Program Imunisasi Industri COVID-19 Kerjasama Awam-Swasta (PIKAS) under MITI, or other independent vaccine program in Malaysia. This could be included as part of the daliy vaccination statistic.
+3) List of PPVs by state, including location name, lat/lon, and address.
+4) Breakdown of daily vaccinations by program, i.e. under PICK, SelVax, PIKAS, or others.
+
 ---
 
 # Share your work!
@@ -44,3 +46,6 @@ Simple visualizations (maps, graphs, and charts) to keep track of daily vaccinat
 
 9) [[Observablehq]](https://observablehq.com/@minimumness/malaysias-covid-vaccination-progress)
 An interactive infographic to visualise Malaysia's vaccination progress. By [Huan Min Gan](https://ministrudels.github.io/)
+
+10) [[Git repo]](https://github.com/danialsim95/msvac)
+An API created by [Danial Sim](https://github.com/danialsim95), powered by PHP. It allows to call HTTP request based on all data provided in this repo.
