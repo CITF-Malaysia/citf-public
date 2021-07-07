@@ -44,3 +44,6 @@ Simple visualizations (maps, graphs, and charts) to keep track of daily vaccinat
 
 9) [[Observablehq]](https://observablehq.com/@minimumness/malaysias-covid-vaccination-progress)
 An interactive infographic to visualise Malaysia's vaccination progress. By [Huan Min Gan](https://ministrudels.github.io/)
+
+10) [[Git repo]](https://github.com/danialsim95/msvac)
+An API created by [Danial Sim](https://github.com/danialsim95), powered by PHP. It allows to call HTTP request based on all data provided in this repo.
