@@ -6,7 +6,7 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
 3) List of PPVs by state, including location name, lat/lon, and address.
 4) Breakdown of daily vaccinations by program, i.e. under PICK, SelVax, PIKAS, or others.
-
+5) Daily number of Covid-19 tests done number of tests returned positive. If possible testing data by state as well. To calculate positivity rate for a more accurate view of the pandemic.
 ---
 
 # Share your work!
