@@ -57,4 +57,4 @@ A dashboard created to forecast progress of vaccination programme, by Koh Wyhow
 A spreadsheet of vaccination centres (name and Google Maps URL) from [JKJAV](https://www.vaksincovid.gov.my/) as of 12 July 2021, obtained by Koh Wyhow
 
 8) [[Live Version]](https://bukanjav.com/)
-BukanJAV - Malaysia's daily vaccine data visualization based on official data from Malaysia's National Covid-19 Immunisation Programme (PICK).
+BukanJAV - Malaysia's daily vaccine data visualization based on official data from Malaysia's National Covid-19 Immunisation Programme (PICK). Build by [yashimwong](https://github.com/yashimwong/) and [afiqfaidhy](https://github.com/balistix)
