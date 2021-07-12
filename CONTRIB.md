@@ -51,4 +51,4 @@ An interactive infographic to visualise Malaysia's vaccination progress. By [Hua
 An API created by [Danial Sim](https://github.com/danialsim95), powered by PHP. It allows to call HTTP request based on all data provided in this repo.
 
 11) [[Google Data Studio dashboard]](https://datastudio.google.com/s/qEsohEphTnA)
-A dahsboard created to forecast progress of vaccinaiton programme, by Koh Wyhow
+A dashboard created to forecast progress of vaccination programme, by Koh Wyhow
