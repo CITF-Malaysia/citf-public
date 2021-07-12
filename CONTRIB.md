@@ -52,3 +52,6 @@ An API created by [Danial Sim](https://github.com/danialsim95), powered by PHP. 
 
 11) [[Google Data Studio dashboard]](https://datastudio.google.com/s/qEsohEphTnA)
 A dashboard created to forecast progress of vaccination programme, by Koh Wyhow
+
+12) [[Google Sheet List of Vaccination Centres]](https://docs.google.com/spreadsheets/d/1Eurs9p9rzCjj33dbMk4266HgqdzONNtYNDwbcEdjpn0/edit?usp=sharing)
+A spreadsheet of vaccination centres (name and Google Maps URL) from [JKJAV](https://www.vaksincovid.gov.my/) as of 12 July 2021, obtained by Koh Wyhow
