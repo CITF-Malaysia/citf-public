@@ -6,6 +6,8 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
 3) List of PPVs by state, including location name, lat/lon, and address.
 4) Breakdown of daily vaccinations by program, i.e. under PICK, SelVax, PIKAS, or others.
+5) Utilization of current vaccine supply (availability) based of different criteria, i.e. States, vaccine brand, vaccination program or PPVs (if possible).
+6) Detailed schedule of future vaccine supply that will arrive to Malaysia, with data broken down to different vaccine brands.
 
 ---
 
