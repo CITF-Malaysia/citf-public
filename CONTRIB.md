@@ -6,6 +6,8 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 2) To have similar fields from `vaxreg_state.csv` in `vax_state.csv` - this will help to compare the registration and vaccination data.
 3) List of PPVs by state, including location name, lat/lon, and address.
 4) Breakdown of daily vaccinations by program, i.e. under PICK, SelVax, PIKAS, or others.
+5) Utilization of current vaccine supply (availability) based of different criteria, i.e. States, vaccine brand, vaccination program or PPVs (if possible).
+6) Detailed schedule of future vaccine supply that will arrive to Malaysia, with data broken down to different vaccine brands.
 
 ---
 
@@ -31,8 +33,8 @@ Malaysia Vaccine Tracker Twitter Bot, by [Henry Lim](https://twitter.com/henryli
 citf-graphs, by Aiman Ismail. Interactive graph of vaccination data showing changes over time.
 
 
-5) [[Live Version]](https://mshumayl.github.io/malaysia-vaccination/)
-Simple and digestible Malay language dashboard, by [Shumayl Asmawi](https://twitter.com/Shumayl_). Visualizes the vaccination progress in terms of percentages of population by state.
+5) [[Live Version]](https://share.streamlit.io/mshumayl/malaysia-vaccination/main/dashboard_streamlit.py)
+Simple and digestible progress dashboard, by [Shumayl Asmawi](https://twitter.com/Shumayl_). Live data query to show vaccination progress and latest infection figures.
 
 6) [[Git repo]](https://github.com/firdausly/Citf-State-Map)
 [[Live Version]](https://firdausly.github.io/Citf-State-Map/)
