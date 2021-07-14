@@ -33,8 +33,8 @@ Malaysia Vaccine Tracker Twitter Bot, by [Henry Lim](https://twitter.com/henryli
 citf-graphs, by Aiman Ismail. Interactive graph of vaccination data showing changes over time.
 
 
-5) [[Live Version]](https://mshumayl.github.io/malaysia-vaccination/)
-Simple and digestible Malay language dashboard, by [Shumayl Asmawi](https://twitter.com/Shumayl_). Visualizes the vaccination progress in terms of percentages of population by state.
+5) [[Live Version]](https://share.streamlit.io/mshumayl/malaysia-vaccination/main/dashboard_streamlit.py)
+Simple and digestible progress dashboard, by [Shumayl Asmawi](https://twitter.com/Shumayl_). Live data query to show vaccination progress and latest infection figures.
 
 6) [[Git repo]](https://github.com/firdausly/Citf-State-Map)
 [[Live Version]](https://firdausly.github.io/Citf-State-Map/)
