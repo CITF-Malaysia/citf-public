@@ -60,3 +60,6 @@ A spreadsheet of vaccination centres (name and Google Maps URL) from [JKJAV](htt
 
 8) [[Live Version]](https://bukanjav.com/)
 BukanJAV - Malaysia's daily vaccine data visualization based on official data from Malaysia's National Covid-19 Immunisation Programme (PICK).  Built by [yashimwong](https://github.com/yashimwong/) and [afiqfaidhy](https://github.com/balistix)
+
+13) [[Git repo]](https://github.com/zulzain2/covid19-insight-flutter)[[Web Version]](https://covid19.zulzayn.com/)
+Covid19 Insight - Summary of Malaysia Covid 19 Cases and Vaccination Programmed from Malaysia's National Covid-19 Immunisation Programme (PICK). Available in Web, Mobile and Desktop OS. By [zulzain](https://github.com/zulzain2)
