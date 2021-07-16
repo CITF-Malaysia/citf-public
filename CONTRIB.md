@@ -63,3 +63,8 @@ BukanJAV - Malaysia's daily vaccine data visualization based on official data fr
 
 13) [[Git repo]](https://github.com/zulzain2/covid19-insight-flutter)[[Web Version]](https://covid19.zulzayn.com/)
 Covid19 Insight - Summary of Malaysia Covid 19 Cases and Vaccination Programmed from Malaysia's National Covid-19 Immunisation Programme (PICK). Available in Web, Mobile and Desktop OS. By [zulzain](https://github.com/zulzain2)
+
+14) [[Google Data Studio Dashboard]](https://datastudio.google.com/reporting/18406380-bc57-4e1a-b5cd-a07f242f1ca3/page/OB1SC?s=gUlxxJLtG6k)
+An interactive dashboard by GDS to present the vaccination update in Malaysia & state.
+Build an end-to-end data pipeline from CITE Github to Google Drive through AWS Lambda.
+By Low Kim Hoe (https://www.linkedin.com/posts/ericlowkimhoe_citf-covid19-github-activity-6818191459301380096-Whyo)
