@@ -67,4 +67,4 @@ Covid19 Insight - Summary of Malaysia Covid 19 Cases and Vaccination Programmed 
 14) [[Google Data Studio Dashboard]](https://datastudio.google.com/reporting/18406380-bc57-4e1a-b5cd-a07f242f1ca3/page/OB1SC?s=gUlxxJLtG6k)
 An interactive dashboard by GDS to present the vaccination update in Malaysia & state.
 Build an end-to-end data pipeline from CITE Github to Google Drive through AWS Lambda.
-By Low Kim Hoe (https://www.linkedin.com/posts/ericlowkimhoe_citf-covid19-github-activity-6818191459301380096-Whyo)
+By [Low Kim Hoe](https://www.linkedin.com/posts/ericlowkimhoe_citf-covid19-github-activity-6818191459301380096-Whyo)
