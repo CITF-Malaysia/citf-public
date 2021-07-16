@@ -68,3 +68,6 @@ Covid19 Insight - Summary of Malaysia Covid 19 Cases and Vaccination Programmed 
 An interactive dashboard by GDS to present the vaccination update in Malaysia & state.
 Build an end-to-end data pipeline from CITE Github to Google Drive through AWS Lambda.
 By [Low Kim Hoe](https://www.linkedin.com/posts/ericlowkimhoe_citf-covid19-github-activity-6818191459301380096-Whyo)
+
+15) [[CSV List of Vaccination Centres with Coordinates]](https://github.com/euyangchai/DSproject/blob/master/PPVscraper/ppv_cleaned.csv)
+A CSV file containing vaccination centres in Malaysia with details including State, District, PPV Name and Coordinates (longitude & latitude). The data is as of 14 July 2021 and scraped from [JKJAV](https://www.vaksincovid.gov.my/) by Chai Eu Yang.
