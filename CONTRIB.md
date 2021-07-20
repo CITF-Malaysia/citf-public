@@ -71,3 +71,6 @@ By [Low Kim Hoe](https://www.linkedin.com/posts/ericlowkimhoe_citf-covid19-githu
 
 15) [[CSV List of Vaccination Centres with Coordinates]](https://github.com/euyangchai/DSproject/blob/master/PPVscraper/ppv_cleaned.csv)
 A CSV file containing vaccination centres in Malaysia with details including State, District, PPV Name and Coordinates (longitude & latitude). The data is as of 14 July 2021 and scraped from [JKJAV](https://www.vaksincovid.gov.my/) by Chai Eu Yang.
+
+16) [[Google Data Studio Dashboard]](https://datastudio.google.com/reporting/8ba8d5d5-9a39-4506-af28-7ab8fcd8f8a9)
+An extensive dashboard to be used to monitor the state of the Covid-19 outbreak as well as the progress of vaccination (Malaysia as a whole and by state). Data are manually curated on a daily basis and cross-checked with various official sources for validation and verification purposes. By [aidilsfwn](https://github.com/aidilsfwn)
