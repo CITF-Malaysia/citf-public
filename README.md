@@ -1,9 +1,9 @@
-# Open data on Malaysia's National Covid-​19 Immunisation Programme 
+# Open Data on Malaysia's National Covid-​19 Immunisation Programme 
 
 **We will continually maintain and improve the scope and granularity of data in this repo.**
 + Documentation and data descriptions contained within subfolders. 
-+ To request more data, submit a pull request to add to the [data wishlist](/CONTRIB.md#data-requests).
-+ We are happy to collate work which builds on our data - submit a pull request to add to the [projects list](/CONTRIB.md#share-your-work).
++ To request more data, submit a pull request (PR) to add into the [data wishlist](/CONTRIB.md#data-requests).
++ We are happy to collate work which builds on our data - submit a pull request (PR) to add into the [projects list](/CONTRIB.md#share-your-work).
 
 ---
 
