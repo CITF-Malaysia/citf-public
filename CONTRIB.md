@@ -76,3 +76,8 @@ A CSV file containing vaccination centres in Malaysia with details including Sta
 An extensive dashboard to be used to monitor the state of the Covid-19 outbreak as well as the progress of vaccination (Malaysia as a whole and by state). Data are manually curated on a daily basis and cross-checked with various official sources for validation and verification purposes. By [aidilsfwn](https://github.com/aidilsfwn)
 
 17) [[Live Version]](https://vax.tehcpeng.net/) MY Vax Tracker, By [Sheng Han](https://www.linkedin.com/in/shenghan/). Vaccination progress dashboard with a focus on projecting days remaining to 80% vaccination target. 
+
+18) [[Google Data Studio Dashboard]](https://datastudio.google.com/s/r8NqXYF2jpA)
+An interactive mobile friendly dashboard to monitor progress as well as estimate future vaccination rate in Malaysia (and by state). By syafix
+
+
