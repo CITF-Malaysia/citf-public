@@ -77,3 +77,5 @@ An extensive dashboard to be used to monitor the state of the Covid-19 outbreak 
 
 17) [[Google Data Studio Dashboard]](https://datastudio.google.com/s/r8NqXYF2jpA)
 An interactive mobile friendly dashboard to monitor progress as well as estimate future vaccination rate in Malaysia (and by state). By syafix
+
+18) [[Live Version]](https://vax.tehcpeng.net/) MY Vax Tracker, By [Sheng Han](https://www.linkedin.com/in/shenghan/). Vaccination progress dashboard with a focus on projecting days remaining to 80% vaccination target. 
