@@ -22,3 +22,4 @@
      + [17th July](https://github.com/CITF-Malaysia/citf-public/commit/2f3100bce891e34c660471ac4dc96dddb911e6eb#diff-61b43ea1f6043e3ce51f4264320ef8907ad059425fc3bcf7cc9f4c20fac3b025)
      + [25th July](https://github.com/CITF-Malaysia/citf-public/commit/1e49d7268e546c325e83fbd9ce4ca0b3c1186756#diff-61b43ea1f6043e3ce51f4264320ef8907ad059425fc3bcf7cc9f4c20fac3b025)
      + [1st August](https://github.com/CITF-Malaysia/citf-public/commit/14c8ab854257e369b6a43f9b7ae97f58c92cef42#diff-61b43ea1f6043e3ce51f4264320ef8907ad059425fc3bcf7cc9f4c20fac3b025) - also reflecting integration of SelVAX transactions
+     + [8th August](https://github.com/CITF-Malaysia/citf-public/commit/8f6b68885e82a99de6040acb1cf33adafd360c64#diff-61b43ea1f6043e3ce51f4264320ef8907ad059425fc3bcf7cc9f4c20fac3b025)
