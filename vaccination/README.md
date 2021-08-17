@@ -17,7 +17,7 @@
 8) `cumul` = `cumul_partial` + `cumul_full`
 9) `x1`and `x2` = 1st and 2nd doses of double-dose vaccine type `x` delivered between 0000 and 2359 on date, where `x` can be `pfizer`, `sinovac` or `astra`
 10) `x` = doses of single-dose vaccine type `x` delivered between 0000 and 2359 on date, where `x` can be `cansino`
-11) `pending` = doses delivered that are 'quarantined' in the Vaccine Management System due to errors and/or inconsistencies in vaccine bar code, batch number, et cetera; these problems are usually resolved soon and affect ~0.1% of all records on a rolling basis. `pending` records for dates far in the past are not unresolved errors, but rather reflect backdated manual uploads, including the records of those returning from overseas and registering vaccinations locally.
+11) `pending` = doses delivered that are 'quarantined' in the Vaccine Management System due to errors and/or inconsistencies in vaccine bar code, batch number, et cetera; these problems are usually resolved soon and affect ~0.1% of all records on a rolling basis. `pending` records for dates far in the past are not unresolved errors, but rather reflect backdated manual uploads, including the records of those returning from overseas who register their vaccinations locally.
 
 ### Methodological choices
 + For the purposes of reporting doses delivered, `total_cumul` = `dose1_cumul` + `dose2_cumul`. However, when counting the number of _unique individuals_ who have been vaccinated, note that `dose2_cumul` is a perfect subset of `dose1_cumul` - everyone who received a 2nd dose also shows up in the 1st dose count. As such, the total number of individuals who have received _at least_ 1 dose is exactly equal to `dose1_cumul`. 
