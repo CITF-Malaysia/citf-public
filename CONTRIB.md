@@ -82,4 +82,4 @@ An interactive mobile friendly dashboard to monitor progress as well as estimate
 
 19) [[GitHub Repo]](https://github.com/vincenth19/myvaccine-backend), [[API documentation]](https://documenter.getpostman.com/view/16605343/Tzm8GG7u) [[Live API]](https://myvaccination-backend.vercel.app/api/). Malaysia Vaccination simple API Endspoints created with ExpressJS. [[Live Example]](https://mycoronastat.pages.dev). Developed by [Vincent Haryadi](https://vincenth19.com)
 
-20) [[GitHub Repo]](https://github.com/UnknownSean8/citf-choropleth-map), [[Live Version]](https://unknownsean8.github.io/citf-choropleth-map/). Interactive choropleth map visualization on the number of full vaccination for each state over time. By [Sean Leong](www.linkedin.com/in/sean-leong-wei-xuan)
+20) [[GitHub Repo]](https://github.com/UnknownSean8/citf-choropleth-map), [[Live Version]](https://unknownsean8.github.io/citf-choropleth-map/). Interactive choropleth map visualization on the number of full vaccination for each state over time. By [Sean Leong](https://www.linkedin.com/in/sean-leong-wei-xuan/)
