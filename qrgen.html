@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en-MY">
+<head>
+<meta charset="utf-8">
+<title>WHO care:MY</title>
+<link rel="icon" href="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png"/>
+<meta name="description" content="QR Code Generator for WHO care">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link href="//fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<script src="jquery.min.js">
+</script>
+<script src="qrgen.js">
+</script>
+<script src="scripts.js">
+</script>
+</head>
+<body>
+<div id="container"></div>
+<div class="control left"><a id="banner" href="https://alexandereric995.github.io/qrcodegen/"><img src="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" width="20" height="20"/>MY-WHO care</a></img><hr>
+<label for="render">GENERATE</label><select id="render">
+<option value="canvas" selected="selected">Canvas</option><option value="IMEJ">Imej</option><option value="div">Div</option></select><hr>
+<label for="size">SAIZ</label><input id="size" type="range" value="400" min="100" max="1000" step="50">
+<label for="fill">FILL</label><input id="fill" type="color" value="#ff9818">
+<label for="background">LATAR BELAKANG</label>
+<input id="background" type="color" value="#808080">
+<label for="text">KANDUNGAN URL</label>
+<textarea id="text"></textarea><hr>
+<label for="minversion">VERSI MIN:</label>
+<input id="minversion" type="range" value="6" min="1" max="10" step="1">
+<label for="eclevel">SYSTEM PEMBETULAN</label>
+<select id="eclevel"><option value="L">RENDAH(7%)</option><option value="M">SEDERHANA (15%)</option><option value="Q">BAIK (25%)</option><option value="H" selected="selected">TINGGI (30%)</option></select>
+<label for="quiet">IMEJ DALAMAN:</label><input id="quiet" type="range" value="1" min="0" max="4" step="1">
+<label for="radius">KADAR PIXEL:</label><input id="radius" type="range" value="50" min="0" max="50" step="10"></div>
+<div class="control right"><label for="mode">MODE</label>
+<select id="mode"><option value="0">0 - Normal</option><option value="1">1 - Label-Strip</option><option value="2" selected="selected">2 - Label-Box</option>
+<option value="3">3 - Image-Strip</option><option value="4">4 - Image-Box</option></select>
+<hr><label for="msize">SAIZ:</label>
+<input id="msize" type="range" value="11" min="0" max="40" step="1">
+<label for="mposx">POS X:</label><input id="mposx" type="range" value="50" min="0" max="100" step="1">
+<label for="mposy">POS Y:</label><input id="mposy" type="range" value="50" min="0" max="100" step="1"><hr>
+<label for="label">LABEL</label>
+<input id="label" type="text" value="">
+<label for="font">JENIS FONT</label><input id="font" type="text" value="Ubuntu Mono">
+<label for="fontcolor">WARNA FONT</label>
+<input id="fontcolor" type="color" value="#ff9818"><hr>
+<label for="IMEJ">IMEJ</label>
+<input id="IMEJ" type="file"></div>
+<img id="img-buffer" src="dummy.png">
+</body>
+</html>
