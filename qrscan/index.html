@@ -97,22 +97,6 @@ body {
     );
   </script>
 
-<script type="text/javascript">
-        
-        document.addEventListener('DOMContentLoaded', function(event) {
-              let urlParams = new URLSearchParams(window.location.search);
-              let formType = urlParams.has('formType') ? urlParams.get('formType') : 'REGULAR';
-              let locationName = urlParams.has('ln') ? urlParams.get('ln').replace(/_/g, ' ') : "-";
-
-              jsonData.locationId = urlParams.has('lId') ? urlParams.get('lId') : null;
-              jsonData.locationName = urlParams.has('eln') ? unescape(atob(urlParams.get('eln'))) : locationName;
-              jsonData.rsvpEndDt = urlParams.has('rsvpEndDt') ? urlParams.get('rsvpEndDt') : '-';
-              let eventDt = urlParams.has('evtStartDt') ? urlParams.get('evtStartDt') : '-';
-              let eventEndDt = urlParams.has('evtEndDt') ? urlParams.get('evtEndDt') : ''
-              jsonData.eventDate = (eventDt == eventEndDt) ? eventDt : (eventDt + " hingga " + eventEndDt);
-              );
-}
-</script>
 <p><b>Powered by Ministry of Health Research Centre </b></p>
 </body>
 </html>
