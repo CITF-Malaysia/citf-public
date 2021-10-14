@@ -18,7 +18,7 @@
 9) `cumul_booster` sum of `daily_booster` for all T <= `date`, i.e. number of people who have received a booster
 10) `cumul_partial_child` = number of children (< 18yo) who have received their 1st dose (thus far, only Pfizer is used)
 11) `cumul_full_child` = number of children (< 18yo)  who have received their 2nd dose (thus far, only Pfizer is used)
-12) `cumul` = `cumul_partial` + `cumul_full` - cumulative `cansino` doses to date
+12) `cumul` = `cumul_partial` + `cumul_full` + `cumul_booster` - cumulative `cansino` doses to date, i.e. total doses administerd
 13) `x1`and `x2` = 1st and 2nd doses of double-dose vaccine type `x` delivered between 0000 and 2359 on date, where `x` can be `pfizer`, `sinovac` or `astra`
 14) `x` = doses of single-dose vaccine type `x` delivered between 0000 and 2359 on date, where `x` can be `cansino`
 15) `pending` = doses delivered that are 'quarantined' in the Vaccine Management System due to errors and/or inconsistencies in vaccine bar code, batch number, et cetera; these problems are usually resolved soon and affect ~0.1% of all records on a rolling basis. `pending` records for dates far in the past are not unresolved errors, but rather reflect backdated manual uploads.
