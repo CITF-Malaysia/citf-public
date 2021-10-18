@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="https://seeklogo.com/images/J/jata-malaysia-colour-logo-475E16311D-seeklogo.com.png">
+<title>INDEX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c86d0346-0010-479a-a177-7b3e87007f5e/d8keqfo-650a6ac1-3335-457f-bba0-ef8a46493e19.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M4NmQwMzQ2LTAwMTAtNDc5YS1hMTc3LTdiM2U4NzAwN2Y1ZVwvZDhrZXFmby02NTBhNmFjMS0zMzM1LTQ1N2YtYmJhMC1lZjhhNDY0OTNlMTkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mUsj011uOCK-6Pghkyq946aJ5yPPvDiqHJxG6SqBUnw" >
+<link rel="stylesheet" href="./net.css">
+<link rel="stylesheet" href="./net.color.css">
+<link rel="stylesheet" href="./font.net.css">
+    <link rel="script" href="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js">
+    <link rel="script" href="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.msgpack.min.js">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <head>
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+      <style>
+  #snowflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+  }
+
+  .snowflake {
+    position: fixed;
+    background-color: #CCC;
+    user-select: none;
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+</style>
+
+<div id="snowflakeContainer">
+  <span class="snowflake"></span>
+</div>
+
+<script>
+  // Array to store our Snowflake objects
+  var snowflakes = [];
+
+  // Global variables to store our browser's window size
+  var browserWidth;
+  var browserHeight;
+
+  // Specify the number of snowflakes you want visible
+  var numberOfSnowflakes = 50;
+
+  // Flag to reset the position of the snowflakes
+  var resetPosition = false;
+
+  // Handle accessibility
+  var enableAnimations = false;
+  var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+
+  // Handle animation accessibility preferences 
+  function setAccessibilityState() {
+    if (reduceMotionQuery.matches) {
+      enableAnimations = false;
+    } else { 
+      enableAnimations = true;
+    }
+  }
+  setAccessibilityState();
+
+  reduceMotionQuery.addListener(setAccessibilityState);
+
+  //
+  // It all starts here...
+  //
+  function setup() {
+    if (enableAnimations) {
+      window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+      window.addEventListener("resize", setResetFlag, false);
+    }
+  }
+  setup();
+
+  //
+  // Constructor for our Snowflake object
+  //
+  function Snowflake(element, speed, xPos, yPos) {
+    // set initial snowflake properties
+    this.element = element;
+    this.speed = speed;
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.scale = 1;
+
+    // declare variables used for snowflake's motion
+    this.counter = 0;
+    this.sign = Math.random() < 0.5 ? 1 : -1;
+
+    // setting an initial opacity and size for our snowflake
+    this.element.style.opacity = (.1 + Math.random()) / 3;
+  }
+
+  //
+  // The function responsible for actually moving our snowflake
+  //
+  Snowflake.prototype.update = function () {
+    // using some trigonometry to determine our x and y position
+    this.counter += this.speed / 5000;
+    this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
+    this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
+    this.scale = .5 + Math.abs(10 * Math.cos(this.counter) / 20);
+
+    // setting our snowflake's position
+    setTransform(Math.round(this.xPos), Math.round(this.yPos), this.scale, this.element);
+
+    // if snowflake goes below the browser window, move it back to the top
+    if (this.yPos > browserHeight) {
+      this.yPos = -50;
+    }
+  }
+
+  //
+  // A performant way to set your snowflake's position and size
+  //
+  function setTransform(xPos, yPos, scale, el) {
+    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+  }
+
+  //
+  // The function responsible for creating the snowflake
+  //
+  function generateSnowflakes() {
+
+    // get our snowflake element from the DOM and store it
+    var originalSnowflake = document.querySelector(".snowflake");
+
+    // access our snowflake element's parent container
+    var snowflakeContainer = originalSnowflake.parentNode;
+    snowflakeContainer.style.display = "block";
+
+    // get our browser's size
+    browserWidth = document.documentElement.clientWidth;
+    browserHeight = document.documentElement.clientHeight;
+
+    // create each individual snowflake
+    for (var i = 0; i < numberOfSnowflakes; i++) {
+
+      // clone our original snowflake and add it to snowflakeContainer
+      var snowflakeClone = originalSnowflake.cloneNode(true);
+      snowflakeContainer.appendChild(snowflakeClone);
+
+      // set our snowflake's initial position and related properties
+      var initialXPos = getPosition(50, browserWidth);
+      var initialYPos = getPosition(50, browserHeight);
+      var speed = 5 + Math.random() * 40;
+
+      // create our Snowflake object
+      var snowflakeObject = new Snowflake(snowflakeClone,
+        speed,
+        initialXPos,
+        initialYPos);
+      snowflakes.push(snowflakeObject);
+    }
+
+    // remove the original snowflake because we no longer need it visible
+    snowflakeContainer.removeChild(originalSnowflake);
+
+    moveSnowflakes();
+  }
+
+  //
+  // Responsible for moving each snowflake by calling its update function
+  //
+  function moveSnowflakes() {
+
+    if (enableAnimations) {
+      for (var i = 0; i < snowflakes.length; i++) {
+        var snowflake = snowflakes[i];
+        snowflake.update();
+      }      
+    }
+
+    // Reset the position of all the snowflakes to a new value
+    if (resetPosition) {
+      browserWidth = document.documentElement.clientWidth;
+      browserHeight = document.documentElement.clientHeight;
+
+      for (var i = 0; i < snowflakes.length; i++) {
+        var snowflake = snowflakes[i];
+
+        snowflake.xPos = getPosition(50, browserWidth);
+        snowflake.yPos = getPosition(50, browserHeight);
+      }
+
+      resetPosition = false;
+    }
+
+    requestAnimationFrame(moveSnowflakes);
+  }
+
+  //
+  // This function returns a number between (maximum - offset) and (maximum + offset)
+  //
+  function getPosition(offset, size) {
+    return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+  }
+
+  //
+  // Trigger a reset of all the snowflakes' positions
+  //
+  function setResetFlag(e) {
+    resetPosition = true;
+  }
+</script>
+       <script>
+        var clock = new Vue({
+            el: "#clock",
+            data: {
+                time: "",
+                date: ""
+            }
+        });
+
+        var week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID = setInterval(updateTime, 1000);
+        updateTime();
+        function updateTime() {
+            var cd = new Date();
+            clock.time =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock.date =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week[cd.getDay()];
+        }
+
+        function zeroPadding(num, digit) {
+            var zero = "";
+            for (var i = 0; i < digit; i++) {
+                zero += "0";
+            }
+            return (zero + num).slice(-digit);
+        }
+
+    </script>
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date()
+            var h = today.getHours()
+            var m = today.getMinutes()
+            var s = today.getSeconds()
+            m = checkTime(m)
+            s = checkTime(s)
+            document.getElementById('clock').innerHTML = h + ":" + m + ":" + s
+            t = setTimeout('startTime()', 500)
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i }
+            return i
+        }
+        window.onload = startTime;
+    </script>
+  </head>
+<body>
+<!-- Header -->
+<header class="net-container net-theme net-padding" id="myHeader">
+  <i onclick="net_open()" class="fa fa-bars net-xlarge net-button net-theme"></i> 
+  <div class="net-center">
+  <h4>Job Seeker</h4>
+  <h1 class="net-xxxlarge net-animate-bottom">SEEKERS GATEWAY</h1>
+<center><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c86d0346-0010-479a-a177-7b3e87007f5e/d8keqfo-650a6ac1-3335-457f-bba0-ef8a46493e19.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M4NmQwMzQ2LTAwMTAtNDc5YS1hMTc3LTdiM2U4NzAwN2Y1ZVwvZDhrZXFmby02NTBhNmFjMS0zMzM1LTQ1N2YtYmJhMC1lZjhhNDY0OTNlMTkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mUsj011uOCK-6Pghkyq946aJ5yPPvDiqHJxG6SqBUnw" width="100" height="100"/></img></center>
+     <label><font color="white">
+      <div id="clock" align='center'></font></div>
+     </label>
+  <center><h4>Excellent Consideration Guideline</h4></center>
+    <div class="net-padding-32">
+      <button class="net-btn net-xlarge net-dark-grey net-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">INFORMATION</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="id01" class="net-modal">
+    <div class="net-modal-content net-card-4 net-animate-top">
+      <header class="net-container net-theme-l1"> 
+<style>
+      .tulis p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+</style>
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="net-button net-display-topright">×</span>
+        <h4><center>
+      <div class="w3-padding">
+<div class="tulis">
+  <p>INFORMATION</p>
+</div></h4>
+      </header>
+      <div class="net-padding">
+        <center><p>WEB</p>
+        <p>This web collecting any portal that hire to one web type of portal.</p></center>
+      </div>
+      <footer class="net-container net-theme-l1">
+        <p>Advisory by Admin</p>
+      </footer></center>
+    </div>
+</div>
+<div id="id02" class="net-modal">
+    <div class="net-modal-content net-card-4 net-animate-top">
+      <header class="net-container net-theme-l1"> 
+<style>
+      .tulis p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+</style>
+        <span onclick="document.getElementById('id02').style.display='none'"
+        class="net-button net-display-topright">×</span>
+        <h4><center>
+      <div class="w3-padding">
+<div class="tulis">
+  <p>EXIST</p>
+</div></h4>
+      </header>
+      <div class="net-padding">
+        <center><p>DRUG AND BIALS</p>
+        <p>Understand the facts that the drug suggest is not only for nerve. Know the facts that some bials exist without going through the antigen's nerves. Consider the physical existences of the drugs you are taking. The bials will not be dead unless the infection spot and it's sele is killed by drug's dosses.</p></center>
+<center><p><a href="http://pustakakajian.ml"><button style="font-size:24px">Back <i class="material-icons" style="font-size:40px;color:blue">fingerprint</i></button></a>
+      </div>
+      <footer class="net-container net-theme-l1">
+        <p>Advisory by Pustaka Kajian</p>
+      </footer></center>
+    </div>
+</div>
+<div id="id03" class="net-modal">
+    <div class="net-modal-content net-card-4 net-animate-top">
+      <header class="net-container net-theme-l1"> 
+<style>
+      .tulis p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid blue; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: blue; }
+}
+</style>
+<style>
+.button {
+  background-color: #0000ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+        <span onclick="document.getElementById('id03').style.display='none'"
+        class="net-button net-display-topright">×</span>
+        <h4><center>
+      <div class="w3-padding">
+<div class="tulis">
+  <p>DEPENDENCY</p>
+</div></h4>
+      </header>
+      <div class="net-padding">
+        <center><p>DEPENCY AND CONTAINS</p>
+        <p>Do research about the antibody and diseases dependcy. Know on what circumstance shall either the antibody or disease is stronger than each others. Also, study about the chemicals contain for making the drugs. If by any chances the drugs taken contain harmful substances. Do stop using the drugs immediately!</p>
+<center><p><a href="http://pustakakajian.ml"><button style="font-size:24px">Back <i class="material-icons" style="font-size:40px;color:blue">fingerprint</i></button></a>
+</p></center>
+</center>
+      </div>
+      <footer class="net-container net-theme-l1">
+        <p>Advisory by Pustaka Kajian</p>
+      </footer></center>
+    </div>
+</div>
+<div id="id04" class="net-modal">
+    <div class="net-modal-content net-card-4 net-animate-top">
+      <header class="net-container net-theme-l1"> 
+<style>
+      .tulis p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+</style>
+        <span onclick="document.getElementById('id04').style.display='none'"
+        class="net-button net-display-topright">×</span>
+        <h4><center>
+      <div class="w3-padding">
+<div class="tulis">
+  <p>SOURCES</p>
+</div></h4>
+      </header>
+      <div class="net-padding">
+        <center><p>BIAL'S SOURCES</p>
+<p>Do research about the bial's sources and its pathogen. Considered either the patient or inffected person require surgical after vaccines or not. Please make only required decision only!
+</p>
+        <p>PUSTAKA KAJIAN</p></center>
+          <center><p><a href="http://pustakakajian.ml"><button style="font-size:24px">Back <i class="material-icons" style="font-size:40px;color:blue">fingerprint</i></button></a>
+      </div>
+      <footer class="net-container net-theme-l1">
+        <p>Advisory by Pustaka Kajian</p>
+      </footer></center>
+    </div>
+</div>
+<div class="net-row-padding net-center net-margin-top">
+<div class="net-third">
+  <div class="net-card net-container" style="min-height:auto">
+  <i class="fa fa-desktop net-margin-bottom net-text-theme" style="font-size:120px"></i>
+  <p> <button class="net-btn net-xlarge net-dark-grey net-hover-light-grey" onclick="document.getElementById('id04').style.display='block'" style="font-weight:900;">SOURCES</button></p>
+  </div>
+</div>
+
+<div class="net-third">
+  <div class="net-card net-container" style="min-height:auto">
+  <p> <button class="net-btn net-xlarge net-dark-grey net-hover-light-grey" onclick="document.getElementById('id02').style.display='block'" style="font-weight:900;">EXIST</button></p>
+  </div>
+</div>
+
+<div class="net-third">
+  <div class="net-card net-container" style="min-height:auto">
+  <p> <button class="net-btn net-xlarge net-dark-grey net-hover-light-grey" onclick="document.getElementById('id03').style.display='block'" style="font-weight:900;">DEPENDENCY</button></a></p>
+  </div>
+</div>
+</div>
+
+<div class="net-container">
+<hr>
+<div class="net-center">
+  <marquee><h2>RESEARCHERS FRAMEWORK, 2021<i class="material-icons" style="font-size:48px;color:blue">fingerprint</i> 
+| By: Alexander Eric</h2></marquee>
+</div>
+<hr>
+</div>
+<br>
+<body>
+ <style>
+            #banner { 
+                    background: url(img/library-img.jpg) no-repeat center 0; 
+                    background-size: cover; 
+                    height: 500px; 
+                    border: solid 3px #ff9933; 
+                    text-align: center;
+                    position: relative;  
+                    overflow: hidden 
+            }
+            .doorText { 
+                    background-color: rgba(0, 0, 255,0.50); 
+                    color: #333; 
+                    font-family: Verdana, sans-serif; 
+                    font-size: 24px; 
+                    font-weight: bold; 
+                    line-height: 45px; 
+                    height: 45px; 
+                    border:solid 1px rgba(0,0,0,0.15); 
+                    border-width:1px 0;
+                    position: absolute; 
+                    top: 50%;  
+                    padding: 0 0 0 20px; 
+                    left: 1px; 
+                    right: 1px; 
+                    margin-top: -22.5px; 
+                    text-shadow: 0 1px 1px rgba(255,255,255,0.25); 
+            }
+            .doorHoverLeft { 
+                    position: absolute; 
+                    left: 0%; 
+                    top: 0; 
+                    bottom: 0; 
+                    width: 50%; 
+                    transition: 3s ease-in-out; 
+                    box-shadow: inset 0 0 0 1px rgba(0, 0, 255,0.40); 
+                    background: rgba(0, 0, 255.35); 
+                    background: -moz-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0, 0, 255.35)), color-stop(50%, rgba(0, 0, 255,0.35)), color-stop(51%, rgba(209,209,209,0.35)), color-stop(100%, rgba(254,254,254,0.35))); 
+                    background: -webkit-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: -o-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: -ms-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: linear-gradient(135deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9933', endColorstr='#fefefe', GradientType=1 );
+            }
+            .doorHoverRight { 
+                    position: absolute; 
+                    right: 0%; 
+                    top: 0; 
+                    bottom: 0; 
+                    width: 50%; 
+                    transition: 3s ease-in-out; 
+                    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.40); 
+                    background: rgba(0, 0, 255.35); 
+                    background: -moz-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0, 0, 255.35)), color-stop(50%, rgba(0, 0, 255,0.35)), color-stop(51%, rgba(209,209,209,0.35)), color-stop(100%, rgba(254,254,254,0.35))); 
+                    background: -webkit-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: -o-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: -ms-linear-gradient(-45deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); 
+                    background: linear-gradient(135deg, rgba(0, 0, 255.35) 0%, rgba(0, 0, 255,0.35) 50%, rgba(209,209,209,0.35) 51%, rgba(254,254,254,0.35) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9933', endColorstr='#fefefe', GradientType=1 );
+            }
+            #banner:hover .doorHoverLeft { 
+                    left: -50%; 
+            }
+            #banner:hover .doorHoverRight { 
+                    right: -50%; 
+            }
+    </style>    
+    <div id="banner">
+            <div class="doorHoverLeft"><span class="doorText">RCEG</span>
+</div>
+            <div class="doorHoverRight"><span class="doorText">2021</span></div>
+    </div>
+</body>
+</html>
