@@ -33,3 +33,4 @@
      + [15th August](https://github.com/CITF-Malaysia/citf-public/commit/f9206aed251613c3492f7b9fa01bd8aaffd2c9d5)
      + [23rd August](https://github.com/CITF-Malaysia/citf-public/commit/238abf321bf0095cdf95f27e142e2603fe99861a)
      + [30th August](https://github.com/CITF-Malaysia/citf-public/commit/693ba64fd8c4f83a0869c1b03a5605f9e3755d2b)
+     + [17th October](https://github.com/CITF-Malaysia/citf-public/commit/156904bdcb346d3d13b4673e2f6dc6451b2557a8) - also reflecting integration of transactions from private-purchase vaccination
