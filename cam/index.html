@@ -2,6 +2,7 @@
 <html lang="MY">
 <link rel="icon" href="https://covid-19.moh.gov.my/user/images/g5_helium/header/JATA2021.png" />
 <title>KKM:CAM</title>
+<head>
 <style>
 .panel {
   padding-bottom: 10px;
@@ -34,7 +35,6 @@
 
 
 </head>
-
 <body translate="no" >
 <fieldset><p><center><img src="https://covid-19.moh.gov.my/user/images/g5_helium/header/JATA2021.png" width="50" height="50"/></p></center></fieldset>
   <div class="panel">
@@ -92,7 +92,7 @@ async function getMediaStream(constraints) {
 async function switchCamera(cameraMode) {
   try {
     // stop the current video stream
-    if (mediaStream != null &amp;&amp; mediaStream.active) {
+    if (mediaStream != null &&mediaStream.active) {
       var tracks = mediaStream.getVideoTracks();
       tracks.forEach(track => {
         track.stop();
@@ -160,5 +160,4 @@ document.getElementById('snapBtn').onclick = event => {
 clearPhoto();
     </script>
 </body>
-
 </html>
