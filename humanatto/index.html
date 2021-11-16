@@ -60,21 +60,15 @@ iframe {
 </head>
 
 <body translate="no" >
-<fieldset><h1>3D Model Sistem Manusia <img src="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" width="40" height="40"/></h1>
-</fieldset>
+<center><fieldset><h1>3D Model Sistem Manusia <img src="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" width="40" height="40"/></h1>
+</fieldset></center>
   <script src="./human-api.min.js"></script>
-<iframe src="https://human.biodigital.com/widget?m=demos/presentation_of_myocardial_infarct.json&amp;ui-tree=true" id="embeddedHuman" allowFullScreen="true" class="fullscreen">
+<iframe src="https://human.biodigital.com/widget?m=demos/presentation_of_myocardial_infarct.json&amp;ui-tree=true" id="embeddedHuman" allowFullScreen="true" class="fullscreen"/>
 </iframe>
-
-<div id="my-hotspot">
-  <h1>3D Model Sistem Manusia <img src="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" width="40" height="40"/></h1>
-</div>
-    <script src="timeout.js"></script>
-
-  
-      <script id="rendered-js" >
+<script src="./timeout.js"></script>
+<script id="rendered-js" >
 // Initialize API
-var human = new HumanAPI(&quot;embeddedHuman&quot;);
+var human = new HumanAPI("embeddedHuman");
 
 // Custom hotspots
 var objectId = 'terumo_stemi_quiz_systems_patch-right_auricle_ID';
