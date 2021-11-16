@@ -65,25 +65,24 @@ iframe {
   <script src="./human-api.min.js"></script>
 <iframe src="https://human.biodigital.com/widget?m=demos/presentation_of_myocardial_infarct" id="embeddedHuman" allowFullScreen="true" class="fullscreen"/>
 </iframe>
-<script src="./timeout.js"></script>
 <script id="rendered-js" >
-// Initialize API
+
 var human = new HumanAPI("embeddedHuman");
 
-// Custom hotspots
+
 var objectId = 'terumo_stemi_quiz_systems_patch-right_auricle_ID';
 var myHotspot = document.getElementById('my-hotspot');
 
 var hotspotId;
 
-human.send('hotspots.create', { // Create an invisible hotspot
+human.send('hotspots.create', { 
   objectId: objectId,
   shown: false },
 function (id) {
   hotspotId = id;
 
   human.send('hotspots.info', hotspotId, function (info) {
-    // Initially position and reveal our hotspot
+   
     setCanvasPosition(info.canvasPosition);
     myHotspot.style.display = 'block';
   });
@@ -92,14 +91,14 @@ function (id) {
 
 human.on('hotspots.positionUpdated', function (event) {
   if (event.id === hotspotId) {
-    // Synch our hotspot's position
+   
     setCanvasPosition(event.canvasPosition);
   }
 });
 
 human.on('hotspots.displayUpdated', function (event) {
   if (event.id === hotspotId) {
-    // Synch our hotspot's display
+    
     myHotspot.style.display = event.inView ? 'block' : 'none';
   }
 });
