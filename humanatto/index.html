@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" >
-
-<head>
-
   <meta charset="UTF-8" >
-  
 <link rel="icon" href="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" />
-  <title>Human Body</title>
+  <title>Badan Manusia</title>
+<head>
 <style>
 body {
   font: 14px/20px Arial, 'Segoe UI Symbol' , Helvetica, sans-serif;
@@ -65,11 +62,7 @@ iframe {
 <body translate="no">
   <script src="https://developer.biodigital.com/builds/api/2/human-api.min.js"></script>
 
-<iframe
-        id='embeddedHuman'; 
-        allowFullScreen='true'; 
-        class='fullscreen';
-        src="https://human.biodigital.com/widget?m=demos/presentation_of_myocardial_infarct.json&amp;ui-tree=true" >
+<iframe id="embeddedHuman" allowFullScreen="true" class=*fullscreen" src="https://human.biodigital.com/widget/?m=demos/presentation_of_myocardial_infarct.json ui-tree="true">
 </iframe>
 
 <div id="my-hotspot">
@@ -85,14 +78,13 @@ var myHotspot = document.getElementById('my-hotspot');
 
 var hotspotId;
 
-human.send('hotspots.create', { // Create an invisible hotspot
+human.send('hotspots.create', { 
   objectId: objectId,
   shown: false },
 function (id) {
   hotspotId = id;
 
   human.send('hotspots.info', hotspotId, function (info) {
-    // Initially position and reveal our hotspot
     setCanvasPosition(info.canvasPosition);
     myHotspot.style.display = 'block';
   });
@@ -101,14 +93,12 @@ function (id) {
 
 human.on('hotspots.positionUpdated', function (event) {
   if (event.id === hotspotId) {
-    // Synch our hotspot's position
     setCanvasPosition(event.canvasPosition);
   }
 });
 
 human.on('hotspots.displayUpdated', function (event) {
   if (event.id === hotspotId) {
-    // Synch our hotspot's display
     myHotspot.style.display = event.inView ? 'block' : 'none';
   }
 });
@@ -118,8 +108,6 @@ function setCanvasPosition(canvasPosition) {
   myHotspot.style.top = canvasPosition.y + 'px';
 }
     </script>
-
- 
 </body>
 
 </html>
