@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" />
+  <title>REPORT</title>
+  
+  
+  
+  
+<style>
+@import &quot;https://fonts.googleapis.com/css?family=Raleway&quot;;
+ * {
+   font-family: Raleway;
+ }
+ map {	
+	background-color: #fafafa;
+	width: auto;
+	height: 100%;
+	margin-left: 250px;
+	padding: 20px 30px;
+}
+#map_side {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+}
+
+#injury_form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat( 1, auto);
+}
+
+
+  #info-box {
+
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #ffffff;
+    border: 2px solid #BF0A30;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+
+
+  g:hover {
+    stroke-linejoin: round;
+    fill: #D3D3D3 !important;
+    cursor: pointer;
+     border: 2px solid black;
+  outline-style: solid;
+  outline-color: red;
+  }
+        .body {
+        fill: #b9b9b9;
+        stroke: #000000;
+        stroke-width: 1.4;
+        stroke-linejoin: round;
+        opacity: 1;
+      }
+         .active {
+        fill: #BF0A30;
+        stroke: #BF0A30;
+        stroke-width: 1.5;
+        stroke-linejoin: round;
+        opacity: .25;
+      }
+#responses {
+   display: table;
+  padding: 5px;
+  width: 100%;
+   border-collapse: collapse;
+  width: 100%;
+   text-align: center !important;
+}
+
+#responses thead {
+  background-color: rgba(51, 170, 51, .1);
+  font-size: 18px;
+ 
+}
+#responses td {
+  font-size: 12px;
+  
+}
+#responses tbody:nth-child(odd) {
+  background-color:  #f2f2f2;
+}
+#responses .delete {
+background-color:#B22222 !important;
+color: #fff !important;
+ font-size: 15px !important;
+   padding: 5px 5px !important;
+}
+
+#injury_form .missing {
+  outline: 2px solid red;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js'></script>
+
+<div><b>INJURY HISTORY:</b>
+  Please provide information about any injuries or orthopedic surgeries that have kept you out of sport for greater than 2 weeks.<hr>
+ 
+   <center><h3>BODY MAP INSTRUCTIONS:</h3></center>
+  <ol>
+    <li>Select the injured body part from the diagram or use the form to select a body part.<ul><li>Click 'Reset' to unselect the current body part.</li><li>If injury is not side-specific, select a side and change 'SIDE:' to NA.</li></ul></li>
+    <li>Complete form. If you are unsure of the exact date of injury, simply select the first day of the month/year.</li>
+    <li>Click 'Submit' and the information will populate the table below.</li>
+  </ol>
+<hr>
+</div>
+
+<div id="map_side" >
+  <div><svg id='bodyMap' enable-background="new 0 0 500 304" height="304" viewBox="0 0 500 304" width="500" xmlns="http://www.w3.org/2000/svg">
+
+    <g id='A_Head' data-side='NA' data-position='Anterior' class='body' name='Head'> 
+    </g>
+    <g id='P_Head' data-side='NA' data-position='Posterior' class='body' name='Head'>
+ </g>
+    <g id='Face' class='body' data-position='Anterior' name='Face' data-side='NA'>     
+    </g>
+
+    <g id='A_Neck' data-side='NA' data-position='Anterior' name='Neck/cervical spine' class='body'>
+   </g>
+
+    <g id='P_Neck' data-side='NA' data-position='Posterior' name='Neck/cervical spine' class='body'>     
+    </g>
+
+    <g id='RA_Shoulder' data-side='Right' data-position='Anterior' name='Shoulder/clavicle' class='body'>     
+    </g>
+    <g id='LA_Shoulder' data-side='Left' data-position='Anterior' name='Shoulder/clavicle' class='body'>     
+    </g>
+    <g id='RP_Shoulder' data-side='Right' data-position='Posterior' name='Shoulder/clavicle' class='body'>
+      
+    </g>
+    <g id='LP_Shoulder' data-side='Left' data-position='Posterior' name='Shoulder/clavicle' class='body'>
+      
+    </g>
+    <g id='RA_Sternum' data-side='Right' data-position='Anterior' name='Sternum/ribs' class='body'>
+      
+    </g>
+    <g id='LA_Sternum' data-side='Left' data-position='Anterior' name='Sternum/ribs' class='body'>
+      
+    </g>
+    <g id='RA_Hip' data-side='Right' data-position='Anterior' name='Hip' class='body'>
+      
+    </g>
+    <g id='LA_Hip' data-side='Left' data-position='Anterior' name='Hip' class='body'>
+    </g>
+    <g id='RP_Hip' data-side='Right' data-position='Posterior' name='Hip' class='body'>
+      
+    </g>
+    <g id='LP_Hip' data-side='Left' data-position='Posterior' name='Hip' class='body'>
+      
+    </g>
+    <g id='RA_Groin' data-side='Right' data-position='Anterior' name='Groin' class='body'>
+      
+    </g>
+    <g id='LA_Groin' data-side='Left' data-position='Anterior' name='Groin' class='body'>
+    </g>
+    <g id='RA_Thigh' data-side='Right' data-position='Anterior' name='Anterior thigh' class='body'>
+      
+    </g>
+    <g id='LA_Thigh' data-side='Left' data-position='Anterior' name='Anterior thigh' class='body'>
+      
+
+    </g>
+    <g id='RP_Thigh' data-side='Right' data-position='Posterior' name='Posterior thigh' class='body'>  </g>
+    <g id='LP_Thigh' data-side='Left' data-position='Posterior' name='Posterior thigh' class='body'></g>
+    <g id='RA_Knee' data-side='Right' data-position='Anterior' name='Knee' class='body'>      
+    </g>
+    <g id='LA_Knee' data-side='Left' data-position='Anterior' name='Knee' class='body'>
+   </g>
+    <g id='RA_Leg' data-side='Right' data-position='Anterior' name='Lower leg' class='body'>
+      
+    </g>
+    <g id='LA_Leg' data-side='Left' data-position='Anterior' name='Lower leg' class='body'>
+
+    </g>
+    <g id='RP_Leg' data-side='Right' data-position='Posterior' name='Lower leg' class='body'>
+      
+    </g>
+    <g id='LP_Leg' data-side='Left' data-position='Posterior' name='Lower leg' class='body'>
+      
+    </g>
+
+    <g id='RP_Ankle' data-side='Right' data-position='Posterior' name='Ankle' class='body'>
+      
+    </g>
+    <g id='LP_Ankle' data-side='Left' data-position='Posterior' name='Ankle' class='body'>
+      
+    </g>
+    <g id='RA_Foot' data-side='Right' data-position='Anterior' name='Foot/toe' class='body'>
+      
+    </g>
+    <g id='LA_Foot' data-side='Left' data-position='Anterior' name='Foot/toe' class='body'>
+      
+    </g>
+    <g id='RA_Elbow' data-side='Right' data-position='Anterior' name='Elbow' class='body'>
+      
+    </g>
+    <g id='LA_Elbow' data-side='Left' data-position='Anterior' name='Elbow' class='body'>
+     
+    </g>
+    <g id='RP_Elbow' data-side='Right' data-position='Posterior' name='Elbow' class='body'>
+      
+    </g>
+    <g id='LP_Elbow' data-side='Left' data-position='Posterior' name='Elbow' class='body'>
+      
+    </g>
+    <g id='RA_Forearm' data-side='Right' data-position='Anterior' name='Forearm' class='body'>
+      
+    </g>
+    <g id='LA_Forearm' data-side='Left' data-position='Anterior' name='Forearm' class='body'>
+      
+
+    </g>
+    <g id='RP_Forearm' data-side='Right' data-position='Posterior' name='Forearm' class='body'>
+      
+    </g>
+    <g id='LP_Forearm' data-side='Left' data-position='Posterior' name='Forearm' class='body'>
+      
+    </g>
+    <g id='RA_Wrist' data-side='Right' data-position='Anterior' name='Wrist' class='body'>
+      
+    </g>
+    <g id='LA_Wrist' data-side='Left' data-position='Anterior' name='Wrist' class='body'>
+     
+    </g>
+    <g id='RP_Wrist' data-side='Right' data-position='Posterior' name='Wrist' class='body'>
+      
+    </g>
+    <g id='LP_Wrist' data-side='Left' data-position='Posterior' name='Wrist' class='body'>
+      
+    </g>
+    <g id='RA_Hand' data-side='Right' data-position='Anterior' name='Hand' class='body'>
+     
+    </g>
+    <g id='LA_Hand' data-side='Left' data-position='Anterior' name='Hand' class='body'>
+ </g>
+    <g id='RP_Hand' data-side='Right' data-position='Posterior' name='Hand' class='body'>
+     
+    </g>
+    <g id='LP_Hand' data-side='Left' data-position='Posterior' name='Hand' class='body'>
+      
+    </g>
+    <g id='RP_Back' data-side='Right' data-position='Posterior' name='Lower back/lumbar spine' class='body'>
+      
+    </g>
+    <g id='LP_Back' data-side='Left' data-position='Posterior' name='Lower back/lumbar spine' class='body'></g>
+      <g id='LP_Pelvis' data-side='Left' data-position='Posterior' name='Pelvis/buttocks' class='body'>
+    </g>
+    <g id='RP_Pelvis' data-side='Right' data-position='Posterior' name='Pelvis/buttocks' class='body'></g>
+  </svg></div>
+  <div id="injury_form" >
+  <div id="body"><b>BODY: </b><select id='body_sel' class='required'><option value='Select one'>Select one</option></select><select id='specific_sel' style='display:none;' class='required'></select></div>
+  <div id="side"><b>SIDE: </b><select id='side_sel' class='required'>
+      <option value='Select one'>Select one</option>
+      <option value='Right'>Right</option>
+      <option value='Left'>Left</option>
+      <option value='NA'>NA</option>
+    </select>
+  </div>
+  <div id="cause"><b>INJURY CAUSE: </b><select id='cause_sel' class='required'>
+      <option value='Select one'>Select one</option>
+      <option value='Contact'>Contact</option>
+      <option value='Acute/non-contact'>Acute/non-contact</option>
+      <option value='Overuse'>Overuse</option>
+    </select>
+  </div>
+  <div id="type"><b>INJURY TYPE: </b><select id='type_sel' class='required'>
+          </select><input type='text' id='type_other' style='display:none;'>
+  </div>
+  <div id="date"><b>DATE OF INJURY:</b>
+    <input type='date' id='date_sel'  placeholder='mm/dd/yyyy' class='required'></div>
+  <div id="status"><b>STATUS: </b><select id='status_sel' class='required'>
+      <option value='Select one'>Select one</option>
+      <option value='Fully recovered'>Fully recovered</option>
+      <option value='still have symptoms and/or receive treatment'>still have symptoms and/or receive treatment</option>
+    </select>
+
+  </div>
+  <div id="detail"> <input type="text" name="detail" id="detail_sel" class='required' placeholder='Describe the diagnosis / treatment / duration of injury' style='width:100%; height:50px;' >
+  </div><br><br>
+  <button id="done">Submit</button>
+  <button id="exit">Reset</button>
+</div>
+ 
+  
+</div>
+
+<div id="info-box"></div>
+<br><br>
+<div id='bodyform'> </div>
+<div>
+  <h3>Click the red button to delete any injuries. To modify, click on the cell and alter the content.</h3>
+  <table id='responses'><thead>
+    <tr>
+      <th>Body</th>
+      <th>Specific</th>
+      <th>Side</th>
+      <th>Cause</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Details</th>
+      <th>Delete</th>
+    </tr></thead>
+  </table>
+</div>
+<div id="results">
+  <center><button id="NextButton">SUBMIT ALL</button></center>
+</div>
+<div>
+<input type='text' id='QR~1'>
+</div>
+    <script src="./timeout.js"></script>
+
+  
+      <script id="rendered-js" >
+//Qualtrics specific requirements
+var dataBox = document.getElementById('QR~1'); //+this.questionId);
+//dataBox.style.display = 'none';
+
+//pull svg groups
+var bodyParts = document.getElementsByClassName('body');
+//json object - for each body type, impossible injury types are excluded
+
+
+var svgPaths = {
+  A_Head: '<path d="m163.7 8c0-1.9.1-4.3-.1-6.5-.1-.6-1.3-1.5-2-1.5-5 .1-6.6 2.8-5 7.4 2.5.3 4.8.4 7.1.6z"  /><path d="m172.7 7.5c.2-.8.8-2.2.5-3.3s-1.3-2.5-2.4-2.9c-1.5-.7-3.3-.6-5.1-.9-.1 0-.3.4-.3.7-.2 2.5-.4 5.1-.5 7.1 2.7-.4 5.1-.5 7.8-.7z"  />',
+  P_Head: '<path  d="m338.8 8c-1 4.6-.4 5.7 3.4 6.6.8.2 1.6.5 2.3.4 1.1-.1 2.2-.4 3.4-.7-.8-.9-1.5-1.9-2.4-2.7s-2-1.4-3.1-1.9c-1.2-.7-2.4-1.2-3.6-1.7z" /><path  d="m344.4 19.2c-4.4 5.7-4.5 9.3-.4 13.1 1.4-4.5.4-8.6.4-13.1z" /><path  d="m346.4 26c.4 0 .8 0 1.2-.1.1-1.8.2-3.7.2-5.5 0-.4-.8-.7-1.2-1.1-.3.4-1 .9-1 1.3.2 1.8.5 3.6.8 5.4z" /><path d="m338.5.7c-.3.4-.5.9-.8 1.3 2.4 1 4.9 1.9 7.3 2.9.1-.3.3-.5.4-.8-2.3-1-4.6-2.2-6.9-3.4z&quot; /><path  d=&quot;m334.5 7.8c-3 1.7-6 3.1-8.7 5-.9.6-.7 2.3 1.1 2.3 1.4 0 2.8-.3 4.3-.6 3.8-.9 4.5-2.1 3.3-6.7z&quot; /><path  d=&quot;m328.9 31.8c4.4-4.3 4.4-7.5 0-12.3z&quot; /><path  d=&quot;m325.7 26h1.3c.2-1.8.5-3.5.6-5.4 0-.4-.6-.9-.9-1.3-.4.4-1.1.8-1.1 1.2-.1 1.9 0 3.7.1 5.5z&quot; /><path  d=&quot;m328.1 5.2c2.5-1 5-2 7.9-3.2-3.2-1.1-5.8.1-7.9 3.2z&quot; />',
+  Face: '<path d=&quot;m158.8 26.6c2.3 3.4 9.5 3.3 11.3 0-3.8 0-7.5 0-11.3 0z&quot; /><path  d=&quot;m159.1 22.4c2.4-.7 2.1-2.3 1.6-4.3-1 .3-2 .6-3.1.9.5 1.4.9 2.4 1.5 3.4z&quot; /><path  d=&quot;m163.1 13.1c-.5-3.1-2.2-4.7-4.4-4.4-2 .3-3.1 2.1-2.9 5.3 2.2-1.7 4.5-2.6 7.3-.9z&quot; /><path  d=&quot;m163.1 14.3c-2.5.2-4.9.4-7.8.6.5 1 .6 2.2 1.3 2.5 1.9 1.1 5.5-.8 6.5-3.1z&quot; /><path  d=&quot;m157.2 24.9c2-1.8.3-3.2-.3-4.6-.2-.3-1.1-.3-1.7-.5-.1.6-.5 1.3-.3 1.7.5 1.2 1.4 2.2 2.3 3.4z&quot; /><path  d=&quot;m154.1 5.3c-2.3 2.2-2.4 4.7-.6 9.6.4-3.3 1.9-6.2.6-9.6z&quot; /><path d=&quot;m163 34.4c-1.2-4.2-2.2-5.1-5.8-5.5 1.2 2.8 2.6 5 5.8 5.5z&quot; /><path  d=&quot;m156.7 30.9c-.9-2.8-1.7-5.2-2.5-7.5-.2-.5-.6-.9-.9-1.3-.2.5-.7 1-.7 1.4.1 3 1.1 5.6 4.1 7.4z&quot; /><path  d=&quot;m173.1 14.3c.1-3.3-1-5.4-2.9-5.7-2.1-.4-4 1.2-4.7 4.6 2.8-1.8 5.2-1.3 7.6 1.1z&quot; /> <path  d=&quot;m171.5 19.2c-1.1-.3-2.2-.6-3.2-.9-.5 3.1-.5 3.1 1.6 4.1.3-1 .8-1.9 1.6-3.2z&quot; /><path d=&quot;m165.9 14.3c.7 2.2 3.7 4.1 5.9 3.3.8-.2 1.2-1.5 2.1-2.7-3.3-.3-5.5-.5-8-.6z&quot; /><path  d=&quot;m158.8 24.9h11.5c-2.7-2.7-9.2-2.7-11.5 0z&quot; /><path  d=&quot;m171.8 28.8c-3.9.2-5 2.8-6.4 5.7 3.6-.6 5-2.9 6.4-5.7z&quot; /><path d=&quot;m175 15.3c2.2-4.2 2-7.7-.2-9.8-1.8 3.2.6 6.1.2 9.8z&quot; /><path  d=&quot;m175.4 21.9c-1.2 3.2-2.2 6.2-3.3 9.1 3.5-2.3 5.3-6.8 3.3-9.1z&quot; /><path d=&quot;m171.6 24.9c1-1.3 1.9-2.3 2.5-3.4.2-.4.2-1.3-.1-1.5-.3-.3-1.4-.4-1.5-.2-1 1.4-2.6 2.9-.9 5.1z&quot; />',
+  A_Neck: '<path d=&quot;m165.7 53.5c3.9-6.3 8.1-12.4 8.1-20.5-4.8 6.2-8.7 12.4-8.1 20.5z&quot;  /><path d=&quot;m174.2 42c.8 4.4 5.9 8.5 11.9 6.4-4-2.3-7.8-4.3-11.9-6.4z&quot;  /><path  d=&quot;m174.4 49.1c-.7-1.8-1.1-3-1.7-4.6-.8 1.7-1.4 3.2-2.3 5.3 1.6-.3 2.7-.6 4-.7z&quot; /><path d=&quot;m155.1 33.2c-.1 8.2 4.3 14.2 7.8 20.6 1.6-5.2-1.6-12.9-7.8-20.6z&quot;  /><path  d=&quot;m158.8 49.9c-1-2.1-1.8-3.5-2.7-5.3-.6 1.7-1 2.9-1.5 4.5 1.1.1 2.3.4 4.2.8z&quot; /><path d=&quot;m160.4 37.4c1.3 1.9 2.7 3.9 4.1 5.8 1.3-1.8 2.6-3.8 4-5.7-2.2-1.8-5.6-2-8.1-.1z&quot;  /><path d=&quot;m142.7 48.5c6.4 2 11.6-2.7 11.9-6.4-4.1 2-7.9 4.2-11.9 6.4z&quot; />',
+  P_Neck: '<path  d=&quot;m317.8 47.4c3.7 1.1 7.6 2.3 11.6 3.5 3.5 1.1 4 .8 4.3-2.7 0-.7.2-1.4.3-2.1 1.3-6.4 2.3-12.8 1.8-19.4-.1-1-.8-1.9-1.1-2.9-.3.1-.5.2-.8.3.1.9.3 1.8.4 2.8.2 4.7-1.6 8.5-5.2 11.6-4 3-7.9 6-11.3 8.9z&quot; /><path  d=&quot;m339.7 23.9c-.4 0-.8-.1-1.2-.1-.3 1-1 2.1-.9 3.1.6 7.1 1.3 14.2 2 21.3.3 3.3.7 3.8 4 2.7 4.2-1.2 8.2-2.5 12.1-3.8-2.3-1.8-5.1-3.9-7.8-6-5.7-4.2-10-9.2-8.2-17.2z&quot; />',
+  RA_Shoulder: '<path d=&quot;m133.2 71.3c-1.7.7-3.3 1.3-5 2-.6.3-1.3.7-1.5 1.3-1.5 5.9-3.1 11.9-4.3 17.8-.3 1.4.8 4 2 4.7 2 1.2 3.8-.5 5.2-2.1.3-.3.5-.7.7-1.1 3.3-4.7 4.6-10.1 5.7-15.7.7-3 .8-5.7-2.8-6.9z&quot; /><path d=&quot;m126.4 71.4c7.5-.2 13.7-7.6 17.1-18.7-2-.7-3.8-.5-5.4.9-5.8 4.6-9.3 10.8-11.7 17.8z&quot; /><path d=&quot;m123.8 71.9c3.4-6.9 6.4-14.1 13.1-18.9-4.7-1.5-9.1.5-11.1 5-1.9 4.3-2.4 8.9-2 13.9z&quot;  /><path d=&quot;m137.8 67.3c6.9-5.1 12.7-11.4 21.3-13.5-4.3-3.3-13.1-1.8-16.2 4.6-1.6 2.9-3.3 5.8-5.1 8.9z&quot;  /><path  d=&quot;m124.8 74.9c-4.9 3.9-6.3 22.2-1.8 26.8-3.6-9.4-1.8-18.1 1.8-26.8z&quot; />',
+  LA_Shoulder: '<path d=&quot;m195.1 70.8c-1 1.5-2.8 2.9-2.6 4.1.6 5.9 1.6 11.7 4.7 16.8 1.1 1.8 2.4 3.7 4 5 2.1 1.8 4.6.8 5.1-2 .2-1.1.4-2.3.2-3.4-.7-4-1.7-7.8-2.5-11.8-.8-3.8-2.2-6.9-6.6-7.5-.8-.1-1.3-.6-2.3-1.2z&quot; /><path d=&quot;m185.8 51.9c2.8 11.4 9.3 19.6 16.7 19.5-2.4-6.9-5.8-13.1-11.6-17.5-1.4-1.2-3.4-1.3-5.1-2z&quot;  /><path d=&quot;m204.9 71.9c.3-5.7.2-11.5-3.4-16.4-2.1-2.7-6.2-3.8-9.4-2.3 6.4 4.5 9.5 11.6 12.8 18.7z&quot; /><path d=&quot;m191.1 67.3c-1.9-3.2-3.7-6.2-5.3-9.2s-4.2-4.9-7.4-5.8c-2.9-.8-6.5-.2-8.4 1.6 8.7 2.3 14.2 8.5 21.1 13.4z&quot;  /><path  d=&quot;m204.1 75c3.5 8.6 5.4 17.2 1.7 26.9 4.4-4.8 3-22.9-1.7-26.9z&quot; />',
+  RP_Shoulder: '<path  d=&quot;m366.8 50.7c-.7-.4-1.1-.6-1.4-.7-7.8-2.2-14.9.5-22 3-2.6.9-3.8 2.8-3.9 5.5-.2 6.3-.4 12.5-.5 18.8 0 .7.2 1.4.4 2.6 1-.7 1.8-1 2.3-1.6 2.5-2.8 5.3-5.6 7.4-8.8 2.4-3.8 4.5-7.9 6.4-12.1 1.6-3.3 4.1-5.4 7.6-6.1 1-.1 2.1-.2 3.7-.6z&quot; /><path  d=&quot;m361.1 55c5.1 6 10 11.9 15 17.7.3-.1.7-.2 1-.3.1-2.9.7-6 .3-8.9-1.1-9.8-8.6-13.4-16.3-8.5z&quot; /><path  d=&quot;m369.9 68.4c-.4 4.3-.8 8.1-1.1 12.1-.2 3.1-.6 6.4-.3 9.5.5 4.7 2.7 8.6 5.5 11.8.4-5.9.5-12 1.1-17.9.8-5.9-1.5-10.7-5.2-15.5z&quot; /><path d=&quot;m352.3 73.2c5.7-1 10.6-1.9 15.7-2.9-.6-4.3-2.8-7.3-5.4-10.1-2.1-2.3-3.9-2.1-5.2.7-1.7 3.7-3.1 7.5-5.1 12.3z&quot; /><path  d=&quot;m376.4 74.9c1.6 7.8 3.3 15.4 5 23 .2-7.9-.4-15.9-5-23z&quot; />',
+  LP_Shoulder: '<path  d=&quot;m306.7 50.2c0 .2-.1.5-.1.7 6.6 0 10.1 3.8 12.6 9.3 2.8 6.5 6.3 12.7 11.7 17.4.8.7 1.7 1.3 2.9 2.2.3-1.2.6-1.8.6-2.5-.1-6.3-.3-12.5-.6-18.8-.1-3.1-1.7-5.3-4.8-6.1-5.1-1.3-10.1-2.7-15.3-3.7-2 .2-4.5 1.2-7 1.5z&quot; /><path  d=&quot;m312.2 55c-3.9-2.6-8.6-2.9-11.5-.8-4.8 3.7-6.8 13.4-3.5 18.5 5.1-5.9 10-11.9 15-17.7z&quot; /><path  d=&quot;m298.6 102.2c3.8-3.7 6.3-8.1 6.3-13.4-.1-6.7-.9-13.4-1.4-20.2-4.4 4.8-6.1 10.2-5.2 16.7.7 5.7 1.6 11.2.3 16.9z&quot; /><path  d=&quot;m321 73.2c-2-4.9-3.7-8.8-5.5-12.9-.8-1.7-2.3-2.5-3.9-1.1-3.3 2.9-5.7 6.5-6.5 11.1 5.3 1 10.2 1.9 15.9 2.9z&quot; /><path d=&quot;m292.1 97.1c1.5-7.2 3-14.3 4.8-22.2-4.5 7.2-5 14.7-4.8 22.2z&quot; />',
+  RA_Sternum: '<path d=&quot;m162.5 130.8c.1-2.7.1-5.6.1-8.3 0-5.7-2.5-8.2-8.2-8.4-1.7-.1-2.7.4-2.5 2.4.2 2.4 0 5.1.6 7.4 1.4 5.9 3 11.7 4.9 17.3.3 1 2.1 1.5 3.2 2.2.6-1.1 1.6-2.1 1.7-3.3.3-2.9.2-6 .2-9.3z&quot;/><path d=&quot;m136.1 70.3c5.1 4.4 10.4 7.1 16.6 8.3 2 .4 4.3.3 6.3 0 3.4-.6 4.4-2.1 3.5-5.5-.1-.6-.3-1.2-.3-1.8.1-4.3.4-8.5.4-12.7 0-2.3-1.8-3.4-4.1-2.6-2 .8-4.1 1.6-5.8 2.7-5.5 3.6-10.9 7.5-16.6 11.6z&quot; /><path d=&quot;m151.2 90.7c3.5-1.1 6.8-2 10-3.1.6-.2 1.2-1 1.3-1.7.2-1.2.2-2.5 0-3.8-.1-.6-.8-1.4-1.4-1.5-3.3-.5-6.2.9-8.4 3.1-2 1.9-2.4 4.4-1.5 7z&quot; /><path d=&quot;m162.6 108.4c0-5.9-1-6.8-6.7-6.3-3.8.4-6.5 5.1-4.7 8.5.3.6 1.3.9 2.1 1.1 1.4.3 2.8.2 4.3.5 5 1.4 5 1.6 5-3.8z&quot;  /><path d=&quot;m162.6 99.8c0-1.7 0-3.4 0-5.1 0-4.5-1.7-5.7-5.9-4.1-1.3.5-2.5 1.3-3.7 2.2-2.5 2.3-3 6-1.5 7.8 3.8-.3 7.2-.5 11.1-.8z&quot;  /><path d=&quot;m150.5 131.3c-.6-7.4-1-14-1.9-20.5-.3-1.7-2.2-3.5-3.8-4.8-1.9-1.5-3-.8-3.1 1.7-.2 4.1 0 8.1-.8 12-1.2 6.2 2.9 9.9 7.8 12.2.4.1 1.5-.6 1.8-.6z&quot;  /><path  d=&quot;m138.4 88.6c.4 6.4 1.7 11.9 7.2 15.8 1.4-2.5.9-4.8-.5-6.7-2-3-4.3-5.9-6.7-9.1z&quot; /><path  d=&quot;m141 87.2c-.1 2.9 2.6 6.7 5.7 7.8 1-4.2-.7-6.6-5.7-7.8z&quot; /><path  d=&quot;m142.1 79.4c.8 3.8 2 6.7 4.8 9 1.5-3.9 1-4.8-4.8-9z&quot; /><path  d=&quot;m142.8 85.5c-1.2-2-2.2-3.7-3.4-5.7-1.5 4.1-.7 5.4 3.4 5.7z&quot; />',
+  LA_Sternum: '<path d=&quot;m166.3 113.4c3.8-.5 7.1-1 10.4-1.6.4-.1.8-.9.9-1.4.8-2.6-.1-5.6-2-7-1.7-1.3-6.8-1.5-8.4-.3-.4.3-.9 1-.9 1.5z&quot;  /><path  d=&quot;m179.5 80.9c.3.4.6.8 1 1.1 1.2-1.1 2.4-2.3 3.8-3.4-.2-.2-.3-.4-.5-.5-1.6.9-3 1.9-4.3 2.8z&quot; /><path d=&quot;m193 70.4c-2.3-1.6-4.4-2.9-6.3-4.4-1.9-1.4-3.8-3-5.8-4.3-3-1.9-6.1-3.8-9.2-5.3-1.2-.6-3.2-.8-4.2-.1-.9.7-1.2 2.6-1.2 4.1 0 3.9.3 7.7.5 11.6 0 .3-.2.7-.3 1-.9 3.4-.1 5.1 3.5 5.7 9.1 1.3 15.9-3.4 23-8.3z&quot; /> <path d=&quot;m165.7 130.6c.2 0 .5 0 .7.1 0 3.1-.1 6.3.1 9.4.1 1.2.9 2.3 1.5 3.4 1.1-.7 2.3-1.3 3.4-2 .4-.3.6-.9.8-1.4 3-7.6 4.5-15.6 4.9-23.7 0-.6-.2-1.5-.6-1.8-1.6-1.3-8.5.6-8.8 2.7-.9 4.3-1.4 8.8-2 13.3z&quot; /><path d=&quot;m177.5 90.7c1.3-4.7-1-8.4-6.2-9.8-4.2-1.1-5.2-.4-5 3.9 0 1 .5 2.5 1.2 2.8 3.2 1 6.6 2 10 3.1z&quot; /> <path d=&quot;m177.5 100.7c1-2.4.6-4.9-1.2-7.1-2-2.4-4.8-3.8-8-3.3-.7.1-1.8.9-1.9 1.4-.2 2.7-.1 5.6-.1 8.1 3.9.3 7.4.5 11.2.9z&quot;  /><path d=&quot;m187.3 119.9c0-4.1.1-8.2 0-12.3 0-2.1-1-2.8-2.9-1.9-2.3 1.1-4.2 2.9-4.5 5.7-.7 6.2-1.1 12.5-1.7 18.7-.2 2.1.8 2.6 2.5 1.7 5.6-3.3 8.2-6.1 6.6-11.9z&quot; /><path d=&quot;m190.4 88.6c-2.4 3.2-5 6.2-7.1 9.4-1.1 1.7-1.4 4-.2 6 4.5-2.2 7.3-8.3 7.3-15.4z&quot;  /><path  d=&quot;m182.6 96.1c2.2-3 4.2-5.7 6.4-8.7-5.6.2-8.4 4.3-6.4 8.7z&quot; /><path d=&quot;m181.7 88.1c.3.1.6.3.9.4 1.4-2.7 2.8-5.6 4.4-8.3-.2-.1-.5-.2-.7-.4-5.5 3.8-5.8 4.3-4.6 8.3z&quot; /> <path  d=&quot;m186.2 85.5c4.1-.1 4.9-1.7 3.1-5.6-1.1 1.9-2 3.6-3.1 5.6z&quot; />',
+  RA_Hip: '<path d=&quot;m144.3 198.9c-.8-5.4-1.7-10.7-2.3-16.1-1.1-9.8-1.5-19.6-.5-29.5.6-6.5 1.2-13 1.7-19.5.1-1-.5-2.1-.7-3.2-.3.1-.6.1-.9.2-5.7 23-4.3 45.6 2.7 68.1z&quot; /><path  d=&quot;m137.1 144.3c.2 0 .4 0 .6.1.8-5 1.7-9.8 2.5-14.8-.4-.1-.8-.1-1.2-.2-.7 4.9-1.3 9.8-1.9 14.9z&quot; />',
+  LA_Hip: '<path d=&quot;m191.4 145.4c0-5.5-.3-11-1.9-16.2-.3 0-.6.1-.9.1.9 5.5 1.8 10.8 2.8 16.1z&quot; /><path d=&quot;m184.5 199.8c7.1-22.8 8.4-45.8 2.4-69.2-.6.6-1.1 1.3-1.1 2 0 1.7.1 3.3.2 5.1.6 7.7 1.5 15.3 1.8 23 .6 13.2-.8 26.3-3.3 39.1z&quot; />',
+  RP_Hip: '<path d=&quot;m362.7 140.2c-1-4.5-1.7-9-2.9-13.5-.8-3.1-2.6-4.2-5.5-4.1-2.8.1-5.3 1.9-6.1 4.6 10.6 6.1 10.6 6.1 14.5 13z&quot; /><path  d=&quot;m359.7 121.9c-.4-5.1-.7-9.6-1-14.2-.2 0-.4 0-.6-.1-1.3 4.3-2.6 8.5-4 12.9 2.2.6 3.7 1 5.6 1.4z&quot; />',
+  LP_Hip: '<path d=&quot;m310.8 139.7c.2.1.5.2.7.3 1.7-7.4 7.6-10.4 13.9-12.8-1.8-3.4-4.5-5-7.5-4.7-3.1.3-4.3 2.7-4.9 5.4-.8 3.9-1.5 8-2.2 11.8z&quot; /><path d=&quot;m319.4 120.4c-1.5-4.7-3-9.2-4.6-13.7-.1.1-.2.1-.3.2-.2 5-.5 10-.7 15.2 1.9-.7 3.5-1.1 5.6-1.7z&quot; />',
+  RA_Groin: '<path d=&quot;m161.6 182.7c-3-16.9-10.6-32.3-17-48.6-.6 5.1.3 9.5 2 13.7 4.9 11.8 10 23.4 15 34.9z&quot; /><path d=&quot;m160.2 170.8c2.6-7.7 3.1-15 2.3-22.4-1.5 2.8-3 5.6-4.5 8.4-.5 1-1.2 2.2-1 3.1.9 3.4 2 6.8 3.2 10.9z&quot;  /><path d=&quot;m154.8 142.7c-3.5 5.2-2.2 9.6 1.5 13.9 5.8-8.9 5.6-9.9-1.5-13.9z&quot;  /> <path d=&quot;m150.7 139.3c-1.6 2.3-1 4.4.6 6.5 2.6-2.9 2.3-5-.6-6.5z&quot; />',
+  LA_Groin: '<path d=&quot;m167.8 182.3c1.2-3.1 2.3-6.3 3.7-9.4 3.5-8.2 7.2-16.3 10.6-24.5 2.2-5.4 2.8-10.2 2.1-13.8-6.3 15.8-13.8 30.9-16.4 47.7z&quot; /> <path d=&quot;m168.8 170c.9-3 1.9-6.1 2.7-9.1.3-1 .1-2.3-.3-3.3-1.5-3-3.2-6-4.8-8.9-1.4 4.4-.1 17.1 2.4 21.3z&quot;  /><path d=&quot;m173.8 142.3c-1.7 1.5-3.4 3-5.1 4.7-.3.3-.5 1.2-.4 1.6 1.1 2.7 2.4 5.5 3.9 8.5 3.9-5 5.5-9.4 1.6-14.8z&quot;  /> <path  d=&quot;m178 139.3c-3 1.8-3.1 4.1-.2 6.4 1.3-2.2 2.2-4.2.2-6.4z&quot; />',
+  RA_Thigh: '<path d=&quot;m153.2 208.4c.4-8.8.7-17.4 1.1-26.1.2-4.1 1.7-8.1 0-12.2-3.3-7.7-6.8-15.4-10.3-23.5-1.3 8.5-2.5 16.5-.5 24.8 2.2 9.1 3.9 18.3 5.8 27.5.6 3.1 1 6.4 1.5 9.4h2.4z&quot; /><path d=&quot;m157 177.8c-.3 3.4-.8 7-1 10.4-.3 6.2-.4 12.5-.4 18.7 0 1.8.1 4.3 2.6 4.3 2.5.1 2.8-2.4 3.2-4.3 1.8-10.2-.5-19.8-4.4-29.1z&quot;  /> <path d=&quot;m148.6 209.9c0-11.8-2.5-23.1-5.7-34.4.7 11.6 1.5 23.2 5.7 34.4z&quot;  />',
+  LA_Thigh: '<path d=&quot;m177.6 208.4c2-10.3 3.7-20.7 6.1-30.7 1.6-6.9 3.2-13.7 2.4-20.9-.4-3.3-.9-6.7-1.3-10-.9 1.2-1.2 2.3-1.7 3.3-2.6 6.1-5.4 12.1-7.9 18.2-1.3 3.1-1.7 6.3-1.4 9.8.8 8.1 1.2 16.2 1.6 24.3.1 2-.3 4-.4 6.1 1.2-.1 2-.1 2.6-.1z&quot; /><path d=&quot;m172.4 177.5c-.3 0-.6 0-1 0-3.3 9-5.5 18.4-4.1 28.1.2 1.5.7 3.1 1.5 4.5 1.1 1.8 3 1.5 4-.4.3-.7.6-1.5.6-2.3-.3-10-.7-19.9-1-29.9z&quot; /><path d=&quot;m186.1 175.1c-3.4 10.7-5.2 22-6.6 33.2-.1.6.6 1.3 1.1 2.5 3.9-12.1 4.6-23.8 5.5-35.7z&quot; />',
+  RP_Thigh: ' <path  d=&quot;m344.8 219.9c.3 0 .7 0 1 .1.8-2.1 1.7-4.3 2.4-6.4 1.7-4.8 3.8-9.5 5-14.4 2.9-11.6 1.1-23.1-.3-34.6-.4-3.1-2.5-4.9-6-5.2-1.3 8.3.5 16.5 1.2 24.7.6 6.8.7 13.7.2 20.5-.3 3.7-2.3 7.1-3.3 10.6-.3 1.6-.1 3.2-.2 4.7z&quot; /><path  d=&quot;m358.9 216.5h.4c.1-2.4.3-5 .4-7.4.2-3.3-.1-6.9.8-10 2.5-8.6 2.1-17 .4-25.7-.8-4.1-2.1-7.7-5.9-9.4.5 5.4 1.4 11.1 1.5 16.7.1 6.2-1.1 12.5-.7 18.7.3 5.7 2 11.4 3.1 17.1z&quot; /><path  d=&quot;m342.9 187.1c.2-1.4.4-2.5.6-3.8.4-3.9 1-7.6 1.1-11.5.1-4.2-.4-8.4-.2-12.6.2-2.9-1.1-3.8-3.7-4-1 6 .4 27.5 2.2 31.9z&quot; /><path d=&quot;m343.8 213.4c3.9-7.1 4.3-14.8 1.7-31.4-2.2 7.1-3.3 27.4-1.7 31.4z&quot; /><path d=&quot;m362.9 177.5h.9c0-6.1 0-12.1 0-18.2-1.2 1.9-2.3 4.1-2.2 6.1.1 4.1.9 8.2 1.3 12.1z&quot; />',
+  LP_Thigh: ' <path  d=&quot;m326.3 159.2c-4.1.6-5.9 2.3-6.2 6.1-.5 5.2-1.3 10.3-1.4 15.5-.1 5.4-.3 10.8.9 16 1.9 7.9 5 15.5 7.6 23.6 2.6-2.3 1.4-4.6.5-6.4-4.8-10.1-4.2-20.7-2.5-31.3 1.2-7.8 1.8-15.5 1.1-23.5z&quot; /> <path  d=&quot;m314.1 217c1-4.6 1.9-8.6 2.6-12.7.4-2.5.5-5.1.4-7.6-.1-5-.7-9.9-.5-14.9.2-5.9 1-11.7 1.6-18.4-1.8 2-4 3.4-4.5 5.4-2.3 8.6-4.3 17.3-1.8 26.4 1.4 5.1 2.1 10.2 1.7 15.6-.1 1.8.3 3.9.5 6.2z&quot; /> <path  d=&quot;m333 155.7c-3.7.3-4.2.9-4.2 4 .1 3.3-.2 6.6 0 9.9.3 5.9.8 11.7 1.2 17.5h.8c2.1-10.5 2.1-20.9 2.2-31.4z&quot; /> <path d=&quot;m329.5 213.9c1.5-6 .3-25.6-1.8-31.2-.4 3.8-.6 7.5-1.1 11.2-1 6.8-.5 13.4 2.9 20z&quot; /><path  d=&quot;m309.3 176.7c2.8-5.9 3.8-11.7 0-18.2z&quot; />',
+
+  RA_Knee: '<path d=&quot;m153.5 225.6c.8-2.5 1.3-4.4 1.8-6.2-1.3.4-2.3.7-3.5 1 .6 1.6 1 3 1.7 5.2z&quot; /><path d=&quot;m161.9 210.8c-1.5 4.4-2.9 9-4.9 13.4-1.7 4-1.7 7.7-.8 11.4.8-2.4 1.2-5.4 2.6-7.8 3.4-5.5 3.7-11.3 3.1-17z&quot; /><path d=&quot;m149.9 222.6c-1.5-4.9-2.9-9.4-4.4-13.9-.2-.6-.5-1.1-1-2.2v12.7c1.8 1.1 3.3 2.2 5.4 3.4z&quot;  /> <path d=&quot;m149.1 215.4c.8.7 1.9 2.1 3.3 2.6s3.9-2.2 3.7-3.9c-.2-2.1-1.8-2.8-3.5-2.7-1.8 0-3.3.8-3.5 4z&quot; />',
+  LA_Knee: '<path d=&quot;m175.3 225.6c.6-1.9 1.1-3.5 1.6-5.3-1.2-.3-2.3-.6-3.4-.9.6 2.1 1.2 4 1.8 6.2z&quot; /><path d=&quot;m166.8 209.6c0 3-.5 5.9.1 8.3 1.6 6 3.8 11.8 5.7 17.6 1.4-4.8.4-9.1-1.6-13.5-1.9-3.7-2.8-7.8-4.2-12.4z&quot;  /> <path d=&quot;m184.6 206.7c-.2 0-.3-.1-.5-.1-1.7 5.3-3.4 10.6-5.3 16.3 1.7-1.2 2.9-2 4.1-2.9.7-.6 1.5-1.4 1.6-2.1.2-3.7.1-7.5.1-11.2z&quot; /><path d=&quot;m176.5 211.4c-2.2 0-3.8 1.2-3.8 2.8s1.8 3.8 3.5 3.9c1.4.1 3.5-2.2 3.5-3.9 0-2.1-1.8-2.5-3.2-2.8z&quot; />',
+  RA_Leg: '<path d=&quot;m158.6 285.4c.3-.2.5-.4.8-.7-2.9-9.2-5.3-18.5-5.4-28.2-.1-6.3-.4-12.5-1.1-18.7-.5-4-1.8-7.8-3.1-11.6-.3-1-1.8-1.5-2.8-2.3-.5 1-1.3 2-1.4 3.1-.1 2.1-.1 4.4.3 6.4 1.6 7.5 3.3 14.9 5.1 22.4 2.1 9.2 4.3 18.4 6.4 27.6.1.9.7 1.5 1.2 2z&quot; /><path d=&quot;m144.3 238.3c-.3 0-.5 0-.8 0 .2 3.1 0 6.5.7 9.5 2.6 11.4 5.7 22.6 8.5 33.9.3 1.4.7 2.7 1.1 4.7 1.2-2.2-7.8-45.6-9.5-48.1z&quot;  /> <path d=&quot;m160.3 251.4c2.2-7 .5-13.7-.9-20.5-1 6.9-2.6 13.8.9 20.5z&quot;  /> <path d=&quot;m158.1 274.8h.6c.2-4.1.5-8.1.7-12.3.4-8 .2-9.5-2.3-11.8.3 8.2.7 16.2 1 24.1z&quot; />',
+  LA_Leg: '<path d=&quot;m169.6 284.9c.3.2.6.4.8.6.4-.8 1-1.6 1.2-2.4 2.7-11.7 5.6-23.2 8.1-34.9 1.4-6.5 2.6-13.1 3.7-19.7.2-1.3-.7-4-1.6-4.3-2.2-.6-2.6 1.8-3.4 3.3-.5.9-.8 2-1 3-.8 5.3-1.8 10.5-2.3 15.8-.7 8-.8 16-1.8 24-.6 5.2-2.5 10-3.7 14.6z&quot;  /><path d=&quot;m184.9 238.3c-.2 0-.4 0-.6-.1-.3.5-.6 1-.7 1.6-3.2 15-6.4 30-9.5 45-.1.3.5.8 1 1.5 1-4.6 1.9-8.6 2.9-12.6 2.3-9 4.8-18 6.9-27.2.6-2.4 0-5.3 0-8.2z&quot; /><path d=&quot;m169.4 230.7c-1.5 6.9-2.8 13.7-.8 20.7 3.3-6.8 2.1-13.7.8-20.7z&quot;  /><path d=&quot;m172 250.8c-.4-.1-.8-.1-1.2-.2-3.9 8.5.8 17.4-1.3 26.1.3 0 .7 0 1 .1.5-8.8 1-17.4 1.5-26z&quot;  />',
+  RP_Leg: '<path  d=&quot;m352.3 210.4c-.3-.1-.5-.2-.8-.3-.7 1.3-1.7 2.6-2.2 4.1-1.1 2.9-1.9 6-2.9 8.8-2.7 7.4-4.4 15.1-4.8 23-.2 3.4-.1 7.1 2.4 10.2 3.2-2.8 6.4-5.3 6.6-9.9.3-8.6.9-17.3 1.3-26 .1-3.3.2-6.5.4-9.9z&quot; /> <path  d=&quot;m356.2 207.7c-2.4.8-2.7 2.5-2.7 4.2-.1 4.9-.3 9.6-.1 14.5.2 6.9.4 13.8-1.5 20.5-.9 3.2-.2 5.3 2.7 6.8.2-.1.4-.2.6-.4.3-.2.5-.5.7-.8 2.9-5.7 5.1-11.7 4.2-18.3-1-7.2-2.1-14.3-3.1-21.4-.4-1.7-.5-3.4-.8-5.1z&quot; />',
+  LP_Leg: '<path  d=&quot;m329.4 256c5.2-6.1-1.5-42.6-7.7-45.1 0 5.2-.1 10.5 0 15.8.2 6.3.7 12.5 1 18.8.3 4.9 3.1 7.9 6.7 10.5z&quot; /><path d=&quot;m318.5 253.8c3.9-2.7 3.4-2.7 2.9-6.7-.8-6.2-1.2-12.4-1.5-18.6-.3-5.9-.2-11.8-.4-17.6 0-1.1-1.1-2.1-1.6-3.2-.3.1-.6.2-.9.4-.5 3.9-1 7.7-1.5 11.6-.8 6.3-1.9 12.5-2.2 18.8-.3 5.6 2 10.6 5.2 15.3z&quot; />',
+  RP_Ankle: '<path  d=&quot;m350.5 296.9c.3.1.7.2 1 .3.2-.8.6-1.6.7-2.4.1-1.4-.2-2.8 0-4.3.5-3.9 1.5-7.7 1.8-11.6.3-3.7.1-7.3.1-11-.4 0-.9 0-1.3 0-.6 9.7-1.5 19.4-2.3 29z&quot; /><path  d=&quot;m350.5 301.4c2.9-1.3 4.9-3.5 5.1-5.8-3.4 1.4-5.4 3.5-5.1 5.8z&quot; /><path  d=&quot;m344.7 298.6c.3-.2.7-.3 1-.5-.8-1.7-1.5-3.4-2.3-5.2-.4.2-.7.3-1.1.5-1.5 2.7 2.2 3.2 2.4 5.2z&quot; /><path d=&quot;m347.8 301.2c-.7 0-1.3-.6-1.3-1.3s.6-1.3 1.3-1.3 1.3.6 1.3 1.3-.6 1.3-1.3 1.3z&quot; /><path  d=&quot;m347.2 297.3h.9c.1-.8.3-1.5.4-2.3.9-8 1.6-15.9 2.7-23.9.6-4.8 1.8-9.4 2.8-14.1.5-2.3-1.2-3.4-2.6-4.2-.7-.4-2.4.5-3.3 1.2-4.2 3.5-4.1 8.3-3.7 13.3.9 9.1 1.5 18.3 2.3 27.4.2.9.4 1.8.5 2.6z&quot; />',
+  LP_Ankle: '<path  d=&quot;m322 297.4c0-5.4.3-10.2-.1-15.1-.4-4.8-1.4-9.4-2.1-14.1-.3 0-.5.1-.8.1 0 3.3-.2 6.6.1 9.9s.6 6.8 1.7 10c.9 2.8-1.2 6.4 1.2 9.2z&quot; /> <path d=&quot;m322.5 302c.6-2.8-2.2-5.8-5.5-5.7 1.8 1.8 3.5 3.6 5.5 5.7z&quot; /><path d=&quot;m327.7 298.1c.2.1.5.2.7.3 3.4-3.9 3.4-3.9 1.4-5.4-.8 1.8-1.5 3.4-2.1 5.1z&quot; /> <path  d=&quot;m325.8 301.2c-.7 0-1.3-.6-1.3-1.3s.6-1.3 1.3-1.3 1.3.6 1.3 1.3-.6 1.3-1.3 1.3z&quot; /><path  d=&quot;m325.3 297.4h.9c.1-.9.2-1.9.3-2.8.7-8.2 1.2-16.3 2-24.5.5-5.6 1.8-11.4-3.1-15.7-.9-.8-2.7-1.6-3.5-1.3-1.5.7-3.3 1.8-2.6 4.4.8 2.8 1.5 5.7 1.9 8.6 1.3 9.7 2.5 19.5 3.8 29.2 0 .6.2 1.3.3 2.1z&quot; />',
+  RA_Foot: '<path  d=&quot;m153.1 291.4c-.2-.1-.4-.2-.6-.3-1.2 1.9-2.5 4-3.8 5.9.2.2.5.3.7.5 3-1 2.4-4.1 3.7-6.1z&quot; /><path d=&quot;m154.2 303.6c.4.2.8.1 1-.3l.7-1.2c.2-.4.1-.8-.3-1s-.8-.1-1 .3l-.7 1.2c-.1.3 0 .8.3 1z&quot; /><path d=&quot;m151.4 303.1c.4.2.8.1 1-.3l.7-1.2c.2-.4.1-.8-.3-1s-.8-.1-1 .3l-.7 1.2c-.2.3 0 .6.3 1z&quot; /><path d=&quot;m148.9 302.2c.4.2.8.1 1-.3l.7-1.2c.2-.4.1-.8-.3-1s-.8-.1-1 .3l-.7 1.2c-.2.3-.1.8.3 1z&quot; /><path d=&quot;m146.7 301.5c.4.2.8.1 1-.3l.7-1.2c.2-.4.1-.8-.3-1s-.8-.1-1 .3l-.7 1.2c-.2.2-.1.7.3 1z&quot; /><ellipse cx=&quot;160.3&quot; cy=&quot;301.7&quot; rx=&quot;1.6&quot; ry=&quot;2.3&quot; /><path d=&quot;m156.2 297.4c.2.2.5.4.7.7.6-.6 1.7-1 1.8-1.7.4-2.6.6-5.3.8-7.9 0-.5-.6-1-1-1.5-.4.4-1.1.8-1.2 1.3-.4 3-.7 6.1-1.1 9.1z&quot; /><path d=&quot;m152.6 297.8c2.2-.4 3.5-5.5 3-9.6-.2-.1-.5-.1-.7-.2-.7 3-1.5 6.3-2.3 9.8z&quot; /><path d=&quot;m162.1 288c-.3 0-.6 0-.9 0-.3 2.8-.6 5.6-.8 8.4 0 .4.6.8 1 1.2.2-.4.7-.8.7-1.2 0-2.8 0-5.5 0-8.4z&quot; />',
+  LA_Foot: '<path d=&quot;m175.7 290c1.2 6.2 2.2 7.7 4.2 6.7-1.3-2.2-2.8-4.4-4.2-6.7z&quot; /> <path d=&quot;m173.9 303.1c-.4.2-.8.1-1-.3l-.7-1.2c-.2-.4-.1-.8.3-1s.8-.1 1 .3l.7 1.2c.2.3.1.8-.3 1z&quot; /> <path d=&quot;m177.3 303.1c-.4.2-.8.1-1-.3l-.7-1.2c-.2-.4-.1-.8.3-1s.8-.1 1 .3l.7 1.2c.2.3.1.8-.3 1z&quot; /> <path d=&quot;m179.8 302.2c-.4.2-.8.1-1-.3l-.7-1.2c-.2-.4-.1-.8.3-1s.8-.1 1 .3l.7 1.2c.2.4.1.9-.3 1z&quot; /><ellipse cx=&quot;168.2&quot; cy=&quot;301.7&quot; rx=&quot;1.6&quot; ry=&quot;2.3&quot; /> <path  d=&quot;m182.1 301.6c-.4.2-.8.1-1-.3l-.7-1.2c-.2-.4-.1-.8.3-1s.8-.1 1 .3l.7 1.2c.1.3 0 .8-.3 1z&quot; /><path  d=&quot;m171.9 298.1c.2-.2.5-.5.7-.7-.3-3-.6-6-1-9-.1-.5-.8-.9-1.2-1.4-.4.6-1.1 1.2-1 1.7.2 2.5.5 5.2.9 7.6 0 .7 1 1.2 1.6 1.8z&quot; /><path d=&quot;m175.7 297.9c-.6-3.5-.4-7-2.4-9.7 0 2.9.3 5.9.8 8.7 0 .4 1 .7 1.6 1z&quot; /><path d=&quot;m167.7 288c-.3 0-.7 0-1 0v8.6c0 .3.6.7 1 .9.1.1.8-.5.8-.7-.3-2.8-.5-5.8-.8-8.8z&quot; />',
+  RA_Elbow: '<path d=&quot;m122.7 103.8c4.7-1.7 7.7-4.9 9.2-9.3.3.3.6.7.9 1-3.3 2.9-6.7 5.7-10.1 8.3z&quot; />',
+  LA_Elbow: '<path d=&quot;m205.7 104.3.8-.8c-3.7-2.8-7.4-5.7-11.1-8.5l1-1c1.7 4.7 4.8 8.2 9.3 10.3z&quot; />',
+  RP_Elbow: '<path  d=&quot;m377.3 84.6c-.3 0-.5 0-.8 0 0 4.2-.1 8.3.1 12.5 0 .6.8 1.2 1.2 1.9.5-.7 1.4-1.4 1.3-2-.6-4.3-1.2-8.4-1.8-12.4z&quot; /><path d=&quot;m380.5 111.9c1.1-4.4-.4-8.4-4.1-9.9 1.5 3.4 2.8 6.8 4.1 9.9z&quot; />',
+  LP_Elbow: '<path  d=&quot;m297 84.6c-.3 0-.7 0-1 0-.6 4.1-1.2 8.2-1.6 12.3-.1.7.9 1.4 1.4 2.1.4-.7 1-1.3 1.1-2 .2-2 .1-4.1.1-6.2s0-4.2 0-6.2z&quot; /><path d=&quot;m292.5 112.5c1.5-3.8 2.8-7.2 4.5-11.2-4 2.1-5.8 7.1-4.5 11.2z&quot; />',
+  RA_Forearm: '<path d=&quot;m119.2 97.8c-3.5 3.3-5.8 7.8-7.6 15.5-1.9 8.5-3.7 17-9.2 24.3.7-.2 1.3-.5 1.6-1 4-6.2 7.7-12.5 11.7-18.6 4.1-6.2 5.5-12.7 3.5-20.2z&quot;  /><path d=&quot;m123.6 114c-9.6 5.4-11.4 16.1-17 24.1 5.6-8 11.3-16.1 17-24.1z&quot; /> <path d=&quot;m128.5 111.8c-.2-.1-.4-.2-.6-.3-4 7.4-7.9 14.8-11.9 22.3 5-7 10.3-13.6 12.5-22z&quot; /> <path d=&quot;m130.6 103.7c-5 1.9-9.9 6.7-10.5 10 2.5-1.3 5.1-2.7 7.7-4.1 2.7-1.3 3.4-2.7 2.8-5.9z&quot;  /> <path d=&quot;m109 139.8c.3.2.6.3.9.5 4.3-7.2 8.4-14.3 12.7-21.5-.4-.2-.7-.4-1.1-.6-4.1 7.2-8.2 14.4-12.5 21.6z&quot;  />',
+  LA_Forearm: '<path d=&quot;m225.9 137.8c.2-.1.4-.3.6-.4-4.8-6.2-6.9-13.4-8.6-20.8-1.1-4.7-2.7-9.2-4.5-13.7-.7-1.8-2.2-3.4-3.7-5.4-2.2 8.1-.5 14.8 3.7 21.2 4 5.9 7.5 12 11.3 17.8.3.6.8.9 1.2 1.3z&quot;  /><path d=&quot;m222.3 137.9c-5.7-7.8-7.3-18.5-16.7-23.6 5.5 7.9 11.1 15.9 16.7 23.6z&quot; /> <path d=&quot;m209.4 114c-2.6-5.1-6.5-8-11.3-10.6-.3 2.5-.1 4.6 1.8 5.7 3 1.6 6 3.2 9.5 4.9z&quot;  /> <path d=&quot;m213.4 134.7c-4.3-7.8-8.4-15.7-12.7-23.5 1.8 9.2 7.5 16.1 12.7 23.5z&quot; /><path d=&quot;m218.9 140.4c.2-.1.4-.2.5-.3-3.5-7.6-7.4-15.1-13.3-21.3 4.3 7.1 8.6 14.3 12.8 21.6z&quot; />',
+  RP_Forearm: '<path  d=&quot;m371.6 106.7c1.1 6.4 9.4 21.9 13.9 25.8-1.2-4.3-2.3-8.5-3.8-12.7-1.5-4.3-3.2-8.4-5-12.6-.2.2-.4.4-.6.6-1.5-.4-3.1-.8-4.5-1.1z&quot; /> <path   d=&quot;m390.8 138.3c.5-6.1-4.9-27.2-7.7-31 .6 10.6 2.2 21.2 7.7 31z&quot; /> <path d=&quot;m393.7 139.4c1.8-.7 4.2-.5 3.3-3.2-2.1-7.3-4.4-14.7-6.8-22-1.2-3.7-2.9-7.2-4.5-10.7-.2.1-.5.2-.7.3 4.8 11.3 7.6 23 8.7 35.6z&quot; />',
+  LP_Forearm: '<path   d=&quot;m297 107.7c-.3-.2-.5-.4-.8-.6-2.9 8.6-5.9 17.2-8.8 25.9 6.6-7.9 11.5-16.6 14.5-26.3-1.9.3-3.4.7-4.9 1z&quot; /><path  d=&quot;m289.7 108.2c-3.8 9.8-6.9 19.8-7.8 31.1 5.7-10.1 7.8-20.4 7.8-31.1z&quot; /> <path d=&quot;m287.5 105.2c-.3-.1-.5-.2-.8-.3-1.2 3-2.6 6-3.7 9-2.2 7.1-4.3 14.3-6.5 21.4-.9 2.8-.1 4 3.1 3.7 1-11.7 3.9-23 7.9-33.8z&quot; />',
+  RA_Wrist: '<path   d=&quot;m106.7 142c-.2 3.2-.3 5.9-.4 8.5 3-3.8 3.2-6.7.4-8.5z&quot; /><path d=&quot;m92.2 144.8c5.8 1.4 9.9-.3 11.1-4.4-4.3-.7-7.7 1.1-11.1 4.4z&quot;   />',
+  LA_Wrist: ' <path   d=&quot;m221.3 150.8c.4-.1.8-.1 1.3-.2-.1-2.3-.2-4.7-.5-7 0-.4-.7-.8-1-1.2-.3.4-1 .9-1 1.3.4 2.3.8 4.8 1.2 7.1z&quot; /><path d=&quot;m225.5 140.4c1.8 4.4 6.4 6.1 11 4.2-3.1-3.1-6.5-4.8-11-4.2z&quot;   />',
+  RP_Wrist: '<path  d=&quot;m393.1 146.4.7 5.5h1.5z&quot; /><path  d=&quot;m396.6 146.3 1.1 5.6h1.4v-1.3z&quot; /><path  d=&quot;m399.1 145.2 2.4 6.4.9-1.5z&quot; />',
+  LP_Wrist: '<path  d=&quot;m271.2 149.6.7 2 3.3-5.9z&quot; /><path  d=&quot;m274.4 151.9h1.6l.9-5.5z&quot; /><path  d=&quot;m278.1 151.9h1.6l.5-6z&quot; />',
+  RA_Hand: '<path d=&quot;m105 141.7c-1.9 1.6-3.4 3.2-5.3 4.6-1.7 1.2-3.8 2.1-5.5 3.3-2.1 1.5-2.1 2.9.3 3.9 2.6 1 5.5 1.5 8.3 1.8 3 .4 3.7-.4 2.7-3.4-.2-.7-.5-1.4-.5-2 0-2.9 0-5.5 0-8.2z&quot; /><path d=&quot;m96.4 155.3c-.3 0-.5.1-.8.1-1.2 2.6-2.4 5.3-3.5 8-.2.5.2 1.2.3 1.8.5-.4 1.2-.6 1.5-1.1 1.1-2.2 2.1-4.5 3-6.8.2-.4-.3-1.2-.5-2z&quot; /> <path  d=&quot;m93 154.8c-.2-.3-.4-.7-.6-.8-.4-.1-1 0-1.2.2-1.4 2.2-2.7 4.6-4.1 6.9-.1.2.1.8.4 1.1.1.1.8.1.9-.1 1.5-2.4 3.1-4.9 4.6-7.3z&quot; /> <path d=&quot;m97.4 165.6c.3.1.7.1 1 .2.9-2.8 1.9-5.7 2.8-8.5 0-.2-.6-.8-.8-.7-.4.2-.9.5-1.1.9-.8 2.1-1.5 4.2-2.1 6.3-.1.5.1 1.2.2 1.8z&quot; /> <path  d=&quot;m102.3 163.8c.4.1.8.2 1.3.3.7-2.2 1.4-4.4 2-6.6.1-.2-.3-.8-.4-.8-.4 0-.9.2-1 .4-.7 2.1-1.3 4.4-1.9 6.7z&quot; />',
+  LA_Hand: '<path d=&quot;m224.5 142.8c-.5 2.9-1 6.8-1.6 10.5-.3 1.8 1 2 2.1 1.9 2.7-.3 5.5-.7 8.1-1.4 1.1-.3 2-1.5 3-2.2-.9-.9-1.6-2-2.6-2.7-3.1-2.4-6.4-4.4-9-6.1z&quot; /><path d=&quot;m225.3 164.1c.3-.1.5-.1.8-.2.5-2.4-.9-6.5-3.1-7.6.8 2.9 1.6 5.3 2.3 7.8z&quot; /> <path d=&quot;m232.1 155.5c-.2.3-.4.6-.6.9 1.1 2.5 2.1 5.1 3.3 7.5.3.6 1.1.9 1.6 1.4.1-.8.4-1.6.2-2.3-.8-2.1-1.8-4.3-2.8-6.3-.3-.5-1.2-.7-1.7-1.2z&quot; /> <path d=&quot;m236.4 147.9c1.5 1 2.9 1.9 4.5 2.6.5.2 1.2-.2 1.9-.3-.1-.6-.1-1.5-.4-1.8-.7-.7-1.7-1.2-2.6-1.9-1.8-1.3-2.8-1-3.4 1.4z&quot; /><path  d=&quot;m230.4 165.7c.4-.1.7-.2 1.1-.2.4-3-1.5-5.7-2.3-8.5-.1-.3-1-.4-2.1-.7 1.1 3.4 2.2 6.4 3.3 9.4z&quot; /><path  d=&quot;m240.7 162.6c.4-.2.9-.5 1.3-.7-1.1-2.9-2.8-5.5-4.7-8-.1-.2-1 .3-1.7.5 1.9 3 3.5 5.6 5.1 8.2z&quot; />',
+  RP_Hand: '<path   d=&quot;m401.9 155.3c-.2.3-.4.6-.6.8.9 2.5 1.8 5.2 2.9 7.7.2.6 1 1 1.5 1.5.1-.8.5-1.6.3-2.3-.6-2.1-1.4-4.3-2.3-6.3-.2-.5-1.1-.8-1.8-1.4z&quot; /><path  d=&quot;m408.5 145.5c-.5.5-1.1.8-1.4 1.3-.2.4-.2 1.2 0 1.4 1.3 1 2.7 2 4.2 2.8.3.2 1.1 0 1.4-.3s.3-1.2.1-1.4c-1.2-1.4-2.6-2.5-4.3-3.8z&quot; /><path  d=&quot;m397.6 155.9c-.2.1-.3.3-.5.4.7 2.6 1.3 5.3 2.1 7.8.1.4.9.6 1.3.9.2-.4.6-.9.5-1.3-.6-2.3-1.2-4.6-2-6.9-.1-.4-.9-.6-1.4-.9z&quot; /><path  d=&quot;m410.9 162.5c.2-.2.5-.4.7-.6-1.3-2.5-2.5-5.1-4-7.6-.2-.3-.9-.3-1.3-.4-.1.5-.3 1-.2 1.4 1 2.1 2.1 4.3 3.3 6.3.4.5 1.1.6 1.5.9z&quot; /> <path  d=&quot;m404.7 149.5c.3-2.6-2.6-7-4.4-7.4-.3-.1-.8.1-.9.3-.1.3-.2.9 0 1.2 1.6 1.8 3.3 3.6 5.3 5.9z&quot; /><path d=&quot;m394.6 163.5c.3-.1.6-.1.9-.2.3-2.7-.7-6.7-2.7-7.9.7 3 1.3 5.5 1.8 8.1z&quot; />',
+  LP_Hand: '<path  d=&quot;m266.9 165.1c.4.1.7.3 1.1.4 2.1-2.7 2.7-6.1 3.9-9.2 0-.1-.6-.7-.9-.7-.4.1-1 .4-1.2.8-.7 1.8-1.4 3.7-2 5.5-.5.8-.7 2.1-.9 3.2z&quot; /><path  d=&quot;m264.8 145.5c-1.3 1-2.7 1.8-4.1 2.9-.4.4-.3 1.3-.4 2 .7.1 1.5.4 2.1.1.9-.3 1.5-1.2 2.4-1.6 2.2-1 1.9-2 0-3.4z&quot; /><path  d=&quot;m267.7 154.3c-2.4-.3-5.7 5.1-5 8.2 2.1-2.3 3.3-5.3 5-8.2z&quot; /><path d=&quot;m271.9 165.2c1-.1 1.5 0 1.5-.1.9-2.7 1.7-5.5 2.5-8.3.1-.2-.4-.7-.6-.7-.4 0-1 .2-1 .4-.8 2.7-1.5 5.5-2.4 8.7z&quot; /> <path  d=&quot;m274.4 142.9c-.1-.2-.2-.4-.3-.6-.6.1-1.4.1-1.7.4-1.6 1.8-4.9 2.7-3.7 6.7 2-2.4 3.9-4.4 5.7-6.5z&quot; /> <path d=&quot;m278.9 155.1c-.6 3-1 5.5-1.5 8 .2 0 .5.1.7.1 1.7-2.3 2.3-6.5.8-8.1z&quot; />',
+  RP_Back: '<path  d=&quot;m368.1 73.3c-1.3 0-2.2-.1-3 0-4.3.9-8.6 1.5-12.8 2.9-5 1.7-8.2 5.8-11.3 9.9-.6.8-.9 1.9-1 3-.7 13.5-1.3 27-1.9 40.5 0 1.1.2 2.2.3 3.3.4.3.9.6 1.3 1 .4-.9.6-1.9 1.2-2.6 2.4-2.9 5.1-5.7 7.5-8.7 1.8-2.2 3.9-4.6 4.9-7.1 4-10.1 7.5-20.4 11.2-30.6 1.2-3.9 2.3-7.5 3.6-11.6z&quot; />',
+  LP_Back: '<path   d=&quot;m334.6 133.3c.2-1.2.5-1.7.4-2.3-.4-12.4-.7-24.6-1.3-37-.2-3.3-.2-7-2.7-9.8-4.3-4.9-9-8.8-15.7-9.7-3.1-.4-6.4-1-10-1.6.5 2 .7 3.2 1.1 4.4 4.5 12.9 8.9 25.8 13.6 38.5.7 2 2.1 3.9 3.5 5.6 2.6 3.2 5.6 6.3 8.4 9.3.8.9 1.6 1.6 2.7 2.6z&quot; />',
+  LP_Pelvis: ['<path d=&quot;m313.4 165.8c2.9-4.6 7.3-6.7 11.6-8.8.7-.3 1.4-.7 2.1-1.1 3.2-2 4.1-4.1 3.3-7.9-.8-4.7-1.7-9.2-2.3-14-.7-5.1-1.3-5.6-6-3.3-.1 0-.1.1-.2.1-9.1 4.5-13.4 14.7-10.7 26.1.7 2.7 1.4 5.3 2.2 8.9z&quot; /><path  d=&quot;m333.9 150.9c.4-.1.7-.2 1.1-.2.1-1.7 0-3.5.4-5.3 1-5.1-.1-9.1-6.2-11.4 1.7 5.9 3.2 11.4 4.7 16.9z&quot; />'],
+  RP_Pelvis: ['<path  d=&quot;m338.4 150.6c3.1-5 4.9-10.2 4.9-16-4.4 1.6-6.1 4.5-5.5 8.7.4 2.4.4 4.7.6 7.3z&quot; /><path  d=&quot;m360.4 164.8c.7-4.1 1.9-8.6 2.2-13.2.8-10.1-4.3-18.5-13.1-21.7-3-1.1-3.8-.6-4.2 2.5-.7 4.5-1.4 9-2.1 13.5-1.2 6.8-.5 8 5.7 11.5 3.9 2 7.5 4.7 11.5 7.4z&quot; />'] };
+
+var bodyMap = document.getElementById('bodyMap');
+for (var i = 0; i < bodyParts.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+  var thisGroup = bodyParts[i];
+  thisGroup.innerHTML = svgPaths[thisGroup.id];
+}window.CP.exitedLoop(0);
+var bodySpecifics = {
+  'Ankle': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms', 'Other, please describe'],
+    'Achilles tendon': ['Tendinitis/tendinopathy (tendon pain)', 'Tendon Rupture', 'Arthritis/synovitis/bursitis'],
+    'Talar/Subtalar': ['Fracture', 'Arthritis/synovitis/bursitis'],
+    'Peroneal': ['Tendinitis/tendinopathy (tendon pain)', 'Tendon Rupture', 'Dislocation/subluxation'] },
+
+  'Anterior thigh': {
+    'General': ['Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Tendon Rupture', 'Fasciitis/aponeurosis injury', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Quadriceps': ['Contusion (bruise)', 'Strain (muscle injury)', 'Muscle soreness', 'Muscle cramps or spasms'] },
+
+  'Elbow': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Humerus': ['Fracture'],
+    'Ulna': ['Fracture'] },
+
+  'Face': {
+    'General': ['Stress Fracture', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Laceration (cut)/abrasion/skin lesion', 'Dental injury/broken tooth', 'Other, please describe'],
+    'Neck/cervical spine': ['Select one', 'Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Ligament rupture', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Eye/Eyebrow/Orbital': ['Laceration (cut)/abrasion/skin lesion', 'Contusion (bruise)', 'Fracture', 'Post-surgical'],
+    'Ear': ['Laceration (cut)/abrasion/skin lesion', 'Contusion (bruise)'],
+    'Nose': ['Laceration (cut)/abrasion/skin lesion', 'Contusion (bruise)', 'Fracture', 'Post-surgical'],
+    'Mouth': ['Laceration (cut)/abrasion/skin lesion', 'Contusion (bruise)', 'Dental injury/broken tooth', 'Post-surgical'],
+    'Jaw': ['Laceration (cut)/abrasion/skin lesion', 'Sprain (ligament injury)', 'Contusion (bruise)', 'Fracture', 'Dislocation/subluxation', 'Post-surgical'] },
+
+  'Foot/toe': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Plantar fascia': ['Sprain (ligament injury)', 'Ligament rupture'] },
+
+  'Forearm': {
+    'General': ['Stress Fracture', 'Strain (muscle injury)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Ligament rupture', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'] },
+
+  'Groin': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'] },
+
+  'Hand': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical,', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Thumb': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Finger(s)': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'] },
+
+  'Head': {
+    'General': ['Concussion', 'Stress Fracture', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Laceration (cut)/abrasion/skin lesion', 'Dental injury/broken tooth'] },
+
+  'Hip': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'] },
+
+  'Knee': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury'],
+    'Patella/Patellar tendon': ['Arthritis/synovitis/bursitis', 'Tendinitis/tendinopathy (tendon pain)', 'Post-surgical', 'Dislocation/subluxation', 'Stress Fracture', 'Fracture', 'Tendon Rupture', 'Contusion (bruise)'],
+    'ACL': ['Sprain (ligament injury)', 'Ligament rupture', 'Post-surgical'],
+    'MCL': ['Sprain (ligament injury)', 'Ligament rupture', 'Post-surgical'],
+    'LCL': ['Sprain (ligament injury)', 'Ligament rupture', 'Post-surgical'],
+    'PCL': ['Sprain (ligament injury)', 'Ligament rupture', 'Post-surgical'],
+    'Meniscus': ['Meniscus or cartilage lesion', 'Post-surgical'] },
+
+  'Lower back/lumbar spine': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Ligament rupture', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Lumbar disc': ['Arthritis/synovitis/bursitis', 'Fracture', 'Stress Fracture', 'Nerve injury'],
+    'Pars': ['Stress Fracture'] },
+
+  'Lower leg': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Fasciitis/aponeurosis injury', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Fibula': ['Stress Fracture', 'Fracture'],
+    'Tibia': ['Stress Fracture', 'Fracture'],
+    'Shin': ['Laceration (cut)/abrasion/skin lesion', 'Contusion (bruise)'],
+    'Calf': ['Laceration (cut)/abrasion/skin lesion', 'Contusion (bruise)', 'Muscle cramps or spasms', 'Strain (muscle injury)'] },
+
+  'Neck/cervical spine': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Ligament rupture', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Cervical disc': ['Sprain (ligament injury)', 'Fracture', 'Arthritis/synovitis/bursitis'] },
+
+  'Pelvis/buttocks': {
+    'General': ['Fracture', 'Stress Fracture', 'Arthritis/synovitis/bursitis', 'Contusion (bruise)', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Stress Fracture', 'Strain (muscle injury)', 'Muscle cramps or spasms', 'Tendinitis/tendinopathy (tendon pain)', 'Tendon Rupture', 'Dislocation/subluxation'],
+    'Ischium': ['Fracture', 'Stress Fracture'],
+    'Ilium': ['Fracture', 'Stress Fracture'],
+    'Sacrum/Sacroiliac': ['Fracture', 'Arthritis/synovitis/bursitis', 'Sprain (ligament injury)', 'Stress Fracture'] },
+
+  'Posterior thigh': {
+    'General': ['Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Fracture', 'Tendon Rupture', 'Fasciitis/aponeurosis injury', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'Hamstring': ['Strain (muscle injury)', 'Muscle soreness', 'Contusion (bruise)', 'Muscle cramps or spasms'] },
+
+  'Shoulder/clavicle': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'],
+    'AC Joint': ['Arthritis/synovitis/bursitis', 'Contusion (bruise)', 'Sprain (ligament injury)', 'Dislocation/subluxation'],
+    'Rotator Cuff': ['Strain (muscle injury)', 'Muscle cramps or spasms', 'Muscle soreness'],
+    'Deltoid': ['Strain (muscle injury)', 'Muscle cramps or spasms', 'Muscle soreness'] },
+
+  'Sternum/ribs': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Laceration (cut)/abrasion/skin lesion'],
+    'Abdominal muscle': ['Muscle soreness', 'Muscle cramps or spasms', 'Strain (muscle injury)'] },
+
+  'Wrist': {
+    'General': ['Stress Fracture', 'Sprain (ligament injury)', 'Strain (muscle injury)', 'Tendinitis/tendinopathy (tendon pain)', 'Muscle soreness', 'Contusion (bruise)', 'Post-surgical', 'Dislocation/subluxation', 'Fracture', 'Tendon Rupture', 'Ligament rupture', 'Meniscus or cartilage lesion', 'Arthritis/synovitis/bursitis', 'Fasciitis/aponeurosis injury', 'Impingement', 'Laceration (cut)/abrasion/skin lesion', 'Nerve injury', 'Muscle cramps or spasms'] } };
+
+
+//form fields
+var responseTable = document.getElementById('responses');
+var headers = ['body', 'specific', 'side', 'cause', 'type', 'date', 'status', 'details'];
+var Body = ['Head', 'Face', 'Neck/cervical spine', 'Lower back/lumbar spine', 'Sternum/ribs'];
+var body_sel = document.getElementById('body_sel');
+var type_sel = document.getElementById('type_sel');
+var date = document.getElementById('date_sel');
+var type_other = document.getElementById('type_other');
+var submitForm = document.getElementById('done');
+var selectIds = ['body_sel', 'specific_sel', 'side_sel', 'cause_sel', 'type_sel', 'status_sel', 'detail_sel', 'date_sel'];
+var selectTerms = ['body', 'specific', 'side', 'cause', 'type', 'status', 'details', 'date'];
+var body_specific = document.getElementById('specific_sel');
+var bodyAdd_div = document.createElement('div');
+var chk = document.createElement('button');
+chk.innerHTML = '✔';
+chk.setAttribute('id', 'chk');
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1;
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd;
+}
+if (mm < 10) {
+  mm = '0' + mm;
+}
+date.setAttribute('max', today);
+for (var i = 0; i < Object.keys(bodySpecifics).length; i++) {if (window.CP.shouldStopExecution(1)) break;
+  var option = document.createElement(&quot;option&quot;);
+  option.value = Object.keys(bodySpecifics)[i];
+  option.text = Object.keys(bodySpecifics)[i];
+  option.selected = false;
+  body_sel.appendChild(option);
+}window.CP.exitedLoop(1);
+
+var bodyCount = {
+  'Ankle': {
+    Left: -1,
+    Right: -1 },
+
+  'Anterior thigh': {
+    Left: -1,
+    Right: -1 },
+
+  'Elbow': {
+    Left: -1,
+    Right: -1 },
+
+  'Face': {
+    Left: -1,
+    Right: -1 },
+
+  'Foot/toe': {
+    Left: -1,
+    Right: -1 },
+
+  'Forearm': {
+    Left: -1,
+    Right: -1 },
+
+  'Groin': {
+    Left: -1,
+    Right: -1 },
+
+  'Hand': {
+    Left: -1,
+    Right: -1 },
+
+  'Head': {
+    Left: -1,
+    Right: -1 },
+
+  'Hip': {
+    Left: -1,
+    Right: -1 },
+
+  'Knee': {
+    Left: -1,
+    Right: -1 },
+
+  'Lower back/lumbar spine': {
+    Left: -1,
+    Right: -1 },
+
+  'Lower leg': {
+    Left: -1,
+    Right: -1 },
+
+  'Neck/cervical spine': {
+    Left: -1,
+    Right: -1 },
+
+  'Pelvis/buttocks': {
+    Left: -1,
+    Right: -1 },
+
+  'Posterior thigh': {
+    Left: -1,
+    Right: -1 },
+
+  'Shoulder/clavicle': {
+    Left: -1,
+    Right: -1 },
+
+  'Sternum/ribs': {
+    Left: -1,
+    Right: -1 },
+
+  'Wrist': {
+    Left: -1,
+    Right: -1 } };
+
+
+
+
+function createTypes(body, specific, initial) {
+  while (type_sel.childNodes.length > 0) {if (window.CP.shouldStopExecution(2)) break; //clear injury types
+    type_sel.lastChild.remove();
+  }window.CP.exitedLoop(2);
+  var thisPart = bodySpecifics[body];
+  var optDefault = document.createElement('option');
+  optDefault.value = 'Select one';
+  optDefault.text = 'Select one';
+  type_sel.appendChild(optDefault);
+  for (var i = 0; i < thisPart[specific].length; i++) {if (window.CP.shouldStopExecution(3)) break;
+    var option = document.createElement(&quot;option&quot;);
+    option.value = thisPart[specific][i];
+    option.text = thisPart[specific][i];
+    option.selected = false;
+    type_sel.appendChild(option);
+  }window.CP.exitedLoop(3);
+  var optOther = document.createElement('option');
+  optOther.value = 'Other, please describe';
+  optOther.text = 'Other, please describe';
+  type_sel.appendChild(optOther);
+  if (initial) {
+    $('#specific_sel').show();
+    while (body_specific.childNodes.length > 0) {if (window.CP.shouldStopExecution(4)) break; //clear specific body parts
+      body_specific.lastChild.remove();
+    }window.CP.exitedLoop(4);
+    var keys = Object.keys(bodySpecifics[body]);
+    for (var j = 0; j < keys.length; j++) {if (window.CP.shouldStopExecution(5)) break;
+      var option = document.createElement('option');
+      option.value = keys[j];
+      option.text = keys[j];
+      body_specific.appendChild(option);
+    }window.CP.exitedLoop(5);
+  }
+}
+$(body_sel).change(function () {
+  createTypes(this.value, 'General', true);
+  this.disabled = true;
+});
+$(body_specific).change(function () {
+  createTypes($('#body_sel').val(), this.value, false);
+});
+var typeOther = function () {
+  type_other.setAttribute('class', '');
+  this.setAttribute('id', 'type_sel');
+  if (this.value == 'Other, please describe') {
+    $('#type_other').show();
+    this.setAttribute('id', 'typeO');
+    type_other.setAttribute('id', 'type_sel');
+    type_other.setAttribute('class', 'required');
+  } else type_other.setAttribute('style', 'display:none;');
+};
+type_sel.addEventListener('change', typeOther);
+
+function clearInputs() {
+  $('#specific_sel').hide();
+
+  for (var i = 0; i < selectIds.length; i++) {if (window.CP.shouldStopExecution(6)) break;
+    var this_input = document.getElementById(selectIds[i]);
+    this_input.className = 'required';
+    if (this_input.outerHTML.includes('input')) {
+      this_input.value = '';
+    }
+    if (this_input.outerHTML.includes('select')) {
+      this_input.value = 'Select one';
+    }
+  }window.CP.exitedLoop(6);
+}
+//functionality for body map
+var areas = $.map($(bodyParts), function (el) {
+  return {
+    key: $(el).attr('id'),
+    body: $(el).attr('name'),
+    side: $(el).attr('data-side'),
+    position: $(el).attr('data-position') };
+
+});
+var list = areas.map(a => a.key);
+$(&quot;g&quot;).hover(function (e) {
+  var index = list.indexOf(this.id);
+  var body = areas[index].body;
+  var side = areas[index].side;
+  if (side == 'NA') {
+    side = '';
+  }
+  $(&quot;#info-box&quot;).css(&quot;display&quot;, &quot;block&quot;);
+  $(&quot;#info-box&quot;).html('<center><b>' + body + '<br>' + side + '</center></b>');
+});
+$(&quot;g&quot;).mouseleave(function (e) {
+  $(&quot;#info-box&quot;).css(&quot;display&quot;, &quot;none&quot;);
+});
+$(document).mousemove(function (e) {
+  $(&quot;#info-box&quot;).css(&quot;top&quot;, e.pageY - $(&quot;#info-box&quot;).height() - 30);
+  $(&quot;#info-box&quot;).css(&quot;left&quot;, e.pageX - $(&quot;#info-box&quot;).width() / 2);
+}).mouseover();
+var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) &amp;&amp; !window.MSStream;
+if (ios) {
+  $(&quot;a&quot;).on(&quot;click touchend&quot;, function () {
+    var link = $(this).attr(&quot;href&quot;);
+    window.open(link, &quot;_blank&quot;);
+    return false;
+  });
+}
+var counter;
+var style = [0.2, 0.4, 0.6, 0.8, 1];
+var enableMore = true; //boolean that is set to false when body map is clicked to prevent multiple body parts from being selected before the form is completed
+$(&quot;g&quot;).on('click', function () {
+  if (enableMore) {
+    var body, side, sideCount;
+    var index = list.indexOf(this.id);
+    enableMore = false;
+    body = areas[index].body;
+    side = areas[index].side;
+    side_sel.value = side;
+    counter = bodyCount[body][side] + 1;
+    //this.classList.add('active');
+    var thisId = document.getElementById(this.id);
+    $('#body_sel').val(body);
+    createTypes(body, 'General', true);
+    body_sel.disabled = true;
+
+    var mapIndex = [];
+    for (var i = 0; i < Object.keys(areas).length; i++) {if (window.CP.shouldStopExecution(7)) break;
+      if (areas[i].body == body &amp; areas[i].side == side) {
+        mapIndex.push(areas[i].key);
+      }
+    }window.CP.exitedLoop(7);
+    for (var j = 0; j < mapIndex.length; j++) {if (window.CP.shouldStopExecution(8)) break;
+      sideCount = document.getElementById(mapIndex[j]);
+      sideCount.classList.add('active');
+      sideCount.style.opacity = style[counter];
+    }window.CP.exitedLoop(8);
+  }
+});
+$('#exit').on('click', function () {
+  checkBodyMap($('#body_sel').val(), $('#side_sel').val());
+  body_sel.disabled = false;
+  while (type_sel.childNodes.length > 0) {if (window.CP.shouldStopExecution(9)) break; //clear types
+    type_sel.lastChild.remove();
+  }window.CP.exitedLoop(9);
+  clearInputs();
+
+  enableMore = true;
+
+});
+
+
+function checkBodyMap(body, side) {
+  var mapIndex = [];
+  var sideCount;
+  counter = bodyCount[body][side];
+  for (var i = 0; i < Object.keys(areas).length; i++) {if (window.CP.shouldStopExecution(10)) break;
+    if (areas[i].body == body &amp; areas[i].side == side) {
+      mapIndex.push(areas[i].key);
+    }
+  }window.CP.exitedLoop(10);
+  for (var j = 0; j < mapIndex.length; j++) {if (window.CP.shouldStopExecution(11)) break;
+    sideCount = document.getElementById(mapIndex[j]);
+    if (counter != -1) {
+      sideCount.setAttribute('class', 'body active');
+      sideCount.style.opacity = style[counter];
+    }
+    if (counter == -1) {
+      sideCount.setAttribute('class', 'body');
+      sideCount.style.opacity = 1;
+    }
+  }window.CP.exitedLoop(11);
+}
+
+var clone = document.createElement('select');
+var eventTrigger;
+//function to edit table fields
+var modifyInjury = function () {
+  if (!this.parentNode.innerHTML.includes('chk')) {
+    eventTrigger = 1;
+    var which_cell = this.className;
+    var old = this.innerHTML;
+    var select = document.getElementById(which_cell + '_sel');
+    if (which_cell != 'details' &amp; which_cell != 'date') {
+      clone.innerHTML = select.innerHTML;
+      clone.setAttribute('class', which_cell);
+      this.firstChild.remove();
+      this.appendChild(clone);
+      this.appendChild(chk);
+      clone.dispatchEvent(new Event(&quot;click&quot;));
+    }
+    if (which_cell == 'details' || which_cell == 'date') {
+      var new_input = document.createElement('input');
+      new_input.setAttribute('class', which_cell);
+      if (which_cell == 'details') {
+        new_input.setAttribute('type', 'text');
+        new_input.setAttribute('value', $('#detail_sel').val());
+      }
+      if (which_cell == 'date') {
+        new_input.setAttribute('type', 'date');
+        new_input.setAttribute('value', $('#date_sel').val());
+      }
+      this.firstChild.remove();
+      this.innerHTML = new_input.outerHTML + chk.outerHTML;
+    }
+  }
+  $(this).on('click', 'button', function () {
+    var responsesInput = this.parentNode.parentNode.getElementsByClassName('results')[0];
+    var responses = JSON.parse(responsesInput.value);
+    if (responses[which_cell] != this.parentNode.firstChild.value) {
+      if (which_cell == 'side') {
+        bodyCount[responses.body][responses[which_cell]] = bodyCount[responses.body][responses[which_cell]] - 1;
+        bodyCount[responses.body][this.parentNode.firstChild.value] = bodyCount[responses.body][this.parentNode.firstChild.value] + 1;
+        checkBodyMap(responses.body, this.parentNode.firstChild.value);
+        checkBodyMap(responses.body, responses[which_cell]);
+      }
+      responses[which_cell] = this.parentNode.firstChild.value;
+      responsesInput.value = JSON.stringify(responses);
+
+    }
+    this.parentNode.innerHTML = this.parentNode.firstChild.value;
+  });
+};
+var deleteRow = function () {
+  var row = this.parentNode.parentNode;
+  var responses = row.getElementsByClassName('results')[0].value;
+  responses = JSON.parse(responses);
+  var tBody = document.getElementById(responses.body);
+  if (responses.side == 'NA') {
+    bodyCount[responses.body]['Left'] = bodyCount[responses.body]['Left'] - 1;
+    checkBodyMap(responses.body, 'Left');
+    bodyCount[responses.body]['Right'] = bodyCount[responses.body]['Right'] - 1;
+    checkBodyMap(responses.body, 'Right');
+  }
+  if (responses.side != 'NA') {
+    bodyCount[responses.body][responses.side] = bodyCount[responses.body][responses.side] - 1;
+    checkBodyMap(responses.body, responses.side);
+  }
+  if (tBody.childElementCount == 1) {
+    tBody.remove();
+  }
+  if (tBody.childElementCount > 1 &amp; tBody.firstChild == row) {
+    var nextRow = tBody.getElementsByTagName('tr')[1];
+    var groupCell = tBody.firstChild.firstChild;
+    nextRow.insertBefore(groupCell, nextRow.firstChild);
+    nextRow.firstChild.rowSpan = tBody.getElementsByTagName('tr').length - 1;
+    this.parentNode.parentNode.remove();
+  }
+  if (tBody.childElementCount > 1 &amp; tBody.firstChild != row) {
+    var groupCell = tBody.firstChild.firstChild;
+    groupCell.rowSpan = tBody.getElementsByTagName('tr').length - 1;
+    this.parentNode.parentNode.remove();
+  }
+
+};
+var modPastResponse = function () {
+  if (eventTrigger == 1) {
+    eventTrigger = 2;
+    var row = this.parentNode.parentNode;
+    var responses = row.getElementsByClassName('results')[0].value;
+    responses = JSON.parse(responses);
+    this.value = responses[this.className];
+  }
+};
+clone.addEventListener('click', modPastResponse);
+//ensure form is complete
+var checkFields = function () {
+
+  var answers = {};
+  var required = document.getElementsByClassName('required');
+  var numResponses = 0;
+  for (var i = 0; i < selectIds.length; i++) {if (window.CP.shouldStopExecution(12)) break;
+    var this_input = document.getElementById(selectIds[i]);
+    if (this_input.value != '' &amp; this_input.value != 'Select one') {
+      numResponses = numResponses + 1;
+      answers[selectTerms[i]] = this_input.value;
+      this_input.className = 'required';
+    } else this_input.classList.add('missing');
+  }window.CP.exitedLoop(12);
+
+  if (numResponses == required.length) {
+    constructTable(answers);
+    clearInputs();
+    body_sel.disabled = false;
+    enableMore = true;
+
+    if (answers.side == 'NA') {
+      bodyCount[answers.body]['Left'] = bodyCount[answers.body]['Left'] + 1;
+      bodyCount[answers.body]['Right'] = bodyCount[answers.body]['Right'] + 1;
+      checkBodyMap(answers.body, 'Left');
+      checkBodyMap(answers.body, 'Right');
+    }
+    if (answers.side != 'NA') {
+      bodyCount[answers.body][answers.side] = bodyCount[answers.body][answers.side] + 1;
+      checkBodyMap(answers.body, answers.side); //color body map based on selections
+    }
+
+
+  }
+};
+submitForm.addEventListener('click', checkFields);
+
+//guide to correct function based on whether body part already in table
+function constructTable(answers) {
+  var exists = false;
+
+
+  for (var i = 0; i < responseTable.getElementsByTagName('tr').length; i++) {if (window.CP.shouldStopExecution(13)) break;
+    if (responseTable.getElementsByTagName('tr')[i].firstChild.innerHTML == answers.body) {
+      exists = true;
+    }
+  }window.CP.exitedLoop(13);
+  if (exists == true) {
+    appendToGroup(answers);
+  } else createNewGroup(answers);
+}
+
+//function to add injury to body part already in table
+function appendToGroup(answers) {
+  var tbody = document.getElementById(answers.body);
+  var groupCell = tbody.firstChild.firstChild;
+  groupCell.rowSpan = tbody.getElementsByTagName('tr').length + 1;
+  var tr = document.createElement('tr');
+  tr.setAttribute('class', answers.side);
+  for (var i = 1; i < headers.length; i++) {if (window.CP.shouldStopExecution(14)) break;
+    var td = document.createElement('td');
+    td.innerHTML = answers[headers[i]];
+    td.setAttribute('class', headers[i]);
+    td.addEventListener('click', modifyInjury);
+    tr.appendChild(td);
+  }window.CP.exitedLoop(14);
+  var deleteBtn = document.createElement('button');
+  deleteBtn.setAttribute('class', 'delete');
+  deleteBtn.innerHTML = '-';
+  deleteBtn.addEventListener('click', deleteRow);
+  var deleteTd = document.createElement('td');
+  deleteTd.appendChild(deleteBtn);
+  tr.appendChild(deleteTd);
+  var results = document.createElement('input');
+  results.setAttribute('style', 'display:none;');
+  results.setAttribute('class', 'results');
+  results.value = JSON.stringify(answers);
+  tr.appendChild(results);
+  tbody.appendChild(tr);
+
+}
+
+//function to add new body part
+function createNewGroup(answers) {
+  var tbody = document.createElement('tbody');
+  tbody.setAttribute('id', answers.body);
+  var tr = document.createElement('tr');
+  tr.setAttribute('class', answers.side);
+  var groupId = document.createElement('td');
+  groupId.innerHTML = answers.body;
+  tr.appendChild(groupId);
+  for (var i = 1; i < headers.length; i++) {if (window.CP.shouldStopExecution(15)) break;
+    var td = document.createElement('td');
+    td.innerHTML = answers[headers[i]];
+    td.setAttribute('class', headers[i]);
+    td.addEventListener('click', modifyInjury);
+    tr.appendChild(td);
+  }window.CP.exitedLoop(15);
+  var deleteTd = document.createElement('td');
+  var deleteBtn = document.createElement('button');
+  deleteBtn.setAttribute('class', 'delete');
+  deleteBtn.innerHTML = '-';
+  deleteBtn.addEventListener('click', deleteRow);
+  deleteTd.appendChild(deleteBtn);
+  tr.appendChild(deleteTd);
+  var results = document.createElement('input');
+  results.setAttribute('style', 'display:none;');
+  results.setAttribute('class', 'results');
+  results.value = JSON.stringify(answers);
+  tr.appendChild(results);
+  tbody.appendChild(tr);
+  responseTable.appendChild(tbody);
+}
+
+//var pastResponse = '${e://Field/Injury_JSON}';
+var pastResponse = '[{&quot;body&quot;:&quot;Lower leg&quot;,&quot;specific&quot;:&quot;Tibia&quot;,&quot;side&quot;:&quot;Left&quot;,&quot;cause&quot;:&quot;Overuse&quot;,&quot;type&quot;:&quot;Stress Fracture&quot;,&quot;status&quot;:&quot;Fully recovered&quot;,&quot;details&quot;:&quot;test&quot;,&quot;date&quot;:&quot;2020-05-20&quot;},{&quot;body&quot;:&quot;Knee&quot;,&quot;specific&quot;:&quot;Patella/Patellar tendon&quot;,&quot;side&quot;:&quot;Left&quot;,&quot;cause&quot;:&quot;Acute/non-contact&quot;,&quot;type&quot;:&quot;Dislocation/subluxation&quot;,&quot;status&quot;:&quot;I still have symptoms and/or receive treatment&quot;,&quot;details&quot;:&quot;test&quot;,&quot;date&quot;:&quot;2020-05-04&quot;},{&quot;body&quot;:&quot;Knee&quot;,&quot;specific&quot;:&quot;ACL&quot;,&quot;side&quot;:&quot;Left&quot;,&quot;cause&quot;:&quot;Acute/non-contact&quot;,&quot;type&quot;:&quot;Sprain (ligament injury)&quot;,&quot;status&quot;:&quot;I still have symptoms and/or receive treatment&quot;,&quot;details&quot;:&quot;test&quot;,&quot;date&quot;:&quot;2020-05-04&quot;},{&quot;body&quot;:&quot;Knee&quot;,&quot;specific&quot;:&quot;Meniscus&quot;,&quot;side&quot;:&quot;Left&quot;,&quot;cause&quot;:&quot;Acute/non-contact&quot;,&quot;type&quot;:&quot;Meniscus or cartilage lesion&quot;,&quot;status&quot;:&quot;Fully recovered&quot;,&quot;details&quot;:&quot;test&quot;,&quot;date&quot;:&quot;2020-04-27&quot;},{&quot;body&quot;:&quot;Ankle&quot;,&quot;specific&quot;:&quot;General&quot;,&quot;side&quot;:&quot;Right&quot;,&quot;cause&quot;:&quot;Acute/non-contact&quot;,&quot;type&quot;:&quot;Sprain (ligament injury)&quot;,&quot;status&quot;:&quot;Fully recovered&quot;,&quot;details&quot;:&quot;test&quot;,&quot;date&quot;:&quot;2020-04-26&quot;},{&quot;body&quot;:&quot;Lower back/lumbar spine&quot;,&quot;specific&quot;:&quot;General&quot;,&quot;side&quot;:&quot;NA&quot;,&quot;cause&quot;:&quot;Overuse&quot;,&quot;type&quot;:&quot;Muscle cramps or spasms&quot;,&quot;status&quot;:&quot;Fully recovered&quot;,&quot;details&quot;:&quot;test&quot;,&quot;date&quot;:&quot;2020-04-26&quot;}]';
+//steps below for 
+if (pastResponse != '') {
+  prevResponse = true;
+  pastResponse = pastResponse.replace('[{', '');
+  pastResponse = pastResponse.replace('}]', '');
+  pastResponse = pastResponse.replace(/\'/g, '');
+  pastResponse = pastResponse.replace(/\&quot;/g, '');
+  pastResponse = pastResponse.split('},{');
+  for (var i = 0; i < pastResponse.length; i++) {if (window.CP.shouldStopExecution(16)) break;
+    var each = pastResponse[i].split(',');
+    var answers = {};
+    answers.body = each[0].replace('body:', '');
+    answers.specific = each[1].replace('specific:', '');
+    answers.side = each[2].replace('side:', '');
+    answers.cause = each[3].replace('cause:', '');
+    answers.type = each[4].replace('type:', '');
+    answers.status = each[5].replace('status:', '');
+    answers.details = each[6].replace('details:', '');
+    answers.date = each[7].replace('date:', '');
+    constructTable(answers);
+    if (answers.side == 'NA') {
+      bodyCount[answers.body]['Left'] = bodyCount[answers.body]['Left'] + 1;
+      bodyCount[answers.body]['Right'] = bodyCount[answers.body]['Right'] + 1;
+      checkBodyMap(answers.body, 'Left');
+      checkBodyMap(answers.body, 'Right');
+    }
+    if (answers.side != 'NA') {
+      bodyCount[answers.body][answers.side] = bodyCount[answers.body][answers.side] + 1;
+      checkBodyMap(answers.body, answers.side); //color body map based on selections
+    }
+  }window.CP.exitedLoop(16);
+}
+
+
+$('#NextButton').on('click', function () {
+  var responses = responseTable.getElementsByClassName('results');
+  var final = [];
+  for (var i = 0; i < responses.length; i++) {if (window.CP.shouldStopExecution(17)) break;
+    var result = JSON.parse(responses[i].value);
+    final.push(result);
+  }window.CP.exitedLoop(17);
+  dataBox.value = JSON.stringify(final);
+  //alert(JSON.stringify(final));
+});
+
+    </script>
+
+  
+
+</body>
+
+</html>
