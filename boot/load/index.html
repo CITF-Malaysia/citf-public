@@ -267,7 +267,15 @@ h2{
   animation-delay:1s;
 }
 
-
+.windows-boot {
+    width: 21.5em;
+    height: 15em;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 .logo p {
     color: white;
     font-family: sans-serif;
@@ -323,9 +331,6 @@ h2{
   <script>
   window.console = window.console || function(t) {};
 </script>
-
-  
-  
   <script>
   if (document.location.search.match(/type=embed/gi)) {
     window.parent.postMessage("resize", "*" );
@@ -339,10 +344,10 @@ h2{
   <div class="ball green"></div>
   <div class="ball yellow"></div>
 </div>
-</div>
 <div class="logo">
 <p class="os"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_Malaysia.svg/640px-Coat_of_arms_of_Malaysia.svg.png" width="50" height="50"> Starting Windows <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_Malaysia.svg/640px-Coat_of_arms_of_Malaysia.svg.png" width="50" height="50">
 </div></p>
+</div>
 </div>
 </body>
 </html>
