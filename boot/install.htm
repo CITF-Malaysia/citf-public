@@ -168,11 +168,11 @@ footer ul li .percent {
   <section class="welcome">
   <div>
     <img src="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png" height="150" alt="">
-    <h2>You have successfully updated to Sains Operating System</h2>
+    <h2>Update to Sains Operating System?</h2>
     <p>Welcome! Reconfirming your decision :</p>
   </div>
-  <button class="get-started">Install Now</button>
-  <button class="revert">Restore Previous Operator</button>
+  <button class="get-started">Yes</button>
+  <button class="revert">No</button>
 </section>
 <section class="format" hidden>
   <div>
@@ -184,7 +184,7 @@ footer ul li .percent {
 </section>
 <section class="install" hidden>
   <h1>Installing Sains Operating System</h1>
-  <h2>This devices shall be restart later. 
+  <h2>This device shall automatically restart later. 
       Installing Sains Operating System</h2>
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300">
         <circle cx="150" cy="150" r="130" 
@@ -283,10 +283,10 @@ function play() {
                 copyFiles.children[0].innerHTML = percentage + "%";
                 installOS.classList.remove('active');
                 installOS.classList.remove('done');
-                installOS.children[0].innerHTML = "&";
+                installOS.children[0].innerHTML = "";
                 config.classList.remove('active');
                 config.classList.remove('done');
-                config.children[0].innerHTML = "&";
+                config.children[0].innerHTML = "";
               }
               if (percentage >= 31 & percentage <= 75) {
                 copyFiles.classList.remove('active');
