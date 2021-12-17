@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" color=&quot;#111&quot; />
+<title>MOH Boot</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.windows-boot {
+    width: 21.5em;
+    height: 15em;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo p {
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo .ms {
+    font-size: 1.6em;
+    font-weight: lighter;
+    line-height: 1em;
+}
+
+.logo .ms::after {
+    content: '\00a9';
+    font-size: 0.625em;
+    vertical-align: top;
+    position: relative;
+    top: -0.3em;
+    left: 0.2em;
+}
+
+.logo .win {
+    font-size: 4.2em;
+    font-weight: bold;
+    line-height: 86%;
+}
+
+.logo .win::after {
+    content: 'MY';
+    font-size: 0.5em;
+    vertical-align: top;
+    position: relative;
+    top: -0.4em;
+    color: tomato;
+}
+
+.logo .pro {
+    font-size: 3em;
+    font-weight: lighter;
+    line-height: 1em;
+    padding-left: 0.2em;
+}
+
+.bar {
+    width: 15em;
+    height: 1em;
+    border: 0.2em solid silver;
+    border-radius: 0.7em;
+    position: relative;
+    padding: 0.2em;
+    overflow: hidden;
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    width: 3em;
+    height: 70%;
+    border-radius: 0.2em;
+    background: 
+        linear-gradient(
+            to right,
+            transparent 30%,
+            black 30%, black 35%,
+            transparent 35%, transparent 65%,
+            black 65%, black 70%,
+            transparent 70%
+        ),
+        linear-gradient(
+            blue 0%,
+            royalblue 17%,
+            deepskyblue 32%, deepskyblue 45%,
+            royalblue 60%,
+            blue 100%
+        );
+    filter: brightness(1.2);
+    animation: run 2s linear infinite;
+}
+
+@keyframes run {
+    from {
+        transform: translateX(-3em);
+    }
+
+    to {
+        transform: translateX(15em);
+    }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+  <div class="windows-boot">
+  <div class="logo">
+    <p class="ms">Malaysia MOH <img src="seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" width="200" height="200"/></p>
+    <p class="win">Operating System</p>
+    <p class="pro">trial</p>
+  </div>
+  <div class="bar"></div>
+</div>
+</body>
+</html>
