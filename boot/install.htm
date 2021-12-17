@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
- <link rel="icon" href="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png" />
+ <link rel="icon" href="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png"/>
   <title>SW Install</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
 <style>
 * {
   box-sizing: border-box;
@@ -170,23 +170,20 @@ footer ul li .percent {
     window.parent.postMessage("resize", "*" );
   }
 </script>
-
-
 </head>
-
 <body translate="no">
   <section class="welcome">
   <div>
     <img src="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png" height="150" alt="">
     <h2>You have successfully updated to Sains Operating System</h2>
-    <p>Let's confirming your information</p>
+    <p>Let's confirming your Information</p>
   </div>
   <button class="get-started">Get Started</button>
   <button class="revert">Restore Previous Operating System</button>
 </section>
 <section class="format" hidden>
   <div>
-    <h1>Formatting drives</h1>
+    <h1>Format Sains's Drives</h1>
     <div class="load">
       <div></div>
     </div>
@@ -195,7 +192,7 @@ footer ul li .percent {
 <section class="install" hidden>
   <h1>Installing Sains Operating System</h1>
   <h2>Your PC will restart several times. 
-      Sit back and relax</h2>
+      Installing Sains Operating System</h2>
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300">
         <circle cx="150" cy="150" r="130" 
                 stroke="#888" stroke-width="5" 
@@ -286,35 +283,35 @@ function play() {
             progress = 820,
             percentage = 0;
             setInterval(function () {
-              loader.setAttribute(&quot;stroke-dashoffset&quot;, progress);
-              percentagetext.innerHTML = percentage + &quot;%&quot;;
+              loader.setAttribute("stroke-dashoffset", progress);
+              percentagetext.innerHTML = percentage + "%";
               if (percentage <= 30) {
                 copyFiles.classList.add('active');
-                copyFiles.children[0].innerHTML = percentage + &quot;%&quot;;
+                copyFiles.children[0].innerHTML = percentage + "%";
                 installOS.classList.remove('active');
                 installOS.classList.remove('done');
-                installOS.children[0].innerHTML = &quot;&quot;;
+                installOS.children[0].innerHTML = "&";
                 config.classList.remove('active');
                 config.classList.remove('done');
-                config.children[0].innerHTML = &quot;&quot;;
+                config.children[0].innerHTML = "&";
               }
-              if (percentage >= 31 &amp;&amp; percentage <= 75) {
+              if (percentage >= 31 & percentage <= 75) {
                 copyFiles.classList.remove('active');
                 copyFiles.classList.add('done');
-                copyFiles.children[0].innerHTML = &quot;&quot;;
+                copyFiles.children[0].innerHTML = "";
                 installOS.classList.add('active');
-                installOS.children[0].innerHTML = percentage + &quot;%&quot;;
+                installOS.children[0].innerHTML = percentage + "%";
                 config.classList.remove('active');
-                config.children[0].innerHTML = &quot;&quot;;
+                config.children[0].innerHTML = "";
               }
               if (percentage >= 76) {
                 copyFiles.classList.remove('active');
-                copyFiles.children[0].innerHTML = &quot;&quot;;
+                copyFiles.children[0].innerHTML = "";
                 installOS.classList.remove('active');
                 installOS.classList.add('done');
-                installOS.children[0].innerHTML = &quot;&quot;;
+                installOS.children[0].innerHTML = "";
                 config.classList.add('active');
-                config.children[0].innerHTML = percentage + &quot;%&quot;;
+                config.children[0].innerHTML = percentage + "%";
               }
               percentage++;
               progress = +progress - 8.19;
