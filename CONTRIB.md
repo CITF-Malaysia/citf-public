@@ -81,3 +81,7 @@ An interactive mobile friendly dashboard to monitor progress as well as estimate
 18) [[Live Version]](https://vax.tehcpeng.net/) MY Vax Tracker, By [Sheng Han](https://www.linkedin.com/in/shenghan/). Vaccination progress dashboard with a focus on projecting days remaining to 80% vaccination target. 
 
 19) [[GitHub Repo]](https://github.com/vincenth19/myvaccine-backend), [[API documentation]](https://documenter.getpostman.com/view/16605343/Tzm8GG7u) [[Live API]](https://myvaccination-backend.vercel.app/api/). Malaysia Vaccination simple API Endspoints created with ExpressJS. [[Live Example]](https://mycoronastat.pages.dev). Developed by [Vincent Haryadi](https://vincenth19.com)
+
+20) [[Live Version]](https://www.mycoviddashboard.com/)
+MY Covid Dashboard - Showing Malaysian country level, and state based trends in a responsive dashboard, using rolling 7 & 14 day data; Data sourced from Malaysia's National Covid 19 Immunisation Programme (PICK), and official data on the COVID-19 epidemic in Malaysia from the Ministry of Health. Built by [thegoodwinner](https://www.linkedin.com/in/andrewgoodwinmy/).
+
