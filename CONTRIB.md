@@ -78,6 +78,9 @@ An extensive dashboard to be used to monitor the state of the Covid-19 outbreak 
 17) [[Google Data Studio Dashboard]](https://datastudio.google.com/s/r8NqXYF2jpA)
 An interactive mobile friendly dashboard to monitor progress as well as estimate future vaccination rate in Malaysia (and by state). By syafix
 
-18) [[Live Version]](https://vax.tehcpeng.net/) MY Vax Tracker, By [Sheng Han](https://www.linkedin.com/in/shenghan/). Vaccination progress dashboard with a focus on projecting days remaining to 80% vaccination target. 
+18) [[Live Version]](https://vax.tehcpeng.net/) MY Vax Tracker, By [Sheng Han](https://www.linkedin.com/in/shenghan/). Vaccination progress dashboard with a focus on projecting days remaining to 80% vaccination target.
 
 19) [[GitHub Repo]](https://github.com/vincenth19/myvaccine-backend), [[API documentation]](https://documenter.getpostman.com/view/16605343/Tzm8GG7u) [[Live API]](https://myvaccination-backend.vercel.app/api/). Malaysia Vaccination simple API Endspoints created with ExpressJS. [[Live Example]](https://mycoronastat.pages.dev). Developed by [Vincent Haryadi](https://vincenth19.com)
+
+20) [[Git repo]](https://github.com/pongloongyeat/fastapi-citf)
+CITF FastAPI server, by [Pong Loong Yeat](https://github.com/pongloongyeat). A REST API server written with FastAPI to parse vaccination data obtained from CITF Malaysia's public repository to JSON-formatted data.
