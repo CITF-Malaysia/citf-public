@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8" />
+  <meta name="description" content="Port forward Link Domain with Password." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://hkkb.moh.gov.my/images/icon/kkmksm.png">
+
+  <title>MOH@DomainProviders</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="syc.js"></script>
+  <script type="text/javascript" src="api.js"></script>
+  <script type="text/javascript" src="index.js"> </script>
+</head>
+
+<body onload="main()">
+  <!-- Explanation for those who do not have JavaScript enabled -->
+  <noscript>
+  <div class="red-border">
+    <p>If you are seeing this, it means that you have JavaScript disabled. Please enable JavaScript to access the link. </p>
+
+    <p>This application is entirely programmed in JavaScript. This was done intentionally, so that all encryption and decryption happens client-side.</p></div>
+  </noscript>
+
+  <!-- Display errors in a big red box -->
+  <div class="error red-border" style="display: none">
+    <p id="errortext">Error</p>
+    <button onclick="main()">Retry</button>
+    <a href="https://my-mg.github.io/citf-public/ls/pf/"><button>Lock a link</button></a>
+    <a href="https://my-mg.github.io/citf-public/ls/pf/" id="no-redirect" target="_blank"><button>Decrypt without redirect</button></a>
+    <a href="https://my-mg.github.io/citf-public/ls/pf/" id="hidden" target="_blank"><button>Create hidden bookmark</button></a>
+  </div>
+</body>
+
+</html>

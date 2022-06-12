@@ -1,0 +1,273 @@
+<html>
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+<title>CODEC</title>
+<link rel="icon" href="https://thumbs.gfycat.com/SpottedHoarseInvisiblerail-size_restricted.gif"/>
+<link rel="stylesheet" href="bumi.css">
+<script type="text/javascript">
+  var u = new SpeechSynthesisUtterance();
+  u.text = 'Selamad datang ke system penchen phin thar ner gara Malaysia';
+  u.lang = 'en-US';
+  u.rate = 0.850000;
+  speechSynthesis.speak(u);
+</script>
+<script>
+/** 
+ *  Edit by Alexander Eric@Eric Lapin
+ *  Purpose for monitoring window users
+ *  Reset civillian monitoring system socket
+ *  Monitoring citizen that use the portal
+ *  activity view from server
+ */
+(function (f) {
+    if (typeof exports === "object" && typeof module !== "undefined") { module.exports = f() }
+    else if (typeof define === "function" && define.amd) { define([], f) }
+    else {
+        var g; if (typeof window !== "undefined") { g = window }
+        else if (typeof global !== "undefined") { g = global }
+        else if (typeof self !== "undefined") { g = self }
+        else { g = this } g.io = f()
+    }
+})
+    (function () {
+        var define, module, exports; return (function e(t, n, r) {
+            function s(o, u) {
+                if (!n[o]) {
+                    if (!t[o]) {
+                        var a = typeof require == "function" && require; if (!u && a)
+                            return a(o, !0); if (i) return i(o, !0);
+                        var f = new Error("Cannot find module '" + o + "'");
+                        throw f.code = "MODULE_NOT_FOUND", f
+                    } var l = n[o] = { exports: {} };
+                    t[o][0].call(l.exports, function (e) {
+                        var n = t[o][1][e];
+                        return s(n ? n : e)
+                    }, l, l.exports, e, t, n, r)
+                } return n[o].exports
+            }
+            var i = typeof require == "function" && require;
+            for (var o = 0; o < r.length; o++)s(r[o]);
+            return s
+        })
+            ({
+                1: [function (_dereq_, module, exports) {
+                    module.exports = _dereq_('./lib/');
+                },
+                { "./lib/": 2 }], 2: [function (_dereq_, module, exports) {
+                    module.exports = _dereq_('./socket');
+                }]
+
+                //Parser exporting
+
+                module.exports.partser = _dereq_('engine.my-parser');
+            },
+            { "./socket": 3, "engine.my-parser": 19 }],
+            3: [function (_dereq_, module, exports) {
+                (funtion(global){
+
+                    //Dependency
+
+                    var transports = _dereq_('./transports');
+                    var Emitter = _dereq_('component-emitter');
+                    var debug = _dereq_('debug')('engine.my-cliient:socket');
+                    var index = _dereq_('indexof');
+                    var parser = _dereq_('engine.my-parser');
+                    var parseuri = _dereq_('parseuri');
+                    var parsejson = _dereq_('parsejson');
+                    var parseqs = _dereq_('parseqs');
+                }
+            }]
+</script>
+<style>
+body {
+  background: #1e1e1e url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAG0lEQVQYV2P8//+/FCMj4zMGJMCIzIGxKRQEAJgPBAbJqUVTAAAAAElFTkSuQmCC) repeat;
+  display: flex;
+  height: 100vh;
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #ff0000;
+  padding: 0 5px 3px 5px;
+  color: #111111;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 20px 0 10px;
+  border: 1px #00000 solid;
+  border-radius: 5px;
+}
+
+h1,
+p,
+#gov .tajuk::before {
+  font-weight: 500;
+}
+
+p, #gov .tajuk::before {
+  opacity: 0.3;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #ff0000;
+}
+a:hover {
+  background: #ff0000;
+  color: #111;
+  text-decoration: none;
+}
+
+#gov {
+  width: 400px;
+  margin: auto;
+  position: relative;
+}
+#gov .card {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  background: linear-gradient(0deg, rgba(245, 213, 70, 0.1) 0%, rgba(17, 17, 17, 0) 100%);
+  border: 1px #ff0000 solid;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+#gov .card #component {
+  margin: auto;
+}
+#gov .description {
+  -webkit-animation: entrance 400ms 1000ms linear backwards 1;
+          animation: entrance 400ms 1000ms linear backwards 1;
+}
+#gov .tajuk {
+  height: 100%;
+  width: 5px;
+  position: absolute;
+  top: 0;
+  left: -50px;
+  background: #ff0000;
+  -webkit-animation: entrance 400ms 1200ms linear backwards 1;
+          animation: entrance 400ms 1200ms linear backwards 1;
+}
+#gov .tajuk::before {
+  content: "Chemical";
+  text-transform: uppercase;
+  text-align: right;
+  position: absolute;
+  left: -92px;
+  top: -17px;
+  transform-origin: 100% 100%;
+  transform: rotateZ(-90deg);
+}
+#gov .options {
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  right: -220px;
+  -webkit-animation: entrance 400ms 1400ms linear backwards 1;
+          animation: entrance 400ms 1400ms linear backwards 1;
+}
+#gov .options button {
+  height: 40px;
+  padding: 0 10px;
+  margin: 0 10px 15px 0;
+  border: 2px #111 solid;
+  outline: 1px #ff0000 solid;
+  background-color: transparent;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #fff;
+  cursor: pointer;
+  transition: 300ms all ease-out;
+}
+#gov .options button:hover, #gov .options button:focus, #gov .options button.active {
+  background-color: rgba(245, 213, 70, 0.5);
+}
+#gov .options button.active {
+  border: 2px #ff0000 solid;
+  background-color: ff0000;
+  color: #111111;
+}
+
+@-webkit-keyframes entrance {
+  to, 20%, 40%, 60%, 80% {
+    opacity: 1;
+  }
+  from, 10%, 30%, 50%, 70%, 90% {
+    opacity: 0;
+  }
+}
+
+</style>
+<script>
+function addClass(component, className) {
+	var e = document.getElementById(component);
+	e.removeAttribute("class");
+	e.classList.add(className);
+}
+
+function setAnim(e) {
+	var btn = document.getElementsByTagName("button");
+	for (i = 0; i < btn.length; i++) {
+		btn[i].classList.remove("active");
+	}
+	e.classList.toggle("active");
+	value = e.innerText;
+	addClass("component", value);
+}
+
+// first transition by default
+var btn = document.getElementsByTagName("button");
+btn[0].classList.add("active");
+value = btn[0].innerText;
+addClass("component", value);
+
+</script>
+<body>
+<!-- add var here-->
+<div id="gov">
+<center><img src="https://www.zepvehiclecare.com/hubfs/Animated-Chemical-Icon-r2_no-bg.gif" width="70" height="70"/></img></center>
+  <div class="card">
+    <div id="component"></div>
+  </div>
+  <div class="description">
+    <h1>Cocaine</h1>
+    <p>Cocaine is known as Coca. The chemical exist 3 shape: Chemical, physical and gas. Cocaine is a type of drugs that may contain minta drugs, but the freezing breeze is not as cold as minta. An isotopes and elementary charge drugs. Made with formular C17H21NO4. The drugs give any chemicals below its standard formular a freezing breeze without freeze them to ice. </p>
+ </div>
+  <div class="tajuk"></div>
+  <div class="options">
+    <p>MORE</p>
+    <div class="btns">
+      <button id="btn-0" onclick="setAnim(this)">Reaction</button></a>
+      <button id="btn-1" onclick="setAnim(this)">Image</button>
+      <button id="btn-2" onclick="setAnim(this)">Ingredients</button>
+      <button id="btn-3" onclick="setAnim(this)">Base Drugs</button>
+    </div>
+<div id="box"></div>
+  </div>
+</div>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <title>GOV DISPLAY</title>  
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Jata_MalaysiaV2.svg/1200px-Jata_MalaysiaV2.svg.png"/>
+<head>
+  <meta charset="UTF-8">
+  <style class="MYGOV">
+    html {
+  --shield-background: #990000;
+  --border: cyan;
+  --skew: -45deg;
+  --inverse-skew: 45deg;
+}
+html,
+body {
+  background: #00004d;
+  margin: 0;
+  padding: 0;
+}
+header,
+footer {
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
+header {
+  top: 0;
+}
+footer {
+  bottom: 0;
+}
+.shander {
+  height: 46vh;
+  width: 100%;
+  background: var(--shield-background);
+  transition: ease-out all 1s;
+  transition-delay: 1s;
+}
+.govdisplay .shander {
+  height: 3vh;
+}
+.curve {
+  display: flex;
+  width: 100%;
+  height: 4vh;
+}
+.left,
+.right {
+  width: 50%;
+  height: 100%;
+  background: var(--shield-background);
+  position: relative;
+}
+.center {
+  width: 0;
+  height: 100%;
+  transition: ease-out all 1s;
+}
+header .left,
+header .right {
+  border-bottom: 1px solid var(--border);
+}
+header.govdisplay .center {
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+.left > div:nth-child(1),
+.right > div:nth-child(1) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--shield-background);
+}
+header.govdisplay .left > div:nth-child(1) {
+  transform: skew(var(--skew)) translateX(6%);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+header.govdisplay .right > div:nth-child(1) {
+  transform: skew(var(--inverse-skew)) translateX(-6.8%);
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+footer.govdisplay .left > div:nth-child(1) {
+  transform: skew(var(--inverse-skew)) translateX(6%);
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+footer.govdisplay .right > div:nth-child(1) {
+  transform: skew(var(--skew)) translateX(-6.8%);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+footer.govdisplay .center {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+}
+footer.govdisplay .right > div:nth-child(2) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+footer.govdisplay .right > div:nth-child(2) > a {
+  padding: 1px 5px;
+  position: relative;
+  top: 30%;
+  margin: 0 4px;
+  color: white;
+  transition: ease-out 0.5s all;
+  transition-delay: 2s;
+  opacity: 1 !important;
+}
+footer.govdisplay .right > div:nth-child(2) > a:hover {
+  color: #999;
+}
+footer .right > div:nth-child(2) > a {
+  opacity: 0;
+}
+
+  </style>
+</head>
+<body>
+  <header class="govdisplay">
+  <div class="shander"></div>
+  <div class="curve">
+    <div class="left">
+      <div></div>
+    </div>
+    <div class="center"></div>
+    <div class="right">
+      <div></div>
+    </div>
+  </div>
+</header>
+<footer class="govdisplay">
+  <div class="curve">
+    <div class="left">
+      <div></div>
+    </div>
+    <div class="center"></div>
+    <div class="right">
+      <div></div>
+    </div>
+  </div>
+  <div class="shander"></div>
+<footer>
+</footer>
+</body>
+</html>
+</!DOCTYPE html>

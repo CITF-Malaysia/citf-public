@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="MY">
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="icon" href="https://covid-19.moh.gov.my/user/images/g5_helium/header/JATA2021.png" />
+  <title>Sciences:Wordes</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+:root {
+  --fontColor:#035755;
+  --fontRedHat:&quot;Red Hat Display&quot;, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(255, 141, 155, 0.1) 0%, white 10%);
+}
+
+.header {
+  padding-top: 31px;
+  padding-bottom: 31px;
+}
+.header .nav-frame {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: column;
+}
+.header .pageLogo {
+  height: 60px;
+  width: 189px;
+}
+.header .open-menu {
+  cursor: pointer;
+  border: 1px solid #035755;
+  border-radius: 20%;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.header .open-menu .line {
+  width: 30px;
+  height: 3px;
+  background-color: #FF5476;
+  margin: 5px;
+}
+.header .nav-links {
+  position: absolute;
+  flex-direction: column;
+  border: 1px solid silver;
+  border-radius: 0 0 10px 10px;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 70px;
+  width: 100%;
+  z-index: 1;
+}
+.header .nav-links .nav-link {
+  position: relative;
+  font-size: 15px;
+  color: var(--fontColor);
+  text-decoration: none;
+  text-align: center;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+.header .nav-links .nav-link.active {
+  color: #FB4C47;
+}
+.header .nav-links .nav-link:hover {
+  color: #FB4C47;
+}
+
+.nav-links.nav-open {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.section {
+  padding-bottom: 100px;
+}
+.section .direction {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.section .center {
+  display: flex;
+  align-items: center;
+}
+.section__title {
+  font-family: var(--fontRedHat);
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 70px;
+  color: #FA5652;
+}
+.section__span {
+  font-family: var(--fontRedHat);
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 40px;
+  color: #035755;
+  text-transform: capitalize;
+}
+.section__desc {
+  margin-top: 20px;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: #4B4F51;
+  text-transform: capitalize;
+}
+.section__button {
+  position: relative;
+  top: 40px;
+  padding: 15px 40px;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background: #FB4C47;
+  box-shadow: 0px 8px 87px rgba(0, 0, 0, 0.1);
+  border-radius: 65px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.section__button:hover {
+  box-shadow: 0px 0px 20px rgba(199, 199, 199, 0.7);
+  transition: 0.3s ease;
+}
+.section__image {
+  width: 300px;
+  z-index: 0;
+}
+.section__virus1 {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  width: 150px;
+  z-index: -1;
+  animation: spin 10s linear infinite;
+}
+.section__virus2 {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 100px;
+  opacity: 0.8;
+  z-index: -1;
+  animation: spin 20s linear infinite;
+}
+.section__virus3 {
+  position: absolute;
+  top: 200px;
+  right: 40px;
+  width: 100px;
+  z-index: -1;
+  animation: spin 20s linear infinite;
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.section .covidImage__image {
+  width: 330px;
+}
+
+.coronavirus__title {
+  font-weight: bold;
+  font-family: var(--fontRedHat);
+  font-size: 20px;
+  line-height: 124%;
+  color: #FA5652;
+}
+.coronavirus__span {
+  font-weight: bold;
+  font-size: 40px;
+  font-family: var(--fontRedHat);
+  line-height: 60px;
+  text-transform: capitalize;
+  color: #035755;
+}
+.coronavirus__desc {
+  margin-top: 18px;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #4B4F51;
+  font-family: Roboto;
+}
+.coronavirus__button {
+  position: relative;
+  background: rgba(250, 86, 82, 0.15);
+  border-radius: 65px;
+  padding: 21px 50px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+  top: 55px;
+  text-transform: capitalize;
+  color: #FA5652;
+  text-decoration: none;
+}
+.coronavirus__button:hover {
+  box-shadow: 0px 0px 20px rgba(199, 199, 199, 0.2);
+}
+
+.upside {
+  margin-bottom: 70px;
+}
+.upside__title {
+  font-family: var(--fontRedHat);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #FA5652;
+  margin-top: 40px;
+}
+.upside__span {
+  display: block;
+  font-family: var(--fontRedHat);
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #035755;
+  margin-bottom: 20px;
+}
+.upside__desc {
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #4B4F51;
+}
+
+.contagion .card {
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 40px 30px 60px;
+  min-height: 450px;
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: 6px solid #FA5652;
+  border: none;
+}
+.contagion .card:hover {
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+  border-bottom: 6px solid #FA5652;
+}
+.contagion .card__figure {
+  margin: auto;
+  display: block;
+  width: 250px;
+}
+.contagion .card__image {
+  width: 220px;
+}
+.contagion .card__title {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 147%;
+  text-transform: capitalize;
+  color: #035755;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.contagion .card__desc {
+  margin-top: 13px;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #4B4F51;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.symptomps {
+  text-align: center;
+}
+.symptomps__image {
+  width: 300px;
+}
+.symptomps__left {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  width: 80px;
+}
+
+.prevention {
+  text-align: center;
+}
+.prevention .row-position {
+  display: flex;
+  align-items: center;
+}
+.prevention .row-position:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.prevention__image {
+  margin-top: 30px;
+  width: 330px;
+}
+.prevention__span {
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: capitalize;
+  color: #035755;
+  align-items: center;
+  display: inline-flex;
+}
+.prevention__number {
+  padding: 10px;
+  margin-right: 15px;
+  background: rgba(250, 86, 82, 0.15);
+  text-transform: capitalize;
+  color: #FA5652;
+  font-size: 30px;
+  border-radius: 100%;
+}
+.prevention__desc {
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #4B4F51;
+}
+
+.contact {
+  margin-top: 50px;
+}
+.contact .help {
+  position: relative;
+}
+.contact .help__desc {
+  margin: auto;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: #0C6C44;
+}
+.contact .help__mail {
+  background: #FFFFFF;
+  box-shadow: 0px 8px 80px rgba(0, 0, 0, 0.06);
+  border-radius: 57px;
+  padding: 30px 40px;
+  outline: none;
+  border: none;
+  margin-top: 50px;
+  width: 100%;
+  font-size: 14px;
+}
+.contact .help__mail::placeholder {
+  font-size: 14px;
+  color: #758681;
+  letter-spacing: 0.07em;
+}
+.contact .help__send {
+  position: absolute;
+  background: #F44A45;
+  border-radius: 157px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  color: #FFFFFF;
+  padding: 10px 30px;
+  right: 15px;
+  bottom: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.footer .logo-figure {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.footer__link {
+  font-size: 13px;
+  line-height: 28px;
+  color: #00402E;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer__link:not(:last-of-type) {
+  margin-right: 10px;
+}
+.footer .social-figure {
+  text-align: center;
+  margin: auto;
+  margin-top: 25px;
+}
+.footer .social-figure a:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.top {
+  margin-top: -60px;
+}
+
+.text-position {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .row.direction {
+    flex-direction: row;
+  }
+
+  .open-menu {
+    display: none;
+  }
+
+  .nav-frame {
+    flex-direction: row;
+  }
+
+  .header .nav-links {
+    width: auto;
+    display: inline-flex;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    border: none;
+    transform: translateY(-50%);
+    background-color: transparent;
+  }
+  .header .nav-links .nav-link {
+    display: flex;
+    align-items: center;
+  }
+  .header .nav-links .nav-link:not(:last-child) {
+    margin-right: 20px;
+  }
+  .header .nav-links .nav-link:last-child {
+    border: 2px solid #1b1b1b;
+    border-radius: 46px;
+    padding: 10px 35px;
+    color: #1b1b1b;
+  }
+  .header .nav-links .nav-link:last-child:hover {
+    background-color: #1b1b1b;
+    color: #fff;
+    transition: 0.3s;
+  }
+  .header .nav-links .nav-link.active::after, .header .nav-links .nav-link:not(:last-of-type):hover::after {
+    position: absolute;
+    content: &quot;&quot;;
+    width: 10px;
+    height: 10px;
+    background-color: #1b1b1b;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+  }
+
+  .text-position {
+    text-align: left;
+  }
+
+  .coronavirus .covidImage {
+    margin-top: 75px;
+  }
+
+  .upside--top {
+    margin-top: -60px;
+  }
+  .upside__title {
+    margin-top: 40px;
+  }
+  .upside__desc {
+    width: 80%;
+    margin: auto;
+  }
+
+  .symptomps__image {
+    width: 600px;
+  }
+
+  .prevention {
+    text-align: left;
+  }
+  .prevention__image {
+    width: 300px;
+  }
+
+  .help {
+    margin: auto;
+    width: 70%;
+  }
+
+  .footer {
+    padding-top: 100px;
+  }
+  .footer .logo-figure,
+.footer .social-figure {
+    margin: 0;
+    align-items: center;
+  }
+  .footer .align-center {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  #nav-links .nav-link:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .section .text-position {
+    text-align: left;
+  }
+  .section__image {
+    width: 500px;
+  }
+  .section__virus1 {
+    top: 0px;
+    left: -40px;
+    width: 110px;
+  }
+
+  .coronavirus .covidImage {
+    margin: 0;
+  }
+  .coronavirus .covidImage__image {
+    width: 450px;
+  }
+  .coronavirus__desc {
+    text-align: left;
+  }
+
+  .symptomps__image {
+    width: 800px;
+  }
+
+  .prevention__desc {
+    padding-left: 70px;
+  }
+  .prevention__image {
+    width: 450px;
+  }
+
+  .help {
+    margin: auto;
+    width: 40%;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&amp;display=swap" rel="stylesheet">
+
+<!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-frame">
+                
+                <figure class="pageLogo">
+                    <img src="https://c.tenor.com/MDbUMTe6B0MAAAAC/bendera-malaysia-malaysian-flag.gif" class="pageLogo__image" alt="Logo">
+                </figure>
+                <div class="open-menu" id="open-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <nav class="nav-links" id="nav-links">
+                    <a href="#" class="nav-link active">Deep Sciences</a>
+                    <a href="#" class="nav-link">Term</a>
+                    <a href="#" class="nav-link">Wordes</a>
+                    <a href="#" class="nav-link">Logic</a>
+                    <a href="#" class="nav-link">Effects</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        
+        <section class="section hero">
+            <div class="container" >
+                <div class="row direction">
+                    <div class="col-12 col-md-6 col-lg-6 text-position">
+                        <h2 class="section__title">SCIENCES</h2>
+                        <span class="section__span">Dictionary</span>
+                        <p class="section__desc">Learne the wordes and Terms</p>
+                        <a href="#" class="section__button seciton__button--center">Read the Informations</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 text-position">
+                        <img src="https://covid-19.moh.gov.my/user/images/g5_helium/header/JATA2021.png" class="section__image" alt="Quarantine">
+                        <img src="https://raw.githubusercontent.com/alaattinerby/Covid-19-Website/4c233460e18c1a8cfba4f7c4830e8da0e7c5e8e9/Covid-19/img/section-virus.svg" class="section__virus1" alt="">
+                        <img src="https://raw.githubusercontent.com/alaattinerby/Covid-19-Website/4c233460e18c1a8cfba4f7c4830e8da0e7c5e8e9/Covid-19/img/section-virus.svg" class="section__virus2" alt="">
+                        <img src="https://raw.githubusercontent.com/alaattinerby/Covid-19-Website/4c233460e18c1a8cfba4f7c4830e8da0e7c5e8e9/Covid-19/img/section-virus.svg" class="section__virus3" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>   
+
+     
+        <section class="section coronavirus">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 text-position">
+                        <figure class="covidImage">
+                            <img src="https://i.gifer.com/Ybin.gif" class="covidImage__image" alt="Corona Virus">
+                        </figure>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 text-position">
+                        <h1 class="coronavirus__title">Dictionary</h1>
+                        <span class="coronavirus__span">Learne</span>
+                        <p class="coronavirus__desc">
+                            Learne Basic Understanding of Scientist's Wordes. </p>
+   <a href="#" class="coronavirus__button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contagion">
+            <div class="container">
+                <div class="upside upside--top">
+                    <h2 class="upside__title">Dictionary</h2>
+                    <span class="upside__span">Usages</span>
+                    <p class="upside__desc">
+                        Misintepretions has become most medics and scientist understanding. So, it is a must for relearne the terms and wordes used by most scientists. 
+  </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <figure class="card__figure">
+                                <img src="https://lung.cancer.ie/assets/img/symptoms_animated/chest_pain.gif" class="card__image" alt="">
+                            </figure>
+                            <h3 class="card__title">Cancers</h3>
+                            <p class="card__desc">The wordes Cancer refer as Problems. This is proven with 'stage' term involvement for the wordes.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" >
+                        <div class="card">
+                            <figure class="card__figure">
+                                <img src="https://i.pinimg.com/originals/a2/2c/d4/a22cd487de6aaedaabec0941be948f52.gif" class="card__image" alt="">
+                            </figure>
+                            <h3 class="card__title">Pandemic</h3>
+                            <p class="card__desc">Instruct for do reresearch or restudy for cases of unknown cancer's sources.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <figure class="card__figure">
+                                <img src="https://apschool.edu.hk/wp-content/uploads/2017/04/gif-parent-involvement.gif" class="card__image" alt="">
+                            </figure>
+                            <h3 class="card__title">Dependency</h3>
+                            <p class="card__desc">Dependency wordes scientist reference is condition of antibody and diseases spreadness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Symtomps -->
+        <section class="symptoms">
+            <div class="container">
+                <div class="upside top">
+                    <h2 class="upside__title">Effects</h2>
+                    <span class="upside__span">Dictionary</span>
+                    <p class="upside__desc">
+                        Now, read again the research studied by you, as researchers. But using those understanding.
+</p>
+                </div>
+                <div class="row" >
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <figure class="symptomps__figure">
+                            <img src="https://i.giphy.com/media/1wo1kzmSBSTivTUXkv/source.gif" width="500" height="480" class="symptomps__image" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prevention -->
+        <section class="prevention">
+            <div class="container">
+                <div class="upside">
+                    <h2 class="upside__title">SCIENCES</h2>
+                    <span class="upside__span">Dictionary</span>
+                    <p class="upside__desc">
+                        Remastered terms for further reresearch. There are always logic answers for every cancers. 
+ </p>
+                </div>
+                <div class="row row-position">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <span class="prevention__span"><span class="prevention__number">01</span>Chemistry</span>
+                        <p class="prevention__desc">
+                            Understand chemist wordes so you may understand the chemist and drugs effect categories.
+</p>       
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <figure class="prevention__figure">
+                            <img src="https://cdn.dribbble.com/users/228367/screenshots/4603754/chemistryset_dribbble.gif" class="prevention__image" alt="">
+                        </figure>
+                    </div>                    
+                </div>
+                <div class="row row-position">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <span class="prevention__span"><span class="prevention__number" >02</span>Biology</span>
+                        <p class="prevention__desc">
+                            Understand Biology term for do reresearch about Biological topics. 
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <figure class="prevention__figure">
+                            <img src="https://i.pinimg.com/originals/f6/af/7b/f6af7bcdc152e52d0bcc177ef2acbd8d.gif" class="prevention__image" alt="">
+                        </figure>
+                    </div>                    
+                </div>
+                <div class="row row-position">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <span class="prevention__span"><span class="prevention__number">03</span>Gases</span>
+                        <p class="prevention__desc">
+                            Remastered all smoke and gases terms which are use for make and create drugs, and basic understanding of its chemical and transformations. 
+</div>
+                    
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <figure class="prevention__figure">
+                            <img src="https://animated-gif-creator.com/images/01/smoke-gif-png-smoke-gif-png-transparent-free-for-download_60.gif" class="prevention__image" alt="">
+                        </figure>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <div class="container">
+                <div class="help">
+                    <p class="help__desc">
+                        Have Question?
+                        Let me help you
+                    </p>
+                    <form action="">
+                        <input type="email" class="help__mail" placeholder="razorlex1995@gmail.com" required>
+                        <button type="submit" class="help__send">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+       
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-center">
+                    <div class="col-12 col-md-3 col-lg-3">
+                        <figure class="logo-figure">
+                            <img src="https://c.tenor.com/MDbUMTe6B0MAAAAC/bendera-malaysia-malaysian-flag.gif" width="70" height="50" class="footer__logo" alt="">
+                        </figure>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="timeout.js"></script>
+      <script id="rendered-js">
+const openMenu = document.getElementById('open-menu');
+const navLinks = document.getElementById('nav-links');
+
+openMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('nav-open');
+});
+    </script>
+
+  
+
+</body>
+
+</html>
