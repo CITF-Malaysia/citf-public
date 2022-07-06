@@ -1,0 +1,42 @@
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8 " />
+<meta http-equiv="refresh" content="1;url=https://covidnow.moh.gov.my/">
+<link rel="icon" type="png" href="https://covid-19.moh.gov.my/user/images/c-19m.jpg" />
+<title>Covid19:Information</title>
+<style type="text/css">
+<!--
+BODY {
+font-family: Verdana, Trebuchet MS;
+font-size: 10px;
+background-color: #ffff;
+background-image: url(https://covid-19.moh.gov.my/user/images/c-19m.jpg);
+background-position: center 240px;
+background-repeat: no-repeat;
+}
+-->
+</style>
+<SCRIPT LANGUAGE="Javascript">
+  if (parent.frames.length)
+  top.location.href= document.location;
+</SCRIPT>
+</head>
+<body>
+</body>
+</html>
