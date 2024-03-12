@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="MY">
+<link rel="icon" href="https://covid-19.moh.gov.my/user/images/g5_helium/header/JATA2021.png" />
+<title>CAM:PNMA</title>
+<head>
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  position: absolute;
+  left: 10px;
+  padding: 1rem;
+}
+
+#controlButton {
+  top: 1rem;
+}
+
+#modeButton {
+  top: 3rem;
+}
+
+#videoButton {
+  top: 150px;
+  display: none;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+<fieldset><p><center><img src="https://covid-19.moh.gov.my/user/images/g5_helium/header/JATA2021.png" width="50" height="50"></center></p></fieldset>
+  <div id="container"></div>
+<button id="controlButton" class="button">Control Toggle</button>
+<button id="modeButton" class="button">Mode Toggle</button>
+<button id="videoButton" class="button">Video Toggle</button>
+    <script src="./timeout.js"></script>
+
+  <script src='https://pchen66.github.io/js/three/three.min.js'></script>
+<script src='https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js'></script>
+      <script id="rendered-js" >
+var panorama, viewer, container, infospot, controlButton, modeButton, videoButton;
+
+var controlIndex = PANOLENS.CONTROLS.ORBIT;
+var modeIndex = 0;
+var videoPlaying = false;
+
+container = document.querySelector('#container');
+controlButton = document.querySelector('#controlButton');
+modeButton = document.querySelector('#modeButton');
+videoButton = document.querySelector('#videoButton');
+
+panorama = new PANOLENS.ImagePanorama('https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/tunnel.jpg');
+
+infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+infospot.position.set(0, -2000, -5000);
+
+panorama.add(infospot);
+
+viewer = new PANOLENS.Viewer({ container: container });
+viewer.add(panorama);
+
+// Method to trigger control
+controlButton.addEventListener('click', function () {
+
+  controlIndex = controlIndex >= 1 ? 0 : controlIndex + 1;
+
+  switch (controlIndex) {
+
+    case 0:viewer.enableControl(PANOLENS.CONTROLS.ORBIT);break;
+    case 1:viewer.enableControl(PANOLENS.CONTROLS.DEVICEORIENTATION);break;
+    default:break;}
+
+
+
+});
+
+modeButton.addEventListener('click', function () {
+
+  modeIndex = modeIndex >= 2 ? 0 : modeIndex + 1;
+
+  switch (modeIndex) {
+
+    case 0:viewer.disableEffect();break;
+    case 1:viewer.enableEffect(PANOLENS.MODES.CARDBOARD);break;
+    case 2:viewer.enableEffect(PANOLENS.MODES.STEREO);break;
+    default:break;}
+
+
+
+});
+
+// if it's video panorama
+videoButton.addEventListener('click', function () {
+
+  videoPlaying = !videoPlaying;
+  viewer.toggleVideoPlay(videoPlaying ? false : true);
+
+});
+    </script>
+</body>
+</html>

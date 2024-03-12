@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" >
+  <link rel="icon" href="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png"/>
+  <title>Organ Manusia</title>
+<style>
+body {
+  font: 14px/20px Arial, "Segoe UI Symbol" , Helvetica, sans-serif;
+  color: #3B3B3B;
+  margin: 0;
+  margin-top: 50px;
+  margin-left: 10px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+iframe {
+  display: block;
+  position: absolute;
+  border: none;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#my-hotspot {
+  position: absolute;
+  display: none;
+  background-color: red;
+  border: 3px solid white;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+#my-hotspot h1 {
+  font-size: 12px;
+  margin: 0;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize","*" );
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+<center><fieldset><h1>3D Model Organ Manusia <img src="https://seeklogo.com/images/K/kementerian-kesihatan-malaysia-logo-0E3D882BDF-seeklogo.com.png" width="70" height="70"/></h1>
+</fieldset></center>
+  <script src="./human-api.min.js"></script>
+<iframe id="embeddedHuman" src="https://human.biodigital.com/widget?=demos/presentation_of_myocardial_infarct" allowFullScreen="true">
+</iframe>
+<script id="rendered-js" >
+
+var human = new HumanAPI("embeddedHuman");
+
+
+var objectId = 'terumo_stemi_quiz_systems_patch-right_auricle_ID';
+var myHotspot = document.getElementById('my-hotspot');
+
+var hotspotId;
+
+human.send('hotspots.create', { 
+  objectId: objectId,
+  shown: false },
+function (id) {
+  hotspotId = id;
+
+  human.send('hotspots.info', hotspotId, function (info) {
+   
+    setCanvasPosition(info.canvasPosition);
+    myHotspot.style.display = 'block';
+  });
+
+});
+
+human.on('hotspots.positionUpdated', function (event) {
+  if (event.id === hotspotId) {
+   
+    setCanvasPosition(event.canvasPosition);
+  }
+});
+
+human.on('hotspots.displayUpdated', function (event) {
+  if (event.id === hotspotId) {
+    
+    myHotspot.style.display = event.inView ? 'block' : 'none';
+  }
+});
+
+function setCanvasPosition(canvasPosition) {
+  myHotspot.style.left = canvasPosition.x + 'px';
+  myHotspot.style.top = canvasPosition.y + 'px';
+}
+    </script>
+
+</body>
+
+</html>

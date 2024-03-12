@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://i.ibb.co/FDzB2tN/logos.png" />
+<meta name="apple-mobile-web-app-title" content="Rehack Browser By Alexander Eric">
+<link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/FDzB2tN/logos.png" />
+<link rel="mask-icon" type="" href="https://i.ibb.co/FDzB2tN/logos.png" color="#111" />
+<title>CL</title>
+<script>
+        $(document).on("contextmenu", function(event) {
+  event.preventDefault();
+  $(".context")
+    .show()
+    .css({
+      top: event.pageY,
+      left: event.pageX
+    });
+});
+$(document).click(function() {
+  if ($(".context").is(":hover") == false) {
+    $(".context").fadeOut("fast");
+  };
+});
+</script>
+<script>
+    const contextMenu = document.getElementById("context-menu");
+const scope = document.querySelector("body");
+
+scope.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+
+  const { clientX: mouseX, clientY: mouseY } = event;
+
+  contextMenu.style.top = `${mouseY}px`;
+  contextMenu.style.left = `${mouseX}px`;
+
+  contextMenu.classList.add("visible");
+});
+</script>
+<style>
+    #context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+}
+
+#context-menu.visible {
+  display: block;
+}
+</style>
+<style type="text/css">
+    .context-menu {
+        position: absolute;
+        text-align: center;
+        background: lightgray;
+        border: 1px solid black;
+    }
+  
+    .context-menu ul {
+        padding: 0px;
+        margin: 0px;
+        min-width: 150px;
+        list-style: none;
+    }
+  
+    .context-menu ul li {
+        padding-bottom: 7px;
+        padding-top: 7px;
+        border: 1px solid black;
+    }
+  
+    .context-menu ul li a {
+        text-decoration: none;
+        color: black;
+    }
+  
+    .context-menu ul li:hover {
+        background: darkgray;
+    }
+</style>
+<style>
+html, body {
+  margin: 0;
+  background: #000;
+  color: #3c4043;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.chrome {
+  width: 100%;
+  background-color: #eee;
+}
+
+.mac-os {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+button, textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+ul {
+  list-style: none;
+  margin:0;
+  padding:0;
+  display: inline-flex;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Rows/Positioning */
+
+.top-row, .middle-row, .the-website {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-row {
+  background: rgb(222,225,230);
+background: linear-gradient(0deg, rgba(222,225,230,1) 0%, rgba(225,227,232,1) 10%, rgba(225,227,232,1) 100%);
+  padding: 8px 13px 0 13px;
+  box-shadow: inset 0 1px 1px #f2f3f6;
+  justify-content: start;
+}
+
+.mac-os-controls, .tab, .new-tab {
+  position: relative;
+  display: flex;
+}
+
+.mac-os-controls {
+  justify-self: start;
+}
+
+.tabs {
+  justify-self: center;
+}
+
+.new-tab {
+  justify-self: end;
+}
+
+
+
+/* Details */
+
+.mac-os-controls {
+  align-self: center;
+  padding-bottom: 6px;
+  padding-right: 6px;
+}
+
+.mac-os-controls li {
+  width: 12px;
+  height: 12px;
+  border-radius: 15px;
+  margin-right: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mac-os-controls .os-close {
+  background: rgb(252,96,92);
+background: radial-gradient(circle, #fc605c 0%, #fc655f 100%);
+  box-shadow: inset 0 0 0 1px #df4946;
+}
+.mac-os-controls .os-minimize {
+  background: rgb(253,188,64);
+background: radial-gradient(circle, #fdbc40 0%, #fec342 100%);
+  box-shadow: inset 0 0 0 1px #dfa135;
+}
+.mac-os-controls .os-expand {
+  background: rgb(52,199,73);
+background: radial-gradient(circle, #34c749 0%, #36ce4c 100%);
+  box-shadow: inset 0 0 0 1px #26ab35;
+}
+
+.mac-os-controls svg {
+  opacity: 0;
+  height: 9px;
+  width: 9px;
+}
+
+.mac-os-controls ul:hover svg, .mac-os-controls ul:focus svg {
+  opacity: 1;
+}
+
+.middle-row {
+  padding: 5px 4px 5px 9px;
+  background-color: #fff;
+}
+
+.omnibar {
+  background-color: #f1f3f4;
+  border: solid 0px #f1f3f4;
+  color: #202124;
+  height: 28px;
+  padding: 2px;
+  border-radius: 25px;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  transition: all ease .33s;
+}
+
+.omnibar:hover {
+  background-color: #e9ebec;
+  transition: all ease .5s;
+}
+
+.omnibar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.omnibar li:not(.url) {
+  height: 24px;
+  width: 34px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(220, 222, 224, 0);
+  transition: all ease .33s;
+}
+
+.omnibar li:not(.url):hover, .omnibar li:not(.url):focus {
+  background-color: rgba(220, 222, 224, 1);
+  transition: all ease .5s;
+}
+
+.omnibar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a0c4f9;
+  background-color: #fff;
+  transition: none;
+}
+
+.omnibar .url {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-grow: 1 !important;
+  position: relative;
+  text-align: left;
+}
+.omnibar .url p {
+	font-size: 1.175rem;
+	line-height: 1em;
+}
+
+.omnibar .favorite {
+  justify-self: end;
+}
+
+.omnibar textarea {
+  width: 100%;
+  position: relative;
+  height: 1em;
+  font-size: 1em;
+  line-height: 1em;
+  resize: none;
+  cursor: text;
+}
+
+/* Tabs */
+
+.tabs li {
+  width: 100%;
+  min-width: 240px;
+  background-color: rgba(225,227,232,0);
+  border-radius: 7px 7px 0 0;
+  position: relative;
+  padding: 10px 8px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+}
+
+.tabs li:hover, .tabs li:focus {
+  background-color: #ebecf0;
+}
+
+.tabs li.in-focus, .tabs #tab1:target, .tabs #tab2:target {
+  background-color: #ffffff;
+}
+
+.tabs li * {
+  line-height: 1em;
+  pointer-events: none;
+}
+
+.tabs .favicon {
+  height: 16px;
+  width: 16px;
+  background-color: gray;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.tabs p {
+  text-align: left;
+  color: #3c4043;
+  margin-right: 5px;
+  flex-grow: 1;
+}
+
+.tabs .close {
+  position: relative;
+  display: block;
+  height: 17px;
+  width: 17px;
+  border-radius: 15px;
+  background-color: rgba(219, 219, 220, 0);
+  transition: all ease .33s;
+  pointer-events: auto;
+  cursor: default !important;
+}
+
+.svg-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tabs .close:hover, .tabs .close:focus {
+  background-color: rgba(219, 219, 220, 1);
+  transition: all ease .5s;
+}
+
+.tabs .close:focus {
+					outline: none;
+				}
+
+.tabs .close:before {
+					content: '';
+					height: 100%;
+					width: 14px;
+					background: linear-gradient(90deg, rgba(225,227,232,0) 0%, rgba(225,227,232,1) 75%);
+					display: block;
+					position: absolute;
+					left: -14px;
+					top: 0;
+				}
+				
+				.tabs li:hover .close:before {
+					background: linear-gradient(90deg, rgba(235, 236, 240, 0) 0%, rgba(235, 236, 240,1) 75%) !important;
+				}
+				
+				.tabs li.in-focus .close:before {
+					background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%) !important;
+				}
+
+/* Curved corners */
+.tabs li.in-focus, .tabs #tab1:target, .tabs #tab1:target {
+  z-index: 200;
+}
+
+.tabs li p {
+  position: relative;
+}
+
+/* Rounded parts */
+
+.tabs li::before, .tabs li::after {
+  content: '';
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0px;
+  left: -7px;
+}
+
+.tabs li::after {
+  left: auto;
+  right: -7px;
+}
+
+/* Non-selected hover tab */
+.tabs li:hover::before {
+  background: radial-gradient(circle at 0 0, rgb(235, 236, 240, 0) 6px, rgb(235, 236, 240, 1) 7px);
+}
+.tabs li:hover::after {
+  background: radial-gradient(circle at 100% 0, rgb(235, 236, 240, 0) 6px, rgb(235, 236, 240, 1) 7px);
+}
+
+/* Selected tab */
+.tabs li.in-focus::before, .tabs #tab1:target::before, .tabs #tab2:target::before {
+  background: radial-gradient(circle at 0 0, rgba(255,255,255,0) 6px, rgba(255,255,255,1) 7px);
+}
+.tabs li.in-focus::after, .tabs #tab1:target::after, .tabs #tab2:target::after {
+  background: radial-gradient(circle at 100% 0, rgba(255,255,255,0) 6px, rgba(255,255,255,1) 7px);
+}
+
+
+
+
+.the-website {
+  background-color: #555;
+  height: 90vh;
+  height: calc( 100vh - (45px + 38px) );
+  display: flex;
+  flex-grow: 1;
+/*   flex-direction: column; */
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+.browser-controls li, .settings li, .new-tab {
+  height: 28px;
+  width: 28px;
+  border-radius: 20px;
+  background-color: rgba(238, 238, 238, 0);
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  transition: all ease .33s;
+}
+
+.browser-controls li:not(.forward):hover, .browser-controls li:not(.forward):focus, .settings li:hover, .settings li:focus, .new-tab:hover, .new-tab:focus {
+				  background-color: rgba(238, 238, 238, 1);
+				  transition: all ease .5s;
+				}
+
+.browser-controls {
+	margin-right: 3px;
+}
+
+.browser-controls li a {
+	display: flex;
+}
+.browser-controls li a:hover {
+  cursor: default;
+}
+
+.new-tab:hover, .new-tab:focus {
+  background-color: #bbbec3;
+}
+
+.new-tab {
+	margin-left: 7px;
+}
+
+
+/* Settings */
+
+.settings ul {
+  margin-left: 4px;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: #808387;
+  margin-left: -1px;
+  display: block;
+}
+
+
+
+
+/* SVG's */
+
+.svg-new {
+  height: 14px;
+  width: 14px;
+}
+
+.svg-close {
+  height: 9px;
+  width: 9px;
+}
+
+.svg-back, .svg-forward, .svg-refresh {
+  height: 16px;
+  height: 16px;
+}
+
+.svg-ssl {
+  height: 12px;
+  width: 12x;
+}
+
+.svg-favorite {
+  height: 17px;
+  width: 17px;
+}
+
+.svg-more {
+  height: 15px;
+}
+
+/* Hidden */
+
+.hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+@media screen and (max-width: 680px) {
+				  .tabs li {
+				    min-width: 200px;
+				    max-width: 200px;
+				  }
+				}
+				
+				@media screen and (max-width: 610px) {
+				  .tabs li {
+				    min-width: 180px;
+				    max-width: 180px;
+				  }
+				  .tabs .favicon {
+					  margin-right: 6px;
+				  }
+				}
+				
+				@media screen and (max-width: 520px) {
+				  .tabs li {
+				    min-width: 160px;
+				    max-width: 160px;
+				  }
+				}
+				
+				@media screen and (max-width: 470px) {
+				  .tabs li {
+				    min-width: 100px;
+				    max-width: 100px;
+				  }
+				}
+.window {
+  position: fixed;
+  width: 1000px;
+  height: 1000px;
+  background-color: #1C7C88;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.window.-show { opacity: 1 }
+
+.window.-animating {
+  -webkit-transition: transform 200ms ease-out;
+  -moz-transition: transform 200ms ease-out;
+  -o-transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out;
+}
+
+.window .window-bar {
+  position: relative;
+  height: 30px;
+  background-color: #E4E3E3;
+  padding: 0px 15px 0 10px;
+  cursor: -webkit-grab;
+}
+
+.window .window-bar:active,
+.window .window-bar:focus {
+  cursor: -webkit-grabbing;
+}
+
+.window .window-bar span {
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 9px 3px
+}
+
+.window .window-bar span.close {
+  background-color: #D73234;
+  cursor: pointer;
+}
+
+.window .window-bar span.reduce {
+
+  background-color: #D73234;
+
+}
+.header__protocol {
+  font-weight: bold;
+  font-size: 13px;
+  padding: 3px 6px;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.1);
+  color: rgba(0,0,0,0.2);
+  margin: 0 10px;
+}
+.star {
+  .on-state-mixin(@star-color, "\f005");
+@icon-size: 1.9em; // Use em to make it scalable
+@border-radius: 100%;
+@border-width-off: 0.1em;
+@border-style-off: solid;
+@border-width-on: 0.1em;
+@border-style-on: solid; //Try dotted
+.anim-icon {
+  width: @icon-size;
+  height: @icon-size;
+  margin: 20px;
+  font-size: 13px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  input {
+    display: none;
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: @border-width-off @border-style-off @off-color;
+    border-radius: @border-radius;
+    display: block;
+    font: normal normal normal 13px/1 FontAwesome;
+    color: @off-color;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    &:after {
+      left: 0;
+      top: 50%;
+      margin-top: -0.5em;
+      display: block;
+      position: relative;
+      text-align: center;
+    }
+  }
+  input:checked + label {
+    animation: check-in 0.3s forwards;
+    transition: background-color 0.1s 0.2s, box-shadow 1s;
+    border-width: @border-width-on;
+    border-style: @border-style-on;
+    &:after {
+      animation: icon 0.3s forwards;
+    }
+  }
+}
+
+.anim-icon-md {
+  font-size: 20px;
+}
+.anim-icon-lg {
+  font-size: 30px;
+}
+
+@keyframes icon {
+  0% {
+    margin-top: -0.5em;
+    font-size: 1.5em;
+  }
+  100% {
+    font-size: 1em;
+    opacity: 1;
+    color: white;
+  }
+}
+
+@keyframes check-in {
+  0% {
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+  }
+  80% {
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes check {
+  0% {
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+  }
+  10% {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  80% {
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+  }
+  90% {
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+<div id="__browser" class="window">
+  <div id="__browser-bar" class="window-bar">
+    <span id="__close"  class="close"></span>
+    <span class="reduce"></span>
+  </div>
+  <div class="chrome mac-os">
+  
+  <div class="top-row">
+    
+    <div class="mac-os-controls">
+      <ul>
+        <li class="os-close"><svg class="OS-Close" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><line x1="1.88" y1="1.88" x2="7.12" y2="7.12" style="fill:none;stroke:#4d0000;stroke-linecap:round;stroke-miterlimit:10"/><line x1="7.12" y1="1.88" x2="1.88" y2="7.12" style="fill:none;stroke:#4d0000;stroke-linecap:round;stroke-miterlimit:10"/></svg></li>
+        <li class="os-minimize"><svg class="OS-Minimize" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><line x1="0.94" y1="4.5" x2="8.06" y2="4.5" style="fill:none;stroke:#995700;stroke-linecap:round;stroke-miterlimit:10"/></svg></li>
+        <li class="os-expand"><svg class="OS-Expand" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><path d="M1.54,3.15V6.74a.76.76,0,0,0,.76.76H5.89Z" style="fill:#060"/><path d="M3.11,1.5H6.7a.76.76,0,0,1,.76.76V5.85Z" style="fill:#060"/></svg></li>
+      </ul>
+    </div>
+
+    <div class="tabs">
+      <ul>
+        <li class="in-focus" id="tab1">
+          <span class="favicon"></span>
+          <p>ASTHMA</p>
+          <button class="close"><p class="hidden">Close Tab</p><svg class="svg-close" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><path d="M5.56,4.5,8.21,1.85A.75.75,0,0,0,7.15.79L4.5,3.44,1.85.79A.75.75,0,0,0,.79,1.85L3.44,4.5.79,7.15a.75.75,0,0,0,0,1.06.75.75,0,0,0,1.06,0L4.5,5.56,7.15,8.21a.75.75,0,0,0,1.06,0,.75.75,0,0,0,0-1.06Z" style="fill:#3c4043"/></svg></button>
+          <span class="round"></span>
+        </li>
+        
+        <li id="tab2">
+          <span class="favicon"></span>
+          <p>ASTHMA</p>
+          <button class="close"><p class="hidden">Close Tab</p><svg class="svg-close" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9"><path d="M5.56,4.5,8.21,1.85A.75.75,0,0,0,7.15.79L4.5,3.44,1.85.79A.75.75,0,0,0,.79,1.85L3.44,4.5.79,7.15a.75.75,0,0,0,0,1.06.75.75,0,0,0,1.06,0L4.5,5.56,7.15,8.21a.75.75,0,0,0,1.06,0,.75.75,0,0,0,0-1.06Z" style="fill:#3c4043"/></svg></button>
+          <span class="round"></span>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="new-tab">
+      <svg class="svg-new" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="M12.05,6H8V2A1,1,0,0,0,6,2V6H2A1,1,0,0,0,2,8H6v4.05a1,1,0,0,0,2,0V8h4.05a1,1,0,0,0,0-2Z" style="fill:#3c4043"/></svg>
+    </div>
+    
+  </div>
+  
+  <div class="middle-row">
+    
+    <div class="browser-controls">
+      
+      <ul>
+        <li><a href="javascript:history.back()"><svg class="svg-back" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path d="M13.27,6.62H3.84L7.47,3A.88.88,0,0,0,6.23,1.76L1.11,6.88a.88.88,0,0,0,0,1.24l5.12,5.12a.89.89,0,0,0,.62.26.87.87,0,0,0,.62-.26.88.88,0,0,0,0-1.24L3.84,8.38h9.43a.88.88,0,1,0,0-1.76Z" style="fill:#5f6368"/></svg></a></li>
+          <li class="forward"><svg class="svg-forward" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path d="M13.89,6.88,8.77,1.76A.88.88,0,0,0,7.53,3l3.63,3.62H1.73a.88.88,0,0,0,0,1.76h9.43L7.53,12a.88.88,0,0,0,0,1.24.87.87,0,0,0,.62.26.89.89,0,0,0,.62-.26l5.12-5.12A.88.88,0,0,0,13.89,6.88Z" style="fill:#babcbe"/></svg></li>
+            <li><svg class="svg-refresh" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path d="M14.28,6.62v-5L12.47,3.43A6.61,6.61,0,1,0,13.55,10a.88.88,0,0,0-1.64-.63,4.87,4.87,0,1,1-.68-4.74l-2,2Z" style="fill:#5f6368"/></svg></li>
+      </ul>
+    </div>
+    <div class="omnibar" tabindex="0">
+      <ul>
+        <li><svg class="svg-ssl" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M9.06,4.15H8.58v-1A2.41,2.41,0,0,0,6.18.76H5.82a2.41,2.41,0,0,0-2.4,2.41v1H2.94A.94.94,0,0,0,2,5.09v5.12a.94.94,0,0,0,.94.94H9.06a.94.94,0,0,0,.94-.94V5.09A.94.94,0,0,0,9.06,4.15Zm-4.64-1a1.41,1.41,0,0,1,1.4-1.41h.36a1.41,1.41,0,0,1,1.4,1.41v1H4.42Z" style="fill:#626365"/></svg></li>
+         <div class="header__protocol">
+		 <font color="green">https://</font>
+      </div>
+        <li class="url"><p>covidnow.internet.online</p></li>
+<!--         <li class="url"><textarea>https://my-mg.github.io/BrowsX/movebar.htm</textarea></li> -->
+        
+        <li class="favorite"><div class="anim-icon star">
+    <input type="checkbox" id="star" />
+    <label for="star"></label>
+  </div></li>
+      </ul>
+    </div>
+    
+    <div class="settings">
+      <ul>
+        <!--<li class="divider"></li> -->
+        <!--<li>Profile</li> -->
+        <li><p class="hidden">More</p><svg class="svg-more" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 14"><circle cx="2" cy="2.07" r="1.5" style="fill:#5f6368"/><circle cx="2" cy="7.09" r="1.5" style="fill:#5f6368"/><circle cx="2" cy="12.11" r="1.5" style="fill:#5f6368"/></svg></li>
+      </ul>
+    </div>
+    
+  </div>
+  <div class="the-website"><iframe class="browser__content" src="https://covidnow.moh.gov.my/" height="100%" width="100%"></iframe>
+  </div>
+  
+</div>
+  
+     <script id="rendered-js" >
+var browser = document.getElementById('__browser');
+var bar = document.getElementById('__browser-bar');
+var close = document.getElementById('__close');
+var initX, initY, mousePressX, mousePressY;
+browser.style.transform = "translate(" + window.innerWidth + "px," + window.innerHeight + "px) scale(0,0)";
+
+setTimeout(function () {
+  browser.classList.add('-show');
+  browser.classList.add('-animating');
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  var x = Math.floor(Math.random() * w / 2);
+  var y = Math.floor(Math.random() * h / 2);
+  browser.dataset.x = x;
+  browser.dataset.y = y;
+  browser.style.transform = "translate(" + x + "px," + y + "px) scale(1,1)";
+  setTimeout(function () {browser.classList.remove('-animating');}, 200);
+}, 500);
+
+bar.addEventListener('mousedown', function (e) {
+  initX = browser.dataset.x || browser.offsetLeft;
+  initY = browser.dataset.y || browser.offsetTop;
+  mousePressX = event.clientX;
+  mousePressY = event.clientY;
+  window.addEventListener('mousemove', repositionElement, false);
+  window.addEventListener('mouseup', function () {
+    window.removeEventListener('mousemove', repositionElement, false);
+  }, false);
+}, false);
+
+function repositionElement(event) {
+  var x = Number(initX) + event.clientX - mousePressX;
+  var y = Number(initY) + event.clientY - mousePressY;
+  browser.style.transform = "translate(" + x + "px," + y + "px)";
+  browser.dataset.x = x;
+  browser.dataset.y = y;
+}
+
+close.addEventListener('mousedown', function (e) {
+  browser.classList.add('-animating');
+  setTimeout(function () {
+    var x = browser.dataset.x || browser.offsetLeft;
+    var y = browser.dataset.y || browser.offsetTop;
+    browser.style.transform = "translate(" + x + "px," + y + "px) scale(0.001,0.001)";
+  }, 50);
+  setTimeout(function () {
+    window.open();
+  }, 3000);
+}, false);
+
+window.open = function (URL) {
+  var x = browser.dataset.x || browser.offsetLeft;
+  var y = browser.dataset.y || browser.offsetTop;
+  browser.style.transform = "translate(" + x + "px," + y + "px) scale(1,1)";
+  setTimeout(function () {browser.classList.remove('-animating');}, 200);
+};
+function demo() {
+
+  demointerval = setInterval(function () {
+    var chkbox = document.querySelector(
+      'input[type="checkbox"]:not([checked])'
+    );
+    if (chkbox) {
+      chkbox.click();
+      chkbox.setAttribute("checked", "checked");
+    } else {
+      clearInterval(demointerval);
+    }
+  }, 600);
+}
+if (document.location.pathname.indexOf("fullcpgrid") > -1) {
+  demo();
+}
+
+    </script>
+</body>
+<div id="contextMenu" class="context-menu" 
+        style="display:none">
+        <ul>
+            <li><a href="#">Window X Prototype</a></li>
+            <li><a href="#">by Alexander Eric</a></li>
+            <li><a href="#">New Folder</a></li>
+<li><a href="#">Properties</a></li>
+        </ul>
+    </div>
+<script>
+        document.onclick = hideMenu;
+        document.oncontextmenu = rightClick;
+        function hideMenu() {
+            document.getElementById(
+                "contextMenu").style.display = "none"
+        }
+  
+        function rightClick(e) {
+            e.preventDefault();
+  
+            if (document.getElementById(
+                "contextMenu").style.display == "block")
+                hideMenu();
+            else {
+                var menu = document
+                    .getElementById("contextMenu")
+                      
+                menu.style.display = 'block';
+                menu.style.left = e.pageX + "px";
+                menu.style.top = e.pageY + "px";
+            }
+        }
+    </script>
+</html>
+ 

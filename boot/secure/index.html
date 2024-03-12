@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+<link rel="icon" href="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png"/>
+    <title>Secure Boot</title>
+<style>
+*,html{margin:0 5px;}
+body{background:black;font-family:Lucida Console,sans-serif;max-width:1200px;margin:auto;}
+ul{list-style-type:none;padding:0;margin:25px 0;}
+li{color:#ccc;margin:2.5px 0;cursor:pointer;color:#ccc;outline:0;}
+li a{text-decoration:none;color:#ccc;display:inline-block;padding:2.5px 0 2.5px 40px;}
+li:nth-child(1),li:nth-child(4){margin-bottom:25px;}
+li:last-child{margin-top:25px;}
+.active a{background:#ccc;color:#000;}
+main p{color:#ccc;margin:5px 0;}
+main b{font-weight:normal;color:white;}
+header{text-align:center;margin-bottom:30px;}
+footer{margin-top:30px;}
+header,footer{background:#ccc;position:relative;padding: 2.5px 0;}
+footer p:nth-child(2){position:absolute;right:0;top:2.5px;}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <header><p>Advance Boot Option</p></header>
+<main>
+  <p>Choose Advanced Options for: <b>Sains Operating System</b></p><p>(Use the arrow keys to highlight your choice.)</p>
+  <ul><li tabindex="0"><a href="#">Select Option</a></li>
+  <li tabindex="1"><a href="#">Safe Mode</a></li>
+  <li tabindex="2"><a href="#">Safe Mode Online</a></li>
+  <li tabindex="3"><a href="#">Safe Mode + Command Prompt</a></li>
+  <li tabindex="4"><a href="#">Enable Boot Logs</a></li>
+  <li tabindex="5"><a href="#">Set Time</a></li>
+  <li tabindex="6"><a href="#">Restore Previous Setting</a></li>
+  <li tabindex="7"><a href="#">Hacking And Developers Mode</a></li>
+  <li tabindex="8"><a href="#">Debugging Mode</a></li>
+  <li tabindex="9"><a href="#">Auto Back Up Option</a></li>
+<li tabindex="10"><a href="#">Racist Mode Option</a></li>
+  <li tabindex="11"><a href="#">Disable Driver Signature Enforcement</a></li>
+
+  <li tabindex="12"><a href="#">Start System Normally</a></li>
+</ul>
+
+  <p>Description: <b>View a list options for mode and settings features at Advance Boot Option</b></p>
+</main>
+<footer><p>ENTER=Choose</p><p>ESC=Cancel</p></footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+      <script id=&quot;rendered-js&quot; >
+$('main').on('focus', 'li', function () {
+  $this = $(this);
+  $this.addClass('active').siblings().removeClass();
+  $this.closest('main').scrollTop($this.index() * $this.outerHeight());
+}).on('keydown', 'li', function (e) {
+  $this = $(this);
+  if (e.keyCode == 40)
+  {$this.next().focus();return false;} else
+  if (e.keyCode == 38)
+  {$this.prev().focus();return false;
+  }
+}).find('li').first().focus();
+    </script>
+</body>
+</html>
