@@ -8,6 +8,7 @@ _This section is non-promisory. Rather, it is a way for us (and the community) t
 4) Breakdown of daily vaccinations by program, i.e. under PICK, SelVax, PIKAS, or others.
 5) Utilization of current vaccine supply (availability) based of different criteria, i.e. States, vaccine brand, vaccination program or PPVs (if possible).
 6) Detailed schedule of future vaccine supply that will arrive to Malaysia, with data broken down to different vaccine brands.
+7) Population data for age 12-17 - this will help in calculating the progress of teenage vaccination.
 
 ---
 
