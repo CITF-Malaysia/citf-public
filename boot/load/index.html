@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_Malaysia.svg/640px-Coat_of_arms_of_Malaysia.svg.png"/>
+  <title>Start Boot</title>
+<style>
+:root{
+--size:2px;
+--red-glow:0px 0px calc(var(--size)*1.2) 2px #FF2828;
+--blue-glow:0px 0px calc(var(--size)*1.2) 2px #448AFF;
+--limegreen-glow:0px 0px calc(var(--size)*1.2) 2px limegreen;
+--yellow-glow:0px 0px calc(var(--size)*1.2) 2px #FDD835;
+}
+body{
+  background:black;
+  color:white;
+}
+h2{
+  margin-top:200px;
+}
+.container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:black;
+  flex-direction:column;
+  height:300px;
+}
+.ball{
+  width:var(--size);
+  height:var(--size);
+  border-radius:60%;
+  position:absolute;
+  border:0px solid blue;
+}
+@keyframes red{
+  20%{
+  margin-left:40px;
+  margin-top:40px;
+  transform:scale(1.2);
+  opacity:1;
+  }
+  40%{
+  margin-left:40px;
+  margin-top:0px;
+  transform:scale(2);    
+  opacity:1;
+  }
+  50%{
+  margin-left:-5px;
+  margin-top:-5px;
+  transform:scale(3.6);    
+  opacity:1;
+  }
+  65%{
+  margin-left:-5px;
+  margin-top:-5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(10);
+  box-shadow:0px 0px 2px 0.5px #FF2828;
+  opacity:1; 
+  }
+  75%{
+  margin-left:-5px;
+  margin-top:-5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(9);
+  box-shadow:0px 0px 2px 0.5px #FF2828;
+  opacity:1; 
+  }
+  100%{
+  margin-left:-5px;
+  margin-top:-5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(11.5);
+  box-shadow:0px 0px 2.9px 1.2px #FF2828;
+  opacity:1;
+  background:radial-gradient(#FF2828,rgba(250,60,60,0.7));
+  }
+}
+@keyframes green{
+  15%{
+  margin-left:-40px;
+  margin-top:-40px;
+  transform:scale(1.2);
+  opacity:1;
+  }
+  35%{
+  margin-left:-40px;
+  margin-top:25px;
+  transform:scale(2);  
+  opacity:1;  
+  }
+  50%{
+  margin-left:5px;
+  margin-top:5px;
+  transform:scale(3.6);
+  opacity:1;  
+  }
+  65%{
+  margin-left:5px;
+  margin-top:5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(10);
+  box-shadow:0px 0px 2px 0.5px limegreen; 
+  opacity:1;
+  }
+  75%{
+  margin-left:5px;
+  margin-top:5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(9);
+  box-shadow:0px 0px 2px 0.5px limegreen;
+  opacity:1; 
+  }
+  100%{
+  margin-left:5px;
+  margin-top:5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(11.5);
+  box-shadow:0px 0px 3px 0.5px limegreen;
+  opacity:1; 
+  }
+}
+
+@keyframes blue{
+  32%{
+  margin-left:35px;
+  margin-top:40px;
+  transform:scale(1.2);
+  opacity:1;
+  }
+  45%{
+  margin-left:-35px;
+  margin-top:40px;
+  transform:scale(2);
+  opacity:1;    
+  }
+  55%{
+  margin-left:-5px;
+  margin-top:5px;
+  transform:scale(3.6);
+  opacity:1;  
+  }
+  65%{
+  margin-left:-5px;
+  margin-top:5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(10);
+  box-shadow:0px 0px 2px 0.5px #448AFF;
+  opacity:1; 
+  }
+  75%{
+  margin-left:-5px;
+  margin-top:5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(9);
+  box-shadow:0px 0px 2px 0.5px #448AFF;
+  opacity:1; 
+  }
+  100%{
+  margin-left:-5px;
+  margin-top:5px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(11.5);
+  box-shadow:0px 0px 2.5px 1px #448AFF;
+  opacity:1; 
+  }
+}
+
+@keyframes yellow{
+  30%{
+  margin-left:-30px;
+  margin-top:-40px;
+  transform:scale(1.2);
+  opacity:1;
+  }
+  40%{
+  margin-left:0px;
+  margin-top:0px;
+  transform:scale(2);
+  opacity:1;    
+  }
+  50%{
+  margin-left:5px;
+  margin-top:15px;
+  transform:scale(3.6);
+  opacity:1;  
+  }
+  65%{
+  margin-left:5px;
+  margin-top:15px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(10);
+  box-shadow:0px 0px 2px 0.5px #FDD835;
+  opacity:1;
+  }
+  75%{
+  margin-left:5px;
+  margin-top:15px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(9);
+  box-shadow:0px 0px 2px 0.5px #FDD835;
+  opacity:1; 
+  }
+  100%{
+  margin-left:5px;
+  margin-top:15px;
+  border-radius:0.2px;
+  transform:skewx(-15deg) scale(11.5);
+  box-shadow:0px 0px 3px 0.5px #FDD835;
+  opacity:1; 
+  }
+}
+.red{
+  background:#FF2828;
+  box-shadow:var(--red-glow);
+  margin-left:-20px;
+  margin-top:-20px;
+  animation:red 5.5s linear infinite;
+  animation-fill-mode:forwards;
+  opacity:0.7;
+  transform-origin:100% 100%;
+  z-index:4;
+  animation-delay:1s;
+}
+
+.blue{
+  background:#448AFF;
+  box-shadow:var(--blue-glow);
+  margin-left:-10px;
+  margin-top:-30px;
+  animation:blue 5.5s linear infinite;
+  animation-fill-mode:forwards;
+  opacity:0.3;
+  transform-origin:100% 0%;
+  z-index:4;
+  animation-delay:1s;
+}
+
+.green{
+  background:limegreen;
+  box-shadow:var(--limegreen-glow);
+  margin-left:30px;
+  margin-top:30px;
+  animation:green 5.5s linear infinite;
+  animation-fill-mode:forwards;
+  opacity:0.7;
+  transform-origin:0% 100%;
+  z-index:3;
+  animation-delay:1s;
+}
+
+.yellow{
+  background:#FDD835;
+  box-shadow:var(--yellow-glow);
+  margin-left:10px;
+  margin-top:30px;
+  animation:yellow 5.5s linear infinite;
+  animation-fill-mode:forwards;
+  opacity:0;
+  transform-origin:0% 0%;
+  z-index:3;
+  animation-delay:1s;
+}
+
+.windows-boot {
+    width: 21.5em;
+    height: 15em;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo p {
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo .ms {
+    font-size: 1.6em;
+    font-weight: lighter;
+    line-height: 1em;
+}
+
+.logo .ms::after {
+    content: '\00a9';
+    font-size: 0.625em;
+    vertical-align: top;
+    position: relative;
+    top: -0.3em;
+    left: 0.2em;
+}
+
+.logo .win {
+    font-size: 4.2em;
+    font-weight: bold;
+    line-height: 86%;
+}
+
+.logo .win::after {
+    content: 'MY';
+    font-size: 0.35em;
+    vertical-align: top;
+    position: relative;
+    top: -0.4em;
+    color: tomato;
+}
+
+.logo .pro {
+    font-size: 1.5em;
+    font-weight: lighter;
+    line-height: 1em;
+
+}
+
+.logo .os {
+    font-size: 1.0em;
+    font-weight: lighter;
+    line-height: 5em;
+    
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*" );
+  }
+</script>
+</head>
+<body translate="no">
+  <div class="container">
+  <div class="ball red"></div>
+  <div class="ball blue"></div>
+  <div class="ball green"></div>
+  <div class="ball yellow"></div>
+<p>
+<p class="os"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_Malaysia.svg/640px-Coat_of_arms_of_Malaysia.svg.png" width="50" height="50"> Starting Windows <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_Malaysia.svg/640px-Coat_of_arms_of_Malaysia.svg.png" width="50" height="50"></p>
+</div></p>
+</body>
+</html>

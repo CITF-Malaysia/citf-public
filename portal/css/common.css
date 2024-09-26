@@ -1,0 +1,2206 @@
+@font-face {
+    font-family: WebManagementSymbols;
+    src: url(/fonts/MgmtMDL2.woff);
+}
+
+body {
+    font-family: "Segoe UI", Helvetica, sans-serif;
+    margin: 0px;
+    overflow-y: auto;
+}
+
+[hidden] {
+    display: none;
+}
+
+#commonContent {
+    color: black;
+}
+
+#content {
+    position: fixed;
+    top: 48px;
+    width: calc(100% - 222px);
+    height: calc(100% - 80px);
+    left: 190px;
+    padding-top: 16px;
+    padding-left: 32px;
+    overflow: auto;
+    z-index: 5;
+}
+
+    #content.fullscreen {
+        position: fixed;
+        top: 48px;
+        left: 0px;
+        width: 100%;
+        height: calc(100% - 48px);
+        overflow: auto;
+        z-index: 5;
+    }
+
+/* Override strange default slickgrid height formatting. */
+div .slick-headerrow .slick-headerrow-columns {
+    height: 0;
+}
+
+#HostSection,
+#ServicesSection,
+#DeviceSection,
+#FirmwareSection {
+    display: none;
+}
+
+#CalibrationSubSection {
+    position: relative;
+}
+
+.indentSection,
+.statusPage #CalibrationActions,
+.statusPage p {
+    margin-left: 10px;
+}
+
+.statusPage table,
+.statusPage th,
+.statusPage td {
+    border-collapse: collapse;
+}
+
+#CalibrationStatus {
+    display: inline;
+}
+
+.rowSelected {
+    background-color: #38c0fd;
+}
+
+#StatusDetails {
+    font-size: 80%;
+}
+
+#StatusSummary {
+    width: 600px;
+    align-content: center;
+    height: 150px;
+}
+
+#doPairGroup {
+    display: none;
+}
+
+#setCredsGroup .credentialsInput {
+    display: inline-block;
+    width: 120px;
+}
+
+#RigToAppSpace {
+    border-spacing: 0;
+}
+
+    #RigToAppSpace td,
+    #RigToAppSpace th {
+        padding: 16px;
+    }
+
+#recordingStatusCaption {
+    margin-left: 64px;
+}
+
+#recordingProgress {
+    margin: 24px;
+}
+
+#recordProgressSpinner {
+    height: 48px;
+    width: 48px;
+}
+
+.sensorPreviewContainer {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.sensorPreview {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+#mrcHistoryStrip {
+    width: 840px;
+}
+
+    #mrcHistoryStrip img {
+        width: 128px;
+        height: auto;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+#mrcThumbnail {
+    height: 100%;
+    text-align: center;
+}
+
+    #mrcThumbnail img {
+        height: 100%;
+    }
+
+#processesGrid {
+    width: 1150px;
+}
+
+#spectrumEventsGrid {
+    height: 400px;
+    border: none;
+    width: 600px;
+}
+
+#handLatencyChartCanvas,
+#gestureLatencyChartCanvas {
+    height: 400px;
+    width: 600px;
+}
+
+.sectionHeader {
+    font-size: large;
+    font-weight: bold;
+}
+
+.logError,
+.warning {
+    color: #f00000;
+}
+
+#installationResult {
+    margin-left:20px;
+}
+
+#installationResult.warning {
+    display: block;
+    margin-left:0px;
+}
+
+.logWarning {
+    color: yellow;
+}
+
+.logInfo {
+    color: lightgreen;
+}
+
+.symbol {
+    font-family: WebManagementSymbols;
+}
+
+#FirmwareGrid,
+#DeviceGrid,
+#ServicesGrid {
+    margin-left: 20px;
+    width: 608px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+}
+
+.inputField, .wideInputField {
+    padding: 0px;
+    height: 28px;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+.wideInputField {
+    width: 512px;
+}
+
+#etwEventsGrid {
+    height: 1000px;
+    width: auto;
+}
+
+.textButton {
+    background: rgba(0, 0, 0, 0.00);
+    border: rgba(0, 0, 0, 0.00);
+    color: white;
+    margin: 5px;
+}
+
+.blackTextButton {
+    background: rgba(0, 0, 0, 0.00);
+    border: rgba(0, 0, 0, 0.00);
+    color: black;
+    margin: 5px;
+}
+
+a.toggler {
+    background: green;
+    cursor: pointer;
+    border: 2px solid black;
+    border-left-width: 35px;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 7px;
+    transition: all .5s ease;
+}
+
+    a.toggler.off {
+        background: red;
+        border-left-width: 2px;
+        border-right-width: 35px;
+    }
+
+#framerate,
+#renderedModels,
+#drawCalls,
+#primitivesAfterTessellation,
+#hullShaderInvocationCount {
+    color: rgb(17, 125, 187);
+}
+
+#renderedLights,
+#verticesPassedToDrawCalls,
+#primitivesPassedToDrawCalls,
+#domainShaderInvocationCount,
+#pixelShaderInvocationCount {
+    color: rgb(166, 194, 0);
+}
+
+#verticesInPipeline,
+#primitivesBeforeTessellation,
+#geometryShaderInvocationCount {
+    color: rgb(31, 105, 175);
+}
+
+#primitivesRendered,
+#vertexShaderInvocationCount {
+    color: rgb(254, 148, 4);
+}
+
+.commonButton,
+button {
+    width: 128px;
+    height: 32px;
+    background: #d5d5d5;
+    border: 0px;
+    margin: 5px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.commonButton:hover,
+button:hover {
+    background: #c8c8c8;
+}
+
+#batteryHeader {
+    display: inline-block;
+    color: white;
+    height: 48px;
+    border: none;
+    margin: 0px;
+    background-color: transparent;
+    width: 62px;
+    vertical-align: middle;
+    padding: 4px 12px;
+    text-align: center;
+}
+
+.autoWidth {
+    width: auto;
+}
+
+.treeViewBorder {
+    border-left: 1px dashed;
+}
+
+/* Section below is used in Latencies.htm */
+#latencies_chart {
+    display: inline-block;
+}
+
+.chartLegend {
+    vertical-align: top;
+    font-size: smaller;
+    width: auto;
+}
+
+#legend_inner_bottom {
+    line-height: 10%;
+}
+
+.blue_is_displayed {
+    background-color: #0000FF;
+}
+
+.green_is_displayed {
+    background-color: #00FF00;
+}
+
+.red_is_displayed {
+    background-color: #FF0000;
+}
+
+#hw_frame_transmit {
+    background-color: #FFFE34;
+}
+
+#wait_for_vsync {
+    background-color: #0247FE;
+}
+
+#composition_latency {
+    background-color: #FB9902;
+}
+
+#gpu_work_latency {
+    background-color: #8601B0;
+}
+
+#cpu_work_latency {
+    background-color: #FFFE34;
+}
+
+#lsr_errors {
+    clear: left;
+    font-size: large;
+}
+
+.latencyLegend {
+  float: left;
+  width: 30px;
+  height: 20px;
+  margin: 1px;
+  margin-right: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.colorPoseToPresent {
+    background-color: #0247fE;
+}
+
+.colorPresentToAppGpuFinish {
+    background-color: #FFFd6E;
+}
+
+.colorAppGpuFinishToLsrStart {
+    background-color: #8601B0
+}
+
+.colorLsrStartToVsync {
+    background-color: #FB9902;
+}
+
+.colorVsyncToPhoton {
+    background-color: #969696;
+}
+
+
+.deviceDescription {
+    background: lightgrey;
+    border: solid 1px black;
+    margin-left: 40px;
+    padding-left: 10px;
+    width: 400px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #303030;
+    color: white;
+    width: calc(100% - 40px);
+    padding: 10px;
+    z-index: 100;
+}
+
+.footerCollapsed {
+    position: fixed;
+    bottom: 0;
+    background-color: #303030;
+    color: white;
+    width: 120px;
+    padding: 10px;
+    z-index: 100;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+#logMessagesList {
+    list-style: none;
+    font-family: WebManagementSymbols;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-top: solid 1px white;
+}
+
+#MapGrid {
+    position: absolute;
+    margin: 0;
+}
+
+#LocalMapGrid .loaded {
+    background-color: #ddd;
+}
+
+#LocalMapGrid .active,
+#RemoteMapGrid .active {
+    background-color: #dff;
+}
+
+.MapManager .commonButton {
+    width: auto;
+}
+
+.MapManager #CopyMap {
+    height: auto;
+}
+
+.MapManager label {
+    margin-right: 3px;
+}
+
+.MapManager h3 {
+    margin: 1em 0 0.5em;
+    font-weight: 500;
+}
+
+.videoPlayer {
+    width: 800px;
+    background-color: black;
+}
+
+.fullWindowCanvas {
+    position: fixed;
+    z-index: 10;
+    top: 48px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.inline-block-align {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.navigationLink {
+    color: #006cb0;
+}
+
+.link {
+    text-decoration: underline;
+    color: #006cb0;
+    cursor: pointer;
+}
+
+.View3DSettingSection {
+    margin-right: 32px;
+}
+
+.marginTop {
+    margin-top: 5px;
+}
+
+.overlayYScroll {
+    overflow-y: overflow;
+}
+
+.hidden {
+    display: none;
+}
+
+hr {
+    margin-right: 32px;
+    margin-top: 24px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+/* WebCore styles start here */
+
+/* Base styles */
+html {
+    font-size: 15px;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+    padding-bottom: 0.227px;
+    padding-top: 0.227px;
+    padding-bottom: 0.227px;
+    padding-top: 0.227px;
+    color: #000;
+    background-color: rgb(242, 242, 242);
+}
+
+/* 
+    Use border box sizing by default. Content box messes up layout calculations. The only place we use content-box
+    are slick-grid.
+*/
+* {
+    box-sizing: border-box;
+}
+
+/* Text */
+h1 {
+    font-size: 46px;
+    line-height: 56px;
+    letter-spacing: -0.46px;
+    margin: 0 0 12px 0;
+    padding: 37px 0 0 3px;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.34px;
+    margin: 0 0 12px 0;
+    padding: 38px 0 0 2px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 12px 0;
+    padding: 38px 0 0 2px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    padding: 36px 0 0 0px;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 12px 0;
+    padding: 37px 0 0 3px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 12px 0;
+    padding: 39px 0 0 1px;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+}
+
+h4, h5, h6 {
+    font-weight: 300;
+}
+
+/* Horizontal rule */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Hyperlink */
+a {
+    background-color: transparent;
+    color: #cccccc;
+    text-decoration: none;
+}
+
+    a:active, a:hover {
+        outline: 0;
+    }
+
+    a:link {
+        color: #006cd8;
+    }
+
+        a:link else {
+            color: #0078D7;
+        }
+
+    a:visited {
+        color: #0078D7;
+    }
+
+    a:hover {
+        color: #2a6496;
+        text-decoration: underline;
+    }
+
+    a:focus {
+        color: #0078D7;
+    }
+
+    a:active {
+        color: #999999;
+    }
+
+    a:active {
+        outline: 0;
+    }
+
+/* Button styles */
+button, .commonButton, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+button, .commonButton, select {
+    text-transform: none;
+}
+
+    button, .commonButton[disabled], html input[disabled] {
+        cursor: default;
+    }
+
+    button, .commonButton::-moz-focus-inner, input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+input, button, .commonButton, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input, button, .commonButton, textarea, select, option, progress {
+    max-width: 100%;
+    line-height: inherit;
+}
+
+button, .commonButton {
+    -webkit-appearance: button;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 120px;
+    padding: 4px 12px 4px 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    text-overflow: clip;
+    touch-action: manipulation;
+    color: #000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: auto;
+    line-height: 19px;
+}
+
+    button:hover,
+    .commonButton:hover,
+    .commonButton:focus {
+        border-color: rgba(0, 0, 0, 0.4);
+    }
+
+    button:hover,
+    .commonButton:hover {
+        cursor: pointer;
+    }
+
+    button:active,
+    .commonButton:active {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-color: transparent;
+    }
+
+    button.btn-primary,
+    .commonButton.btn-primary {
+        background-color: #0078D7;
+        border-color: #0078D7;
+        color: #FFF;
+    }
+
+        button.btn-primary:hover,
+        .commonButton.btn-primary:hover,
+        button.btn-primary:focus,
+        .commonButton.btn-primary:focus {
+            border-color: #004E8C;
+        }
+
+    button[disabled],
+    .commonButton[disabled],
+    fieldset[disabled] button,
+    fieldset[disabled] .commonButton {
+        cursor: false;
+        pointer-events: none;
+        outline: none;
+        color: rgba(0, 0, 0, 0.2) !important;
+        border-color: transparent !important;
+        background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+
+/* Select */
+select {
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    background-clip: padding-box;
+    background-color: #FFF;
+    color: #000;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 0;
+}
+
+    select:focus {
+        background-color: rgba(0, 120, 215, 0.4);
+        color: #000;
+    }
+
+        select:focus::-ms-value {
+            background-color: rgba(0, 120, 215, 0.4);
+            color: #000;
+        }
+
+        select:focus option {
+            background-color: #FFF;
+            color: #000;
+        }
+
+    select:hover {
+        border-color: rgba(0, 0, 0, 0.6);
+    }
+
+    select:active {
+        background-color: #FFF;
+    }
+
+    select option:focus {
+        background-color: rgba(0, 120, 215, 0.4);
+        color: #000;
+    }
+
+    select option:checked {
+        background-color: rgba(0, 120, 215, 0.4);
+        color: #000;
+    }
+
+    select option:active {
+        background-color: rgba(0, 120, 215, 0.8);
+        color: #000;
+    }
+
+    select option:not(:checked):hover {
+        background-color: rgba(0, 120, 215, 0.6);
+    }
+
+    select option:not(:checked):active {
+        background-color: rgba(0, 120, 215, 0.8);
+        color: #000;
+    }
+
+    select[multiple]:focus {
+        background-color: #FFF;
+    }
+
+    select[disabled], select.disabled, fieldset[disabled] select {
+        cursor: false;
+        background-color: rgba(0, 0, 0, 0.2) !important;
+        border-color: rgba(0, 0, 0, 0.2) !important;
+        color: rgba(0, 0, 0, 0.6) !important;
+    }
+
+        select[disabled] option:hover, select[disabled] option:focus, select[disabled] option:active, select.disabled option:hover, select.disabled option:focus, select.disabled option:active, fieldset[disabled] select option:hover, fieldset[disabled] select option:focus, fieldset[disabled] select option:active {
+            background-color: transparent !important;
+        }
+
+::-ms-expand {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 6px;
+    background-color: transparent;
+    border: 0;
+}
+
+/* File upload */
+input[type="file"] {
+    display: block;
+    width: auto;
+}
+
+    input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+    /* Checkbox */
+    input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+    input[type="checkbox"]::-ms-check {
+        border-style: solid;
+        border-width: 2px;
+        background-color: transparent;
+        color: #FFF;
+        border-color: rgba(0, 0, 0, 0.8);
+    }
+
+    input[type="checkbox"]:checked::-ms-check {
+        background-color: #0078D7;
+        border-color: #0078D7;
+    }
+
+    input[type="checkbox"]:hover::-ms-check {
+        border-color: #000;
+    }
+
+    input[type="checkbox"]:active::-ms-check {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-color: transparent;
+    }
+
+    input[type="checkbox"][disabled]::-ms-check, fieldset[disabled] input[type="checkbox"]::-ms-check {
+        border-color: rgba(0, 0, 0, 0.2) !important;
+        background-color: transparent !important;
+        color: rgba(0, 0, 0, 0.2) !important;
+    }
+
+    input[type="radio"][disabled] + span, input[type="radio"].disabled + span, fieldset[disabled] input[type="radio"] + span, input[type="checkbox"][disabled] + span, input[type="checkbox"].disabled + span, fieldset[disabled] input[type="checkbox"] + span {
+        color: rgba(0, 0, 0, 0.2);
+    }
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    vertical-align: middle;
+}
+
+/* Additional styles I added to WebCore to more easily adapt it to existing pages */
+form input[type="checkbox"],
+form input[type="radio"] {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    margin-left: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    vertical-align: middle;
+}
+
+/* Non-webcore styles added for workspace support */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* We don't want scrollbars on the body or they will throw off layout calculations. */
+}
+
+select,
+button,
+.commonButton {
+    margin-right: 4px;
+}
+
+select {
+    vertical-align: middle;
+}
+
+/* Table */
+
+/* 
+    Note: We must use this particularly odd workaround because it is the only way to align the column headers.
+    This is because SlickGrid hard codes most of it's sizing values instead of using CSS. The proper technique 
+    would be to use padding, but that will confuse SlickGrid, because SlickGrid won't calculate the size of 
+    the headers correctly.
+*/
+.slick-column-name::before {
+    content: '\00a0\00a0';
+}
+
+.slick-header-column-sorted {
+    font-style: normal;
+}
+
+.slick-header-column {
+    color: #777777;
+    font-size: 11px;
+    text-align: left;
+}
+
+.slick-cell {
+    padding: 10px 12px;
+}
+
+.slick-row.even {
+    background-color: rgb(242, 242, 242);
+}
+
+.slick-cell,
+.slick-header-column.ui-state-default {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(224, 224, 224);
+}
+
+
+.slick-header-column.ui-state-default {
+    padding-top: 0;
+}
+
+.slick-sort-indicator-asc,
+.slick-sort-indicator-desc {
+    margin: 0;
+    padding: 0;
+    background: none;
+    float: right;
+}
+
+    .slick-sort-indicator-desc::after,
+    .slick-sort-indicator-asc::after {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        font-family: "Segoe UI Symbol";
+    }
+
+    .slick-sort-indicator-desc::after {
+        content: '\1F53D';
+    }
+
+    .slick-sort-indicator-asc::after {
+        content: '\1F53C';
+    }
+
+.slick-cell.rowSelected {
+    background-color: rgb(203, 203, 203);
+}
+
+#content {
+    margin: 32px 24px;
+    padding: 0;
+}
+
+.sectionHeader {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 2px;
+    margin-top: 32px;
+}
+    /* This is a temporary style to make the 1st header not have awkward whitespace. It is
+       temporary because once we move tools to workspaces, then the header will be part of
+       the workspace chrome and we won't have this problem. */
+    .sectionHeader:nth-child(1) {
+        margin-top: 0;
+    }
+
+/* Form */
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="checkbox"],
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] + label,
+.form-group input[type="radio"] + label {
+    display: inline-block;
+}
+
+.form-group input,
+.form-group-value {
+    display: block;
+}
+
+label.form-group-value {
+    font-weight: 700;
+}
+
+form input,
+.form-group select {
+    display: block;
+    width: 100%;
+}
+
+.form-buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input:invalid {
+    border: 2px solid rgb(189, 52, 56);
+}
+
+/* Text */
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    padding: 4px 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 32px;
+}
+
+    input[type="text"]:hover,
+    input[type="search"]:hover,
+    input[type="number"]:hover,
+    input[type="email"]:hover,
+    input[type="password"]:hover {
+        border-color: rgba(0, 0, 0, 0.6);
+    }
+
+    input[type="text"]:focus,
+    input[type="search"]:hover,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #0078D7;
+        background-color: #FFF;
+    }
+
+    input[type="text"]::-moz-placeholder,
+    input[type="search"]::-moz-placeholder,
+    input[type="number"]::-moz-placeholder,
+    input[type="email"]::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+
+    input[type="text"]:-ms-input-placeholder,
+    input[type="search"]:-ms-input-placeholder,
+    input[type="number"]:-ms-input-placeholder,
+    input[type="email"]:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    input[type="text"]::-webkit-input-placeholder,
+    input[type="search"]:-ms-input-placeholder,
+    input[type="number"]::-webkit-input-placeholder,
+    input[type="email"]::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+/* Spinner */
+/* Ensure the spinner isn't off screen */
+.webbBusySpin {
+    margin: 16px;
+}
+
+/* common.css overrides */
+.tableHeader {
+    text-transform: none;
+}
+
+.tableHeader,
+.tableCell {
+    background-color: transparent;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+#cpuChart {
+    border: 1px solid rgb(17, 125, 187);
+}
+
+#MemoryChartCanvas {
+    border: 1px solid rgb(17, 125, 187);
+}
+
+.engineCanvas {
+    border: 1px solid rgb(192, 0, 0);
+}
+
+#IOChartCanvas {
+    border: 1px solid rgb(77, 166, 12);
+}
+
+#NetworkChartCanvas {
+    border: 1px solid rgb(167, 79, 1);
+}
+
+/* 
+   We use absolute positioning to stop the 1px right border of the chart not to get cut off.
+*/
+.graph-container {
+    height: calc(100% - 26px);
+    width: calc(100% - 16px);
+}
+/* There's more data displayed at the bottom of the memory chart so it needs a smaller height for the chart. */
+#Memory.graph-container {
+    height: calc(100% - 136px);
+}
+
+.expandToAvailableSpace {
+    height: 100%;
+    width: 100%;
+}
+/* The last column of the table doesn't show the resize handle */
+.slick-header-column:last-child .slick-resizable-handle {
+    visibility: hidden;
+}
+
+.commonTable {
+    margin-top:8px;
+}
+
+.commonTable * {
+    box-sizing: content-box;
+}
+/* Tables with an icon as their 1st column don't show the resize handle either since that
+   column would have fixed content.
+*/
+.commonTable .slick-header-column:first-child .slick-resizable-handle {
+    visibility: hidden;
+}
+/* Hide the ellipsis because the column is fixed and contains an icon.
+   We never want any dots after an icon.
+*/
+.commonTable-firstColumnIcon .slick-cell:first-child {
+    text-overflow: clip;
+    border-right-color: transparent;
+}
+
+.commonTable-firstColumnIcon .slick-header-column.ui-state-default:first-child {
+    border-right-color: transparent;
+}
+
+.commonTable .slick-cell:last-child {
+    text-overflow: clip;
+    border-right-color: transparent;
+}
+
+.commonTable .slick-header-column.ui-state-default:last-child {
+    border-right-color: transparent;
+}
+
+/* Workspace chrome styles */
+
+/* Container */
+.dock-container {
+    display: flex;
+    position: relative;
+}
+
+.dock-container-direction-row {
+    flex-direction: row;
+}
+
+.dock-container-direction-column {
+    flex-direction: column;
+}
+
+/* Panel */
+.dock-panel {
+    background-color: rgb(255, 255, 255);
+}
+
+.dock-panel,
+.dock-panel-placeholder {
+    position: relative;
+}
+
+/* Tab styles */
+.dock-headers {
+    max-height: 35px; /* This prevents the content from being clipped on the bottom if the dock headers are too wide. It means they may overlap the top of the content though. */
+}
+
+.dock-header {
+    display: inline-block;
+    margin-right: 4px;
+    padding: 2px 0px 2px 6px;
+}
+
+.dock-header,
+.dock-header-title {
+    cursor: move;
+}
+
+[data-dock-node-type="3"] .dock-header:hover .dock-header-title {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(194, 194, 194);
+}
+
+[data-dock-node-type="3"] .dock-header.wdp-active .dock-header-title {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+.dock-header-title {
+    font-size: 24px;
+    padding-bottom: 4px;
+}
+
+.dock-header-title {
+    display: inline-block;
+    user-select: none;
+    -ms-user-select: none;
+}
+
+.dock-header-close {
+    padding: 4px 8px 4px 4px;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    position: relative;
+    bottom: 2px;
+}
+
+.dock-header:hover .dock-header-close,
+.dock-header-close:focus,
+.dock-header:focus .dock-header-close {
+    color: black;
+}
+
+.dock-header-close::before {
+    font-family: "Segoe UI Symbol";
+    content: '\2715';
+}
+
+.dock-content-host {
+    /* We need to account for the size of the header and padding within a content panel. */
+    height: calc(100% - 35px);
+    width: 100%;
+    overflow: auto;
+    padding: 6px 6px 0px 6px;
+}
+
+.dock-content {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.dock-content-iframe {
+    overflow: hidden;
+}
+
+    .dock-content-iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+    }
+
+.wdp-progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+    .wdp-progress-container progress {
+        position: absolute;
+        top: calc(50% - 16px);
+        left: calc(50% - 16px);
+        height: 32px;
+        width: 32px;
+    }
+
+        .wdp-progress-container progress:indeterminate::-ms-fill {
+            animation-name: -ms-ring;
+        }
+
+.wdp-devcentersigninprompt {
+    position: absolute;
+    top: 46px;
+    left: 12px;
+    height: calc(100% - 58px);
+    width: calc(100% - 24px);
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.wdp-devcentersigninprompt p {
+    margin: 0;
+}
+
+/* Resize */
+.dock-divider,
+.dock-resize-preview {
+    background-color: transparent;
+}
+
+.dock-divider {
+    z-index: 1;
+    border: 2px solid rgb(242, 242, 242);
+}
+
+.dock-container-direction-column > .dock-divider,
+.dock-container-direction-column > .dock-resize-preview {
+    min-height: 4px;
+    height: 4px;
+    width: 100%;
+    cursor: ns-resize;
+}
+
+.dock-container-direction-row > .dock-divider,
+.dock-container-direction-row > .dock-resize-preview {
+    height: 100%;
+    min-width: 4px;
+    width: 4px;
+    cursor: ew-resize;
+}
+
+.dock-resize-preview {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Move */
+.dock-panel-placeholder {
+    background-color: transparent;
+}
+
+.dock-dragging {
+    position: absolute;
+    opacity: 0.7;
+}
+
+.dock-target {
+    height: 186px;
+    width: 186px;
+    position: absolute;
+    top: calc(50% - 186px / 2);
+    left: calc(50% - 186px / 2);
+    background-image: url('../img/dock-target-background-large.png');
+    z-index: 2;
+}
+
+.dock-target-stack {
+    position: absolute;
+    top: calc(50% - 31px / 2);
+    left: calc(50% - 31px / 2);
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-stack.png');
+    background-position: center;
+}
+
+    .dock-target-stack:hover {
+        background-image: url('../img/dock-stack-highlight.png');
+    }
+
+.dock-target-split-top {
+    position: absolute;
+    top: 42px;
+    left: calc(50% - 31px / 2);
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-split-vertical.png');
+    background-position: center;
+}
+
+    .dock-target-split-top:hover {
+        background-image: url('../img/dock-split-vertical-highlight.png');
+    }
+
+.dock-target-split-right {
+    position: absolute;
+    top: calc(50% - 31px / 2);
+    right: 42px;
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-split-horizontal.png');
+    background-position: left top bottom right;
+}
+
+    .dock-target-split-right:hover {
+        background-image: url('../img/dock-split-horizontal-highlight.png');
+    }
+
+.dock-target-split-left {
+    position: absolute;
+    top: calc(50% - 31px / 2);
+    left: 42px;
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-split-horizontal.png');
+    background-position: left top bottom right;
+}
+
+    .dock-target-split-left:hover {
+        background-image: url('../img/dock-split-horizontal-highlight.png');
+    }
+
+.dock-target-split-bottom {
+    position: absolute;
+    bottom: 42px;
+    left: calc(50% - 31px / 2);
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-split-vertical.png');
+    background-position: center;
+}
+
+    .dock-target-split-bottom:hover {
+        background-image: url('../img/dock-split-vertical-highlight.png');
+    }
+
+.dock-target-move-left {
+    position: absolute;
+    top: calc(50% - 31px / 2);
+    left: 6px;
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-move-left.png');
+    background-position: left top bottom right;
+}
+
+    .dock-target-move-left:hover {
+        background-image: url('../img/dock-move-left-highlight.png');
+    }
+
+.dock-target-move-right {
+    position: absolute;
+    top: calc(50% - 31px / 2);
+    right: 6px;
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-move-right.png');
+    background-position: left top bottom right;
+}
+
+    .dock-target-move-right:hover {
+        background-image: url('../img/dock-move-right-highlight.png');
+    }
+
+.dock-target-move-top {
+    position: absolute;
+    top: 6px;
+    left: calc(50% - 31px / 2);
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-move-top.png');
+    background-position: center;
+}
+
+    .dock-target-move-top:hover {
+        background-image: url('../img/dock-move-top-highlight.png');
+    }
+
+.dock-target-move-bottom {
+    position: absolute;
+    bottom: 6px;
+    left: calc(50% - 31px / 2);
+    height: 31px;
+    width: 31px;
+    background-image: url('../img/dock-move-bottom.png');
+    background-position: center;
+}
+
+    .dock-target-move-bottom:hover {
+        background-image: url('../img/dock-move-bottom-highlight.png');
+    }
+
+.dock-move-preview {
+    position: fixed;
+    background-color: rgba(0, 120, 215, 0.5);
+    border: 5px solid rgba(16, 16, 16, 0.5);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.dock-reorder-preview {
+    background-color: rgba(0, 120, 215, 0.5);
+    border: 2px solid rgba(16, 16, 16, 0.5);
+    border-radius: 2px;
+    display: inline-block;
+    width: 64px;
+    z-index: 999;
+}
+
+#wdp-noworkspaces {
+    position: absolute;
+    top: calc(50% - 71px);
+    left: calc(50% - 245px);
+}
+
+/*  Alerts appear top of screen to provide important information, such as cookies required.
+    'showAlert' is not a real class, but is only used as a CSS selector to trigger overrides
+    of screen element dimensions (top, height) to accommodate the alert bar. */ 
+body.showAlert #wdp-alert {
+    display:block;
+}
+
+#wdp-alert {
+    background-color: #FFF999;
+    height: 24px;
+    width: 100%;
+    padding-left: 4px;
+    top: 0;
+    display:none;
+}
+
+/* Menu */
+body.showAlert .wdp-menu {
+    top: 24px;
+}
+
+.wdp-menu {
+    top: 0px;   
+    display: inline-block;
+    z-index: 1;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+.wdp-menu-togglecontainer {
+    height: 32px;
+    display: inline-block;
+}
+
+.wdp-header .wdp-menu-toggle {
+    background-color: transparent;
+    height: 32px;
+    min-width: 32px;
+    width: 32px;
+    padding: 0;
+    color: rgb(137, 137, 137);
+    position: absolute;
+    top: 0;
+    right: 12px;
+    transform: rotate(-45deg);
+}
+
+.wdp-nav-minimized .wdp-header .wdp-menu-toggle {
+    transform: rotate(45deg);
+}
+
+.wdp-header .wdp-menu-toggle:hover {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+.wdp-menu-toggle::before {
+    font-family: "Segoe UI Symbol";
+    content: '\E141';
+}
+
+.wdp-menu a:link {
+    display: block;
+    width: 239px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+    .wdp-menu a:hover {
+        text-decoration: underline;
+    }
+
+.wdp-menu ul {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(0, 84, 150);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.wdp-menu li {
+    list-style: none;
+    padding: 17px 24px;
+    padding: 0;
+}
+
+    .wdp-menu li:hover,
+    .signin-signincommand:hover {
+        background-color: rgb(0, 72, 132);
+    }
+
+    .wdp-menu li ul {
+        height: 100vh;
+        float: right;
+        margin-left: 239px;
+        background-color: rgb(0, 84, 150);
+        position: absolute;
+        top: 0;
+    }
+
+    .wdp-menu li a,
+    .signin-signincommand {
+        padding: 17px 24px;
+        text-align: left;
+    }
+
+.wdp-menu a.signin-signincommand {
+    width: 100%;
+}
+
+.wdp-menu-categoryname {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    margin: 8px 16px;
+}
+
+.wdp-menu-workspaces a:hover,
+.wdp-menu-settings > li > a:hover,
+.wdp-menu .signin-signincommand:hover {
+    text-decoration: none;
+}
+
+.wdp-menu-workspaces {
+    height: calc(100vh - 208px);
+}
+
+#wdp-menu-settings a {
+    padding-left: 48px;
+}
+
+.wdp-menu-settings {
+    height: calc(100% - 48px);
+}
+
+.wdp-menu ul.wdp-menu-fixedcommands {
+    height: 208px;
+    background: rgb(0, 72, 132);
+}
+
+.wdp-menu-workspaces .wdp-active {
+    background-color: rgb(0, 132, 227);
+}
+
+.wdp-submenu.wdp-active {
+    background-color: rgb(0, 84, 150);
+}
+
+.wdp-menu-tool-label {
+    margin-left: 24px;
+}
+
+.wdp-menu-toolalreadyadded .wdp-menu-tool-label {
+    margin-left: 8px;
+}
+
+.wdp-menu .wdp-menu-toolalreadyadded a:hover {
+    text-decoration: none;
+}
+
+.wdp-menu a:hover .wdp-menu-tool-label {
+    text-decoration: underline;
+}
+
+.wdp-menu-toolalreadyadded .wdp-icon::before {
+    font-family: "Segoe UI Symbol";
+    content: '\E0E7';
+}
+
+body.showAlert .wdp-menu-content {
+    top: 72px;
+}
+
+.wdp-menu-content {
+    position: fixed;
+    top: 48px;
+    left: 254px;
+    height: 100%;
+    width: calc(100% - 254px);
+    background-color: rgb(255, 255, 255);
+    padding: 24px;
+    z-index: 1;
+}
+
+.wdp-nav-minimized .wdp-menu-content {
+    width: calc(100% - 32px);
+    left: 32px;
+}
+
+.wdp-menu-content form {
+    max-width: 720px;
+}
+
+    .wdp-menu-content form button {
+        margin-top: 24px;
+    }
+
+.wdp-menu-button {
+    height: 48px;
+    width: 48px;
+    min-width: 48px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+    .wdp-menu-button:hover {
+        background-color: rgb(0, 84, 150);
+    }
+
+.wdp-active .wdp-menu-button,
+.wdp-active .wdp-powermenu-button {
+    background-color: rgb(0, 84, 150);
+}
+
+/* Copyright (c) Microsoft Corporation.  All Rights Reserved. */
+.wdp-menu-button::before {
+    font-size: 12px;
+    font-family: 'Segoe MDL2 Assets', 'Symbols';
+    content: "\E700";
+}
+
+body.showAlert #wdp-menu-container,
+body.showAlert #wdp-powermenu-container {
+    top: 72px;
+}
+
+#wdp-menu-container {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    z-index: 2; /* If we use 1, then the menu appears below the SlickGrid table. */
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 320px;
+    background-color: rgb(0, 84, 150);
+    padding: 16px 0;
+}
+
+#wdp-powermenu-container {
+    position: fixed;
+    top: 48px;
+    right: 0;
+    z-index: 2; /* If we use 1, then the menu appears below the SlickGrid table. */
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 185px;
+    background-color: rgb(0, 84, 150);
+    padding: 16px 0;
+}
+
+.wdp-menu-setting-workspaces-hidenav-listitem,
+.wdp-nav-minimized .wdp-menu-setting-workspaces-shownav-listitem {
+    display: block;
+}
+
+.wdp-nav-minimized .wdp-menu-setting-workspaces-hidenav-listitem,
+.wdp-menu-setting-workspaces-shownav-listitem {
+    display: none;
+}
+
+/* Logo */
+.wdp-logo {
+    height: 48px;
+    display: inline-flex;
+    background-color: transparent;
+    vertical-align: bottom;
+    margin-right: 9px;
+}
+
+.wdp-logo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+}
+
+.wdp-logo-hidden {
+    display: none;
+}
+
+/* Header */
+.wdp-header {
+    background-color: rgb(0, 120, 215);
+}
+
+    .wdp-header button {
+        height: 48px;
+        margin: 0;
+        display: inline-block;
+        background-color: transparent;
+        color: rgb(255, 255, 255);
+        border: none;
+    }
+
+        .wdp-header button:hover {
+            background-color: rgb(0, 96, 172);
+        }
+
+.wdp-secondarycommands {
+    display: inline-block;
+    float: right;
+}
+
+.wdp-secondarycommands button {
+    min-width: 0;
+    width: auto;
+}
+
+#webbHelp::before {
+    content: '\E11B';
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+#feedback::before {
+    content: '\E170';
+    margin-right: 4px;
+    font-size: 14px;
+}
+
+#wdp-powermenu-button::before {
+    content: '\E07D';
+    margin-right: 4px;
+    font-size: 20px;
+}
+
+#wdp-powermenu-button::after {
+    content: '\1F53D';
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+body.showAlert #wdp-titlelabel {
+    top: 24px;
+}
+
+#wdp-titlelabel {
+    color: rgb(255, 255, 255);
+}
+
+body.showAlert .wdp-body {
+    top: 24px;
+    height: calc(100% - 72px);
+}
+
+.wdp-body {
+    top: 0px;
+    height: calc(100% - 48px);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+body.showAlert #wdp-content {
+    height: calc(100% - 28px); /* There's 4px margin on the top of the content */
+}
+
+#wdp-banner {
+    display: block;
+    overflow: hidden;
+}
+
+#wdp-banner.wdp-banner-hidden {
+    display: none;
+}
+
+#wdp-content-wrapper {
+    height: 100%;
+    width: calc(100% - 254px);
+    display:flex;
+    flex-direction:column;
+}
+
+.wdp-nav-minimized #wdp-content-wrapper {
+    width: calc(100% - 32px);
+    margin-left: 0px;
+}
+
+#wdp-content {
+    height: calc(100% - 4px); /* There's 4px margin on the top of the content */
+    width: 100%;
+    margin-top: 4px;
+}
+
+.wdp-nav {
+    height: 100%;
+    width: 254px;
+    background-color: rgb(0, 96, 172);
+}
+
+.wdp-nav-workspaces {
+    height: calc(100% - 32px);
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.wdp-nav-workspace {
+    position: relative;
+    list-style: none;
+}
+
+.wdp-nav-sub-workspaces {
+    height: calc(100% - 32px);
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.wdp-nav-sub-workspace {
+    list-style: none;
+}
+
+.wdp-nav-workspace a,
+.wdp-nav-workspace a:link,
+.wdp-nav-workspace a:visited {
+    display: block;
+    padding: 8px 18px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.wdp-nav-sub-workspace a,
+.wdp-nav-sub-workspace a:link,
+.wdp-nav-sub-workspace a:visited {
+    display: block;
+    padding: 12px 40px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.wdp-nav-workspace:hover {
+    background-color: rgb(0, 108, 193);
+}
+
+.wdp-nav-workspace:hover a {
+    text-decoration: none;
+}
+
+.wdp-nav-workspace .wdp-nav-sub-workspaces{
+    background-color: rgb(0, 96, 172);
+}
+
+.wdp-nav-sub-workspace:hover{
+   background-color: rgb(0, 108, 193);
+}
+
+.wdp-nav-sub-workspace:hover a {
+    text-decoration: none;
+}
+
+.wdp-nav-divider {
+    position: relative;
+    border-top: 2px solid transparent;
+    height: 32px;
+}
+
+.wdp-nav-show-subworkspace::after{
+    font-family: "Segoe UI Symbol";
+    font-size: 10px;
+    content: '\25B6';
+    position:absolute;
+    left: 8px; 
+    padding-top:2.5px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.toggleButton .wdp-nav-show-subworkspace::after{
+    font-family: "Segoe UI Symbol";
+    font-size: 10px;
+    content: '\25E2';
+    position: absolute;
+    left: 8px;
+    padding-top:2.5px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+a.wdp-nav-divider-minimizebutton {
+    display: inline-block;
+    height: 32px;
+    width: 16px;
+    color: rgb(197, 197, 197);
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+a.wdp-nav-divider-minimizebutton:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.wdp-nav-divider-minimizebutton::after {
+    font-family: "Segoe UI Symbol";
+    font-size: 20px;
+    content: '\E0E2';
+}
+
+.wdp-nav-minimized .wdp-nav-divider-minimizebutton::after {
+    content: '\E0E3';
+}
+
+.wdp-nav-workspace.wdp-active {
+    background-color: rgb(0, 84, 150);
+}
+
+.wdp-nav-sub-workspace.wdp-active {
+    background-color: rgb(0, 84, 150);
+}
+
+.wdp-nav-minimized .wdp-nav {
+    width: 32px;
+}
+
+.wdp-nav-minimized .wdp-nav-workspace {
+    display: none;
+}
+
+/* Overlay */
+.wdp-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 120, 215);
+    padding: 16px;
+    z-index: 1;
+}
+
+.wdp-fader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.wdp-popup {
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 300px);
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+    border: 2px solid rgb(0, 120, 215);
+    padding: 16px;
+    z-index: 1;
+}
+
+    .wdp-popup > p {
+        margin-bottom: 24px;
+    }
+
+    .wdp-popup button {
+        margin: 20px 0;
+    }
+
+.wdp-overlay.wdp-dropdown {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 120, 215);
+    padding: 0;
+}
+
+    .wdp-overlay.wdp-dropdown button {
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        text-align: left;
+    }
+
+        .wdp-overlay.wdp-dropdown button:hover {
+            border-color: transparent;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+.wdp-overlay h1:first-child,
+.wdp-overlay h2:first-child,
+.wdp-overlay h3:first-child,
+.wdp-overlay h4:first-child,
+.wdp-overlay h5:first-child,
+.wdp-overlay h6:first-child {
+    padding-top: 0;
+}
+
+@media (max-height: 540px) {
+    body {
+        height: 540px;
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        width: 720px;
+        overflow-x: scroll;
+    }
+}
+
+.wdp-error {
+    margin: auto;
+    padding-left: 50px;
+}
+
+input[type=radio],
+input.radio {
+  width: auto;
+  margin-left: 0px;
+}
+
+.drag-drop {
+    text-align: center;
+    padding: 1em 0;
+    margin: 1em 0;
+    border: 2px dashed;
+    cursor: default;
+}
+
+.drag-drop-hover {
+    text-align: center;
+    padding: 1em 0;
+    margin: 1em 0;
+    cursor: default;
+    color: rgb(0, 120, 215);
+    border-color: rgb(0, 120, 215);
+    border-style: solid;
+    box-shadow: inset 0 3px 4px #888;
+}

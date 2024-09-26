@@ -1,0 +1,1544 @@
+
+<!DOCTYPE html>
+<html lang="my-en" >
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png"/>
+<title>SPECTRE</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600" rel="stylesheet">
+<link rel="stylesheet" href="font.css"> 
+<style>
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mcmc {
+  background: linear-gradient(45deg, #990000, #cc0000);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  position: relative;
+}
+.mcmc_screen {
+  position: relative;
+  background-color: #800000;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.mcmc_screen--clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.mcmc__logo {
+  font-family: Muli, sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.155px;
+  font-size: 11.55px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  top: 16.5px;
+  transition: all 0.25s ease;
+  will-change: transform, opacity;
+}
+.mcmc__logo--hidden {
+  opacity: 0;
+  transform: translate3d(0, -33px, 0);
+}
+.mcmc__logo-particles {
+  position: absolute;
+  width: 3.3px;
+  height: 3.3px;
+  left: 146.85px;
+  top: 24.75px;
+  opacity: 0;
+}
+.mcmc__logo-particles--visible {
+  opacity: 1;
+}
+.mcmc__logo-particle {
+  width: 2.475px;
+  height: 2.475px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 1;
+  transition: all 1.7s ease;
+  position: absolute;
+  will-change: transform;
+}
+@media (max-width: 400px) {
+  .mcmc__logo-particle {
+    display: none;
+  }
+}
+.mcmc__logo-particle:nth-child(1) {
+  left: -14.85px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(1) {
+  transform: translate3d(18.15px, 57.75px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(2) {
+  left: -18.15px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(2) {
+  transform: translate3d(-49.5px, 34.65px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(3) {
+  left: -31.35px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(3) {
+  transform: translate3d(-1.65px, 28.05px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(4) {
+  left: 14.85px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(4) {
+  transform: translate3d(36.3px, 16.5px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(5) {
+  left: -39.6px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(5) {
+  transform: translate3d(-77.55px, 23.1px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(6) {
+  left: -21.45px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(6) {
+  transform: translate3d(11.55px, 28.05px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(7) {
+  left: 21.45px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(7) {
+  transform: translate3d(-11.55px, 6.6px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(8) {
+  left: -18.15px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(8) {
+  transform: translate3d(-36.3px, 47.85px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(9) {
+  left: -19.8px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(9) {
+  transform: translate3d(-85.8px, 29.7px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(10) {
+  left: 16.5px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(10) {
+  transform: translate3d(-9.9px, 57.75px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(11) {
+  left: -33px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(11) {
+  transform: translate3d(-18.15px, 54.45px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(12) {
+  left: 26.4px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(12) {
+  transform: translate3d(-19.8px, 14.85px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(13) {
+  left: 14.85px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(13) {
+  transform: translate3d(-66px, 8.25px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(14) {
+  left: -13.2px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(14) {
+  transform: translate3d(29.7px, 31.35px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(15) {
+  left: 41.25px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(15) {
+  transform: translate3d(51.15px, 56.1px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(16) {
+  left: 9.9px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(16) {
+  transform: translate3d(-54.45px, 9.9px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(17) {
+  left: -26.4px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(17) {
+  transform: translate3d(-13.2px, 14.85px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(18) {
+  left: 28.05px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(18) {
+  transform: translate3d(-80.85px, 33px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(19) {
+  left: 3.3px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(19) {
+  transform: translate3d(-77.55px, 4.95px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(20) {
+  left: 0px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(20) {
+  transform: translate3d(-21.45px, 54.45px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(21) {
+  left: 0px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(21) {
+  transform: translate3d(26.4px, 39.6px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(22) {
+  left: -9.9px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(22) {
+  transform: translate3d(-61.05px, 29.7px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(23) {
+  left: -36.3px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(23) {
+  transform: translate3d(37.95px, 18.15px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(24) {
+  left: 13.2px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(24) {
+  transform: translate3d(-59.4px, 47.85px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(25) {
+  left: 14.85px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(25) {
+  transform: translate3d(61.05px, 21.45px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(26) {
+  left: 28.05px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(26) {
+  transform: translate3d(-21.45px, 19.8px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(27) {
+  left: -13.2px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(27) {
+  transform: translate3d(79.2px, 1.65px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(28) {
+  left: 39.6px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(28) {
+  transform: translate3d(-64.35px, 9.9px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(29) {
+  left: 33px;
+  background-color: #668cff;
+}
+.mcmc__logo-particle--exploded:nth-child(29) {
+  transform: translate3d(80.85px, 34.65px, 0);
+  opacity: 0;
+}
+.mcmc__logo-particle:nth-child(30) {
+  left: -16.5px;
+  background-color: #80b3ff;
+}
+.mcmc__logo-particle--exploded:nth-child(30) {
+  transform: translate3d(52.8px, 1.65px, 0);
+  opacity: 0;
+}
+.mcmc__logo-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mcmc__logo-pic {
+  display: inline-block;
+  width: 26.4px;
+  height: 26.4px;
+  vertical-align: middle;
+  position: relative;
+  transform: scale(0.65);
+}
+.mcmc__logo-glass {
+  border: 1.65px solid #ECC8DD;
+  width: 11.55px;
+  height: 11.55px;
+  border-radius: 50%;
+  position: absolute;
+}
+.mcmc__logo-glass:after {
+  display: block;
+  content: "";
+  width: 6.6px;
+  height: 1.65px;
+  background-color: #ECC8DD;
+  top: 50%;
+  position: absolute;
+  left: 8.25px;
+  top: 3.3px;
+}
+.mcmc__logo-glass:nth-child(2) {
+  left: 19.8px;
+  transform: rotate(120deg);
+  border: 1.65px solid #668cff;
+}
+.mcmc__logo-glass:nth-child(2):after {
+  background-color: #668cff;
+}
+.mcmc__logo-glass:nth-child(3) {
+  left: 9.9px;
+  top: 16.5px;
+  transform: rotate(240deg);
+  border: 1.65px solid #80b3ff;
+}
+.mcmc__logo-glass:nth-child(3):after {
+  background-color: #80b3ff;
+}
+.mcmc__fprint-path {
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  fill: none;
+  stroke: white;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  will-change: stroke-dashoffset, stroke-dasharray;
+  transform: translateZ(0);
+}
+.mcmc__fprint-path--pinkish {
+  stroke: #668cff;
+}
+.mcmc__fprint-path--purplish {
+  stroke: #80b3ff;
+}
+.mcmc__fprint-path--gradient {
+  stroke: url(#linear);
+  transition: stroke 0.3s ease;
+  transition-delay: 0.5s;
+}
+.mcmc__fprint-path#mcmc__elastic-path {
+  will-change: opacity;
+  opacity: 1;
+}
+.mcmc__hidden-path {
+  display: none;
+}
+.mcmc__ending-path {
+  fill: none;
+  stroke-width: 2.5px;
+  stroke-dasharray: 60 1000;
+  stroke-dashoffset: 61;
+  stroke-linecap: round;
+  will-change: stroke-dashoffset, stroke-dasharray, opacity;
+  transform: translateZ(0);
+  transition: stroke-dashoffset 1s ease, stroke-dasharray 0.5s linear, opacity 0.75s ease;
+}
+.mcmc__ending-path--removed {
+  stroke-dashoffset: -130;
+  stroke-dasharray: 5 1000;
+}
+.mcmc__ending-path--transparent {
+  opacity: 0;
+}
+.mcmc__ending-path--pinkish {
+  stroke: #668cff;
+}
+.mcmc__ending-path--purplish {
+  stroke: #80b3ff;
+}
+.mcmc__fprint {
+  width: 297px;
+  height: 528px;
+  position: relative;
+  top: 33px;
+  overflow: visible;
+  background-image: url("https://kiyutink.github.io/svg/fprintBackground.svg");
+  background-size: cover;
+}
+.mcmc__fprint--no-bg {
+  background-image: none;
+}
+.mcmc__bullet {
+  position: absolute;
+  width: 6.6px;
+  height: 6.6px;
+  background-color: white;
+  border-radius: 50%;
+  top: 346.5px;
+  left: 145.2px;
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  will-change: transform, opacity;
+}
+.mcmc__bullet--with-aura {
+  box-shadow: 0 0 0 4.95px rgba(255, 255, 255, 0.3);
+}
+.mcmc__bullet--elevated {
+  transform: translate3d(0, -412.5px, 0);
+  opacity: 1;
+}
+.mcmc__bullet--descended {
+  transform: translate3d(0, 49.5px, 0);
+  opacity: 1;
+  transition: all 0.6s cubic-bezier(0.285, 0.21, 0.605, 0.91);
+}
+.mcmc__top-bullet {
+  position: absolute;
+  width: 3.3px;
+  height: 3.3px;
+  background-color: white;
+  top: 26.4px;
+  left: 0;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: all 0.5s ease;
+  transition-delay: 0.1s;
+  will-change: opacity, transform;
+}
+.mcmc__top-bullet--1 {
+  left: 64.35px;
+  transform: translate3d(82.5px, 0, 0);
+  opacity: 0.2;
+}
+.mcmc__top-bullet--2 {
+  left: 105.6px;
+  transform: translate3d(41.25px, 0, 0);
+  opacity: 0.4;
+}
+.mcmc__top-bullet--3 {
+  background-color: transparent;
+  width: 9.9px;
+  height: 9.9px;
+  border: 2px solid white;
+  top: 23.1px;
+  left: 143.55px;
+  box-shadow: 0 0 13.2px white;
+}
+.mcmc__top-bullet--4 {
+  left: 188.1px;
+  transform: translate3d(-41.25px, 0, 0);
+  opacity: 0.4;
+}
+.mcmc__top-bullet--5 {
+  left: 229.35px;
+  transform: translate3d(-82.5px, 0, 0);
+  opacity: 0.2;
+}
+.mcmc__top-bullet--hidden {
+  opacity: 0;
+}
+.mcmc__top-bullet--spread {
+  transform: none;
+}
+.mcmc__month {
+  width: 100%;
+  height: 33px;
+  position: absolute;
+  top: 41.25px;
+  text-align: center;
+  color: white;
+  font-size: 11.55px;
+  font-weight: 300;
+  font-family: Muli, sans-serif;
+  opacity: 0;
+  transform: translate3d(0, -24.75px, 0);
+  transition: all 0.25s ease-out;
+  transition-delay: 0.3s;
+  will-change: transform, opacity;
+}
+.mcmc__month--visible {
+  opacity: 1;
+  transform: none;
+}
+.mcmc__value {
+  width: 100%;
+  height: 42.9px;
+  font-size: 42.9px;
+  position: absolute;
+  display: flex;
+  color: white;
+  font-family: Muli, sans-serif;
+  font-weight: 300;
+  top: 115.5px;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translate3d(0, -49.5px, 0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transition-delay: 0.3s;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+.mcmc__value--visible {
+  transform: none;
+  opacity: 1;
+}
+.mcmc__value-particles {
+  position: absolute;
+  width: 3.3px;
+  height: 3.3px;
+  left: 146.85px;
+  top: 165px;
+  opacity: 0;
+}
+.mcmc__value-particles--visible {
+  opacity: 1;
+}
+.mcmc__value-particle {
+  width: 2.475px;
+  height: 2.475px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 1;
+  transition: all 1.5s ease;
+  position: absolute;
+  will-change: transform;
+}
+@media (max-width: 400px) {
+  .mcmc__value-particle {
+    display: none;
+  }
+}
+.mcmc__value-particle:nth-child(1) {
+  left: -80.85px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(1) {
+  transform: translate3d(-46.2px, 52.8px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(2) {
+  left: 80.85px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(2) {
+  transform: translate3d(34.65px, 18.15px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(3) {
+  left: -62.7px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(3) {
+  transform: translate3d(24.75px, 44.55px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(4) {
+  left: -51.15px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(4) {
+  transform: translate3d(-21.45px, 39.6px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(5) {
+  left: -23.1px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(5) {
+  transform: translate3d(56.1px, 42.9px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(6) {
+  left: -57.75px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(6) {
+  transform: translate3d(-44.55px, 3.3px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(7) {
+  left: -79.2px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(7) {
+  transform: translate3d(-39.6px, 1.65px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(8) {
+  left: -46.2px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(8) {
+  transform: translate3d(64.35px, 13.2px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(9) {
+  left: -66px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(9) {
+  transform: translate3d(-74.25px, 46.2px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(10) {
+  left: -16.5px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(10) {
+  transform: translate3d(64.35px, 19.8px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(11) {
+  left: -54.45px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(11) {
+  transform: translate3d(8.25px, 11.55px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(12) {
+  left: -9.9px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(12) {
+  transform: translate3d(82.5px, 49.5px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(13) {
+  left: -80.85px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(13) {
+  transform: translate3d(90.75px, 41.25px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(14) {
+  left: -28.05px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(14) {
+  transform: translate3d(64.35px, 56.1px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(15) {
+  left: 29.7px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(15) {
+  transform: translate3d(-52.8px, 21.45px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(16) {
+  left: -33px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(16) {
+  transform: translate3d(-52.8px, 51.15px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(17) {
+  left: -69.3px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(17) {
+  transform: translate3d(-14.85px, 56.1px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(18) {
+  left: 18.15px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(18) {
+  transform: translate3d(-67.65px, 54.45px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(19) {
+  left: -47.85px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(19) {
+  transform: translate3d(-34.65px, 8.25px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(20) {
+  left: -67.65px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(20) {
+  transform: translate3d(-79.2px, 14.85px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(21) {
+  left: 31.35px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(21) {
+  transform: translate3d(29.7px, 24.75px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(22) {
+  left: 56.1px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(22) {
+  transform: translate3d(-85.8px, 19.8px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(23) {
+  left: 21.45px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(23) {
+  transform: translate3d(16.5px, 56.1px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(24) {
+  left: 56.1px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(24) {
+  transform: translate3d(9.9px, 29.7px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(25) {
+  left: 13.2px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(25) {
+  transform: translate3d(-64.35px, 47.85px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(26) {
+  left: -79.2px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(26) {
+  transform: translate3d(-39.6px, 31.35px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(27) {
+  left: 47.85px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(27) {
+  transform: translate3d(66px, 13.2px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(28) {
+  left: 52.8px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(28) {
+  transform: translate3d(8.25px, 19.8px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(29) {
+  left: 47.85px;
+  background-color: #668cff;
+}
+.mcmc__value-particle--exploded:nth-child(29) {
+  transform: translate3d(-41.25px, 9.9px, 0);
+  opacity: 0;
+}
+.mcmc__value-particle:nth-child(30) {
+  left: 31.35px;
+  background-color: #80b3ff;
+}
+.mcmc__value-particle--exploded:nth-child(30) {
+  transform: translate3d(37.95px, 57.75px, 0);
+  opacity: 0;
+}
+.mcmc__value-xtext {
+  display: flex;
+  align-items: center;
+  width: 28.05px;
+  line-height: 42.9px;
+}
+.mcmc__xval {
+  width: 24.75px;
+  display: flex;
+  line-height: 42.9px;
+  will-change: transform;
+  justify-content: center;
+  align-items: center;
+}
+.mcmc__xval:nth-child(3) {
+  margin-right: 8.25px;
+}
+.mcmc__xval:nth-child(2) {
+  transition: transform 0.4s ease;
+  transition-delay: 0.3s;
+  transform: translate3d(0, -343.2px, 0);
+}
+.mcmc__xval--visible:nth-child(2) {
+  transform: none;
+}
+.mcmc__xval:nth-child(3) {
+  transition: transform 0.5s ease;
+  transition-delay: 0.3s;
+  transform: translate3d(0, -343.2px, 0);
+}
+.mcmc__xval--visible:nth-child(3) {
+  transform: none;
+}
+.mcmc__xval:nth-child(4) {
+  transition: transform 0.6s ease;
+  transition-delay: 0.3s;
+  transform: translate3d(0, -343.2px, 0);
+}
+.mcmc__xval--visible:nth-child(4) {
+  transform: none;
+}
+.mcmc__xval:nth-child(5) {
+  transition: transform 0.7s ease;
+  transition-delay: 0.3s;
+  transform: translate3d(0, -343.2px, 0);
+}
+.mcmc__xval--visible:nth-child(5) {
+  transform: none;
+}
+.mcmc__xval:nth-child(6) {
+  transition: transform 0.8s ease;
+  transition-delay: 0.3s;
+  transform: translate3d(0, -343.2px, 0);
+}
+.mcmc__xval--visible:nth-child(6) {
+  transform: none;
+}
+.mcmc__under-curve {
+  fill: url(#linear);
+  opacity: 0;
+  transition: opacity 0.4s linear;
+  transition-delay: 0.6s;
+  will-change: opacity;
+}
+.mcmc__under-curve--visible {
+  opacity: 0.8;
+}
+.mcmc__touch-id {
+  position: absolute;
+  font-family: Muli, sans-serif;
+  font-size: 16.5px;
+  top: 148.5px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  transition: all 0.25s ease;
+  will-change: transform, opacity;
+}
+.mcmc__touch-id--hidden {
+  opacity: 0;
+  transition: translate3d(0, -33px, 0);
+}
+.mcmc__tip {
+  position: absolute;
+  top: 173.25px;
+  font-family: Muli, sans-serif;
+  font-size: 9.9px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+.mcmc__tip--hidden {
+  opacity: 0;
+}
+.mcmc__dates {
+  position: absolute;
+  bottom: 8.25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translate3d(0, 33px, 0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  will-change: transform, opacity;
+}
+.mcmc__dates--visible {
+  opacity: 1;
+  transform: none;
+}
+.mcmc__member {
+  position: absolute;
+  width: 100%;
+  bottom: 16.5px;
+  text-align: center;
+  color: white;
+  font-family: Muli, sans-serif;
+  font-size: 11.55px;
+  transition: all 0.3s ease;
+  will-change: transform, opacity;
+}
+.mcmc__member--hidden {
+  transform: translate3d(0, 33px, 0);
+  opacity: 0;
+}
+.mcmc__date {
+  border-radius: 50%;
+  height: 29.7px;
+  width: 29.7px;
+  color: white;
+  font-size: 11.55px;
+  font-family: Muli, sans-serif;
+  margin: 0 3.3px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mcmc__date:nth-child(4) {
+  border: 2px solid #ECC8DD;
+}
+.mcmc__buttons {
+  position: absolute;
+  width: 99px;
+  height: 90.75px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  transform: translateY(-33px);
+  pointer-events: none;
+}
+.mcmc__restart-button {
+  transform: translate3d(0, -165px, 0);
+}
+.mcmc__mcmc {
+  transform: translate3d(-165px, 0, 0);
+}
+.mcmc__mcmc a {
+  color: black;
+}
+.mcmc__twitter {
+  transform: translate3d(165px, 0, 0);
+}
+.mcmc__twitter a {
+  color: #1DA1F2;
+}
+.mcmc__original {
+  transform: translate3d(0, 165px, 0);
+}
+.mcmc__original a {
+  color: #ea4c89;
+}
+.mcmc__button {
+  width: 41.25px;
+  height: 41.25px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  font-size: 24.75px;
+  line-height: 41.25px;
+}
+.mcmc__button--visible {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.mcmc__button--visible:hover {
+  background-color: white;
+  box-shadow: 0 0 8.25px white;
+}
+.mcmc__restart-icon {
+  flex-shrink: 0;
+  width: 24.75px;
+  height: 24.75px;
+  fill: #372546;
+}
+
+.no-animation {
+  opacity: 0;
+  transition: none !important;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+ <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+  <div class="mcmc">
+  <div class="mcmc_screen mcmc_screen--clickable">
+    <div class="mcmc__top-bullets">
+      <div class="mcmc__top-bullet mcmc__top-bullet--1 mcmc__top-bullet--hidden"></div>
+      <div class="mcmc__top-bullet mcmc__top-bullet--2 mcmc__top-bullet--hidden"></div>
+      <div class="mcmc__top-bullet mcmc__top-bullet--3 mcmc__top-bullet--hidden"></div>
+      <div class="mcmc__top-bullet mcmc__top-bullet--4 mcmc__top-bullet--hidden"></div>
+      <div class="mcmc__top-bullet mcmc__top-bullet--5 mcmc__top-bullet--hidden"></div>
+    </div>
+    <div class="mcmc__month">
+BERJAYA
+    </div>
+    <div class="mcmc__touch-id">Login with FingerPrint ID</div>
+    <div class="mcmc__tip">Scan Fingerprint</div>
+    <div class="mcmc__logo-particles">
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+      <div class="mcmc__logo-particle"></div>
+    </div>
+    <div class="mcmc__logo">
+      <div class="mcmc__logo-pic">
+        <div class="mcmc__logo-glasss"><img src="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" width="35" height="35"/></div>
+      </div>
+      <div class="mcmc__logo-name"> FINGERPRINT </div>
+    </div>
+    <div class="mcmc__value-particles">
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+      <div class="mcmc__value-particle"></div>
+    </div>
+    <div class="mcmc__value">
+     
+      <div class="mcmc__xval">
+      </div>
+      <div class="mcmc__xval">
+      </div>
+      <div class="mcmc__xval">
+      </div>
+      <div class="mcmc__xval">
+      </div>
+      <div class="mcmc__xval">  
+      </div>
+    </div>
+ <div class="mcmc__value-xtext">SUCCES!</div>
+
+    <svg class="mcmc__fprint" viewBox="0 0 180 320">
+      <defs>
+        <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#990000"/>
+          <stop offset="100%" stop-color="#cc0000"/>
+        </linearGradient>
+      </defs>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--pinkish" d="M46.1,214.3c0,0-4.7-15.6,4.1-33.3"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--purplish" d="M53.5,176.8c0,0,18.2-30.3,57.5-13.7"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--pinkish" d="M115.8,166.5c0,0,19.1,8.7,19.6,38.4"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--pinkish" d="M47.3,221c0,0,3.1-2.1,4.1-4.6s-5.7-20.2,7-36.7c8.5-11,22.2-19,37.9-15.3"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--pinkish" d="M102.2,165.4c10.2,2.7,19.5,10.4,23.5,20.2c6.2,15.2,4.9,27.1,4.1,39.4"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--purplish" d="M51.1,226.5c3.3-2.7,5.1-6.3,5.7-10.5c0.5-4-0.3-7.7-0.3-11.7"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--purplish" d="M56.3,197.9c3.1-16.8,17.6-29.9,35.1-28.8c17.7,1.1,30.9,14.9,32.8,32.2"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--purplish" d="M124.2,207.9c0.5,9.3,0.5,18.7-2.1,27.7"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--pinkish" d="M54.2,231.1c2.1-2.6,4.6-5.1,6.3-8c4.2-6.8,0.9-14.8,1.5-22.3c0.5-7.1,3.4-16.3,10.4-19.7"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--purplish" d="M77.9,178.2c9.3-5.1,22.9-4.7,30.5,3.3"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--purplish" d="M113,186.5c0,0,13.6,18.9,1,54.8"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--pinkish" d="M57.3,235.2c0,0,5.7-3.8,9-12.3"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--pinkish" d="M111.7,231.5c0,0-4.1,11.5-5.7,13.6"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--purplish" d="M61.8,239.4c9.3-8.4,12.7-19.7,11.8-31.9c-0.9-12.7,3.8-20.6,18.5-21.2"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--pinkish" d="M97.3,188.1c8.4,2.7,11,13,11.3,20.8c0.4,11.8-2.5,23.7-7.9,34.1c-0.1,0.1-0.1,0.2-0.2,0.3
+        c-0.4,0.8-0.8,1.5-1.2,2.3c-0.5,0.8-1,1.7-1.5,2.5"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--purplish" d="M66.2,242.5c0,0,15.3-11.1,13.6-34.9"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--pinkish" d="M78.7,202.5c1.5-4.6,3.8-9.4,8.9-10.6c13.5-3.2,15.7,13.3,14.6,22.1"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--pinkish" d="M102.2,219.7c0,0-1.7,15.6-10.5,28.4"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-backwards mcmc__fprint-path--pinkish" d="M72,244.9c0,0,8.8-9.9,9.9-15.7"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--pinkish" d="M84.5,223c0.3-2.6,0.5-5.2,0.7-7.8c0.1-2.1,0.2-4.6-0.1-6.8c-0.3-2.2-1.1-4.3-0.9-6.5c0.5-4.4,7.2-6.9,10.1-3.1
+        c1.7,2.2,1.7,5.3,1.9,7.9c0.4,3.8,0.3,7.6,0,11.4c-1,10.8-5.4,21-11.5,29.9"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--removes-forwards mcmc__fprint-path--purplish" d="M90,201.2c0,0,4.6,28.1-11.4,45.2"/>
+      <path class="mcmc__fprint-path mcmc__fprint-path--pinkish" id='mcmc__elastic-path' d="M67.3,219C65,188.1,78,180.1,92.7,180.3c18.3,2,23.7,18.3,20,46.7"/>
+      <line id='mcmc__straight-path' x1="0" y1="151.3" x2="180" y2="151.3"/>
+      <path class="mcmc__hidden-path" id='mcmc__arc-to-top' d="M0,148.4c62.3-13.5,122.3-13.5,180,0"/>
+      <path class="mcmc__hidden-path" id='mcmc__curve' d="M0,140.2c13.1-10.5,34.7-17,48.5-4.1c5.5,5.2,7.6,12.1,9.2,19.2c2.4,10.5,4.3,21,7.2,31.4c2.4,8.6,4.3,19.6,10.4,26.7c4.3,5,17.7,13.4,23.1,4.8c5.9-9.4,6.8-22.5,9.7-33c4.9-17.8,13-14.6,15.7-14.6c1.8,0,9,2.3,15.4,5.4c6.2,3,11.9,7.7,17.9,11.2c7,4.1,16.5,9.2,22.8,6.6"/>
+      <path class="mcmc__ending-path mcmc__ending-path--pinkish"d="M48.4,220c-5.8,4.2-6.9,11.5-7.6,18.1c-0.8,6.7-0.9,14.9-9.9,12.4c-9.1-2.5-14.7-5.4-19.9-13.4c-3.4-5.2-0.4-12.3,2.3-17.2c3.2-5.9,6.8-13,14.5-11.6c3.5,0.6,7.7,3.4,4.5,7.1"/>
+      <path class="mcmc__ending-path mcmc__ending-path--pinkish"d="M57.3,235.2c-14.4,9.4-10.3,19.4-17.8,21.1c-5.5,1.3-8.4-7.8-13.8-4.2c-2.6,1.7-5.7,7.7-4.6,10.9c0.7,2,4.1,2,5.8,2.4c3,0.7,8.4,3,7.6,7.2c-0.6,3-5,5.3-2.4,8.7c1.8,2.2,4.7,1.1,6.9,0.3c11.7-4.3,14.5,0.8,16.5,0.9"/>
+      <path class="mcmc__ending-path mcmc__ending-path--purplish"d="M79,246c-1.8,2.4-4.9,2.9-7.6,3.2c-2.7,0.3-5.8-0.8-7.7,1.6c-2.9,3.3,0.7,8.2-1.2,12c-1.5,2.8-4.5,2.4-6.9,1.3c-10.1-4.7-33.2-17.5-38.1-2.5c-1.1,3.4-1.9,7.5-1.3,11c0.6,4,5.6,7.9,7.7,2.3c0.8-2.1,3.1-8.6-1-8.9"/>
+      <path class="mcmc__ending-path mcmc__ending-path--pinkish"d="M91.8,248c0,0-3.9,6.4-6.2,9.2c-3.8,4.5-7.9,8.9-11.2,13.8c-1.9,2.8-4.4,6.4-3.7,10c0.9,5.2,4.7,12.5,9.7,14.7c5.2,2.2,15.9-4.7,13.1-10.8c-1.4-3-6.3-7.9-10-7.2c-1,0.2-1.8,1-2,2"/>
+      <path class="mcmc__ending-path mcmc__ending-path--purplish"d="M114.8,239.4c-2.7,6.1-8.3,12.8-7.8,19.8c0.3,4.6,3.8,7.4,7.8,9.1c8.9,3.8,19.7,0.4,28.6-1.3c8.8-1.7,19.7-3.2,23.7,6.7c2.8,6.8,6.1,14.7,4.4,22.2"/>
+      <path class="mcmc__ending-path mcmc__ending-path--pinkish"d="M129.9,224.2c-0.4,7.5-3.1,18,0.7,25c2.8,5.1,14.3,6.3,19.5,7.4c3.7,0.7,8.7,2.2,12-0.5c6.7-5.4,11.1-13.7,14.1-21.6c3.1-8-4.4-12.8-11.1-14.5c-5-1.3-19.1-0.7-21-6.7c-0.9-2.8,1.8-5.9,3.4-7.9"/>
+      <path class="mcmc__under-curve" d="M0,140.2c13.1-10.5,34.7-17,48.5-4.1c5.5,5.2,7.6,12.1,9.2,19.2c2.4,10.5,4.3,21,7.2,31.4c2.4,8.6,4.3,19.6,10.4,26.7c4.3,5,17.7,13.4,23.1,4.8c5.9-9.4,6.8-22.5,9.7-33c4.9-17.8,13-14.6,15.7-14.6c1.8,0,9,2.3,15.4,5.4c6.2,3,11.9,7.7,17.9,11.2c7,4.1,16.5,9.2,23.8,6.6l0,125.5l-181,0l0,-179.8"/>
+    
+</svg>
+    <div class="mcmc__bullet"></div>
+    <div class="mcmc__member"> MY WINDOW </div>
+    <div class="mcmc__dates">
+      <div class="mcmc__date">K</div>
+      <div class="mcmc__date">W</div>
+      <div class="mcmc__date">S</div>
+      <div class="mcmc__date">P</div>
+      <div class="mcmc__date">G</div>
+      <div class="mcmc__date">O</div>
+      <div class="mcmc__date">V</div>
+    </div>
+  </div>
+  <div title="Restart" class="mcmc__buttons">
+    <div class="mcmc__restart-button mcmc__button">
+    <svg viewBox="0 0 500 500" class="mcmc__restart-icon">
+      <path d="M268.175,488.161c98.2-11,176.9-89.5,188.1-187.7c14.7-128.4-85.1-237.7-210.2-239.1v-57.6c0-3.2-4-4.9-6.7-2.9l-118.6,87.1c-2,1.5-2,4.4,0,5.9l118.6,87.1c2.7,2,6.7,0.2,6.7-2.9v-57.5c87.9,1.4,158.3,76.2,152.3,165.6c-5.1,76.9-67.8,139.3-144.7,144.2c-81.5,5.2-150.8-53-163.2-130c-2.3-14.3-14.8-24.7-29.2-24.7c-17.9,0-31.9,15.9-29.1,33.6C49.575,418.961,150.875,501.261,268.175,488.161z"/> 
+    </svg>    
+  </div>
+  <div title="alex" class="mcmc__mcmc mcmc__button">
+    <a href="https://twitter.com/alexeric95" target="_blank">
+      <i class="fa fa-mcmc"></i>
+    </a>
+  </div>
+  <div title="mosti" class="mcmc__twitter mcmc__button">
+    <a href="https://twitter.com/officialmosti" target="_blank">
+      <i class="fa fa-mcmc"></i>
+    </a>
+    </div>
+  <div title="MKN" class="mcmc__original mcmc__button">
+    <a href="https://twitter.com/MKNJPM" target="_blank">
+      <i class="fa fa-mcmc"></i>
+    </a>
+<script type="text/javascript">
+  var u = new SpeechSynthesisUtterance();
+  u.text = 'Selamat Datang! Saya adalah K K M intelligence portal! Sila Scan biometric jari anda!';
+  u.lang = 'en-US';
+  u.rate = 0.850000;
+  speechSynthesis.speak(u);
+</script>
+    </div>
+  </div>  
+</div>
+    <script src="window-2.js"></script>
+
+  <script src='beyond.js'></script>
+<script src='jquery.min.js'></script>
+<script src='mcmc.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function (cb) {
+      setTimeout(() => cb(new Date()), 1000 / 60);
+    };
+  }
+
+  const TIME_TO_FILL_FPRINT = 700; //ms
+  const TIME_TO_REMOVE_FPRINT = 250;
+  const DELAY_TO_CURVE = 350;
+  const WOBBLE_TIME = 1000;
+  const ELASTIC_TRANSITION_TIME_TO_STRAIGHT = 250;
+  const ELASTIC_TRANSITION_TIME_TO_CURVED = 300;
+  const ELEVATION_TIME = 700;
+  const DELAY_AFTER_ELEVATION = 700;
+  const DELAY_TO_ANIMATE_ELASTIC_STROKE = 400;
+  const DELAY_TO_ANIMATE_value_PARTICLES = 300;
+  const DELAY_TO_ANIMATE_LOGO_PARTICLES = 500;
+  const DELAY_TO_BULLET_AURA = 300;
+  const DELAY_TO_DATES = 600;
+  const DELAY_TO_RESTART = 4000;
+
+  const fprintPathSelector = '.mcmc__fprint-path';
+
+  const $elasticPath = $('#mcmc__elastic-path');
+  const $fprintPaths = $('.mcmc__fprint-path');
+  const $endingPaths = $('.mcmc__ending-path');
+  const fprintPathsFirstHalf = [];
+  const fprintPathsSecondHalf = [];
+  const $bullet = $('.mcmc__bullet');
+  const $topBullets = $('.mcmc__top-bullet');
+  const $month = $('.mcmc__month');
+  const $value = $('.mcmc__value');
+  const $valueDigits = $('.mcmc__xval');
+  const $underCurve = $('.mcmc__under-curve');
+  const $valueParticles = $('.mcmc__value-particle');
+  const $valueParticlesContainer = $('.mcmc__value-particles');
+  const $touchId = $('.mcmc__touch-id');
+  const $logo = $('.mcmc__logo');
+  const $logoParticlesContainer = $('.mcmc__logo-particles');
+  const $logoParticles = $('.mcmc__logo-particle');
+  const $dates = $('.mcmc__dates');
+  const $member = $('.mcmc__member');
+  const $fprint = $('.mcmc__fprint');
+  const $buttons = $('.mcmc__button');
+  const $restart = $('.mcmc__restart-button');
+  const $screen = $('.mcmc_screen');
+  const $tip = $('.mcmc__tip');
+
+  let isFprintAnimationInProgress = false;
+  let isFprintAnimationOver = false;
+  let curFprintPathsOffset = -1;
+  let fprintProgressionDirection = 1;
+  let lastRafCallTimestamp = 0;
+  let fprintTick = getPropertyIncrement(0, 1, TIME_TO_FILL_FPRINT);
+  let fprintPaths = [];
+
+  for (let i = 0; i < $(fprintPathSelector).length; i++) {
+    fprintPaths.push(new Path(fprintPathSelector, i));
+    fprintPaths[i].offset(-1).makeVisible();
+    if (fprintPaths[i].removesForwards)
+    fprintPathsSecondHalf.push(fprintPaths[i]);else
+
+    fprintPathsFirstHalf.push(fprintPaths[i]);
+  }
+
+  function removeFprint() {
+    $endingPaths.addClass('mcmc__ending-path--removed');
+    setTimeout(() => {
+      $endingPaths.addClass('mcmc__ending-path--transparent');
+    }, TIME_TO_REMOVE_FPRINT * 0.9);
+    fprintProgressionDirection = -1;
+    window.requestAnimationFrame(removeFprintFrame);
+  }
+
+  function removeFprintFrame(timestamp) {
+    if (timestamp - lastRafCallTimestamp >= 1000 / 65) {
+      curFprintPathsOffset += fprintTick * fprintProgressionDirection;
+      offsetFprintPathsByHalves(curFprintPathsOffset);
+      lastRafCallTimestamp = timestamp;
+    }
+    if (curFprintPathsOffset >= -1)
+    window.requestAnimationFrame(removeFprintFrame);else
+    {
+      curFprintPathsOffset = -1;
+      offsetAllFprintPaths(curFprintPathsOffset);
+    }
+  }
+
+  function startElasticAnimation() {
+    $elasticPath.css('stroke-dasharray', 'none');
+    const elasticAnimationTimeline = new TimelineLite();
+
+    elasticAnimationTimeline.
+    to('#mcmc__elastic-path', ELASTIC_TRANSITION_TIME_TO_STRAIGHT / 1000, {
+      delay: TIME_TO_REMOVE_FPRINT / 1000 * 0.7,
+      morphSVG: '#mcmc__arc-to-top' }).
+
+    to('#mcmc__elastic-path', WOBBLE_TIME / 1000, {
+      morphSVG: '#mcmc__straight-path',
+      ease: Elastic.easeOut.config(1, 0.3) }).
+
+    to('#mcmc__elastic-path', ELASTIC_TRANSITION_TIME_TO_CURVED / 1000, {
+      delay: DELAY_TO_CURVE / 1000,
+      morphSVG: '#mcmc__curve' });
+
+    animateBullet();
+  }
+
+  function elevateBullet() {
+    $bullet.addClass('mcmc__bullet--elevated');
+    animatevalueParticles();
+    animateLogoParticles();
+  }
+
+  function descendBullet() {
+    $bullet.addClass('mcmc__bullet--descended').removeClass('mcmc__bullet--elevated');
+    animateTopBullets();
+    animatevalue();
+    animateMonth();
+    animateUnderCurve();
+    animateBulletAura();
+    animateDates();
+    animateButtons();
+  }
+
+  function animateBulletAura() {
+    setTimeout(() => $bullet.addClass('mcmc__bullet--with-aura'), DELAY_TO_BULLET_AURA);
+  }
+
+  function animateButtons() {
+    setTimeout(() => $buttons.addClass('mcmc__button--visible'), DELAY_TO_RESTART);
+  }
+
+  function animateMonth() {
+    $month.addClass('mcmc__month--visible');
+  }
+
+  function animateBullet() {
+    elevateBullet();
+    $screen.removeClass('mcmc_screen--clickable');
+    setTimeout(descendBullet, ELEVATION_TIME + DELAY_AFTER_ELEVATION);
+  }
+
+  function animateTopBullets() {
+    $topBullets.removeClass('mcmc__top-bullet--hidden').addClass('mcmc__top-bullet--spread');
+  }
+
+  function animatevalue() {
+    $value.addClass('mcmc__value--visible');
+    $valueDigits.addClass('mcmc__xval--visible');
+  }
+
+  function animateUnderCurve() {
+    $underCurve.addClass('mcmc__under-curve--visible');
+    setTimeout(() => $elasticPath.addClass('mcmc__fprint-path--gradient'), DELAY_TO_ANIMATE_ELASTIC_STROKE);
+  }
+
+  function animateDates() {
+    setTimeout(() => {
+      $dates.addClass('mcmc__dates--visible');
+      $member.addClass('mcmc__member--hidden');
+    }, DELAY_TO_DATES);
+  }
+
+  function animatevalueParticles() {
+    setTimeout(() => {
+      $valueParticlesContainer.addClass('mcmc__value-particles--visible');
+      $valueParticles.addClass('mcmc__value-particle--exploded');
+      $touchId.addClass('mcmc__touch-id--hidden');
+      $tip.addClass('mcmc__tip--hidden');
+    }, DELAY_TO_ANIMATE_value_PARTICLES);
+  }
+
+  function animateLogoParticles() {
+    setTimeout(() => {
+      $logoParticlesContainer.addClass('mcmc__logo-particles--visible');
+      $logoParticles.addClass('mcmc__logo-particle--exploded');
+      $logo.addClass('mcmc__logo--hidden');
+    }, DELAY_TO_ANIMATE_LOGO_PARTICLES);
+  }
+
+  function fprintFrame(timestamp) {
+    if (timestamp - lastRafCallTimestamp >= 1000 / 65) {
+      lastRafCallTimestamp = timestamp;
+      curFprintPathsOffset += fprintTick * fprintProgressionDirection;
+      offsetAllFprintPaths(curFprintPathsOffset);
+    }
+
+    if (curFprintPathsOffset >= -1 && curFprintPathsOffset <= 0) {
+      isFprintAnimationInProgress = true;
+      window.requestAnimationFrame(fprintFrame);
+    } else
+    if (curFprintPathsOffset > 0) {
+      curFprintPathsOffset = 0;
+      offsetAllFprintPaths(curFprintPathsOffset);
+      isFprintAnimationInProgress = false;
+      isFprintAnimationOver = true;
+      $fprint.addClass('mcmc__fprint--no-bg');
+      startElasticAnimation();
+      fprintTick = getPropertyIncrement(0, 1, TIME_TO_REMOVE_FPRINT);
+      window.requestAnimationFrame(removeFprint);
+    } else
+    if (curFprintPathsOffset < -1) {
+      curFprintPathsOffset = -1;
+      offsetAllFprintPaths(curFprintPathsOffset);
+      isFprintAnimationInProgress = false;
+    }
+  }
+
+  function offsetAllFprintPaths(ratio) {
+    fprintPaths.forEach(path => path.offset(ratio));
+  }
+
+  function offsetFprintPathsByHalves(ratio) {
+    fprintPathsFirstHalf.forEach(path => path.offset(ratio));
+    fprintPathsSecondHalf.forEach(path => path.offset(-ratio));
+  }
+
+  $screen.on('mousedown touchstart', function () {
+    fprintProgressionDirection = 1;
+    if (!isFprintAnimationInProgress && !isFprintAnimationOver)
+    window.requestAnimationFrame(fprintFrame);
+  });
+
+  $(document).on('mouseup touchend', function () {
+    fprintProgressionDirection = -1;
+    if (!isFprintAnimationInProgress && !isFprintAnimationOver)
+    window.requestAnimationFrame(fprintFrame);
+  });
+
+  function clear(e) {
+    $('.mcmc_screen *').addClass('no-animation');
+    $screen.addClass('mcmc_screen--clickable');
+    $buttons.removeClass('mcmc__button--visible');
+    $fprint.removeClass('mcmc__fprint--no-bg');
+    $member.removeClass('mcmc__member--hidden');
+    $dates.removeClass('mcmc__dates--visible');
+    $bullet.removeClass('mcmc__bullet--with-aura');
+    $logoParticlesContainer.removeClass('mcmc__logo-particles--visible');
+    $logoParticles.removeClass('mcmc__logo-particle--exploded');
+    $logo.removeClass('mcmc__logo--hidden');
+    $touchId.removeClass('mcmc__touch-id--hidden');
+    $valueParticlesContainer.removeClass('mcmc__value-particles--visible');
+    $valueParticles.removeClass('mcmc__value-particle--exploded');
+    $elasticPath.removeClass('mcmc__fprint-path--gradient');
+    $underCurve.removeClass('mcmc__under-curve--visible');
+    $value.removeClass('mcmc__value--visible');
+    $valueDigits.removeClass('mcmc__xval--visible');
+    $topBullets.addClass('mcmc__top-bullet--hidden').removeClass('mcmc__top-bullet--spread');
+    $month.removeClass('mcmc__month--visible');
+    $bullet.removeClass('mcmc__bullet--elevated mcmc__bullet--descended');
+    $endingPaths.removeClass('mcmc__ending-path--removed mcmc__ending-path--transparent');
+    $fprintPaths.removeClass('mcmc__fprint-path--transparent');
+    e.stopPropagation();
+    isFprintAnimationOver = false;
+    isFprintAnimationInProgress = false;
+    fprintTick = getPropertyIncrement(0, 1, TIME_TO_FILL_FPRINT);
+    TweenMax.to('#mcmc__elastic-path', 0, { morphSVG: '#mcmc__elastic-path', onComplete: () => {
+        for (let i = 0; i < $(fprintPathSelector).length; i++) {
+          fprintPaths[i].setDasharray().offset(-1).makeVisible();
+        }
+      } });
+
+    setTimeout(() => $('.mcmc_screen *').removeClass('no-animation'), 100);
+  }
+
+  $restart.on('click', clear);
+});
+
+
+function getPropertyIncrement(startValue, endValue, transitionDuration) {
+  const TICK_TIME = 1000 / 60;
+  const ticksToComplete = transitionDuration / TICK_TIME;
+  return (endValue - startValue) / ticksToComplete;
+}
+
+class Path {
+  constructor(selector, index) {
+    this.index = index;
+    this.querySelection = document.querySelectorAll(selector)[index];
+    this.length = this.querySelection.getTotalLength();
+    this.$ = $(selector).eq(index);
+    this.setDasharray();
+    this.removesForwards = this.$.hasClass('mcmc__fprint-path--removes-forwards');
+  }
+
+  setDasharray() {
+    // + 2 hack just fixes weird firefox bug (classic)
+    this.$.css('stroke-dasharray', `${this.length} ${this.length + 2}`);
+    return this;
+  }
+
+  offset(ratio) {
+    // + 1 hack just fixes weird firefox bug (classic)
+    this.$.css('stroke-dashoffset', -this.length * ratio + 1);
+    return this;
+  }
+
+  makeVisible() {
+    this.$.css('visibility', 'visible');
+    return this;
+  }}
+//edit by Alexander Eric@Eric Lapin
+    </script>
+</body>
+
+</html>
+ 
+
