@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <link rel="icon" href="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png"/>
+  <title>SW Install</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  background: #0078D7;
+  color: #fff;
+  font-weight: 300;
+  font-size: 150%;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+section > div {
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 15px;
+  font-size: 1.1em;
+  transition: background .5s;
+  bottom: 50px;
+  right: 50px;
+  position: absolute;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, .3);
+  transition: background .2s;
+}
+
+.revert {
+  left: 50px;
+  right: auto;
+}
+
+.load {
+  height: 2px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.load div {
+  height: 2px;
+  width: 0;
+  background: #fff;
+}
+
+.install {
+  /* display: flex; */
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: column;
+  background: #000;
+}
+.install h1 {
+  font-size: 50px;
+  margin: 60px 0 20px;
+}
+.install h2 {
+  flex: 2;
+  color: #888;
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+.install svg {
+  display: flex;
+  flex: 50;
+  width: 50%;
+  max-width: 350px;
+}
+
+.install footer {
+  display: flex;
+  flex: 2;
+  max-width: 700px;
+  width: 90%;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+.install footer ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  list-style: none;
+}
+.install footer ul li {
+  display: flex;
+  color: #999;
+  font-size: 12px;
+}
+.install footer ul li.active {
+  color: #fff;
+}
+footer ul li .percent {
+  margin-left: 3px;
+}
+.install .done {
+  color: #0087E5;
+}
+
+:-webkit-full-screen {
+  display: block !important;
+}
+
+:-moz-full-screen {
+  display: block !important;
+}
+
+:full-screen {
+  display: block !important;
+}
+
+:-moz-full-screen #bluescreen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -320px;
+}
+</style>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*" );
+  }
+</script>
+</head>
+<body translate="no">
+  <section class="welcome">
+  <div>
+    <img src="https://efodeo.perkeso.gov.my/images/logo_rasmi/Jata%20Negara.png" height="150" alt="">
+    <h2>Update to Sains Operating System?</h2>
+    <p>Welcome! Reconfirming your decision :</p>
+  </div>
+  <button class="get-started">Yes</button>
+  <button class="revert">No</button>
+</section>
+<section class="format" hidden>
+  <div>
+    <h1>Format Drives</h1>
+    <div class="load">
+      <div></div>
+    </div>
+  </div>
+</section>
+<section class="install" hidden>
+  <h1>Installing Sains Operating System</h1>
+  <h2>This device shall automatically restart later. 
+      Installing Sains Operating System</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="130" 
+                stroke="#888" stroke-width="5" 
+                fill="transparent" class="fade-in-out"/>
+        <circle cx="50" cy="150" r="130"
+                stroke="#0087E5" stroke-width="5" 
+                fill="transparent"
+                transform="rotate(-90 100 100)"
+                stroke-dasharray="820" 
+                stroke-dashoffset="820"
+                id="svgLoaderCircle" />
+        <text x="150" y="150" id="svgPercentageText"
+              dominant-baseline="mathematical"
+              alignment-baseline="middle"
+              text-anchor="middle"
+              fromtime="0"
+              totime="100"
+              fill="white" font-size="80">0%</text>
+      </svg>
+  <footer>
+    <ul>
+      <li class="copyFiles">Copy Files 
+        <span class="percent" 
+              fromtime="0" 
+              totime="25">
+        </span>
+      </li>
+      <li class="installOS">Installing features and drivers
+        <span class="percent" 
+              fromtime="26" 
+              totime="75">
+        </span>
+      </li>
+      <li class="config">Configuring setting
+        <span class="percent"
+              fromtime="76" 
+              totime="100">
+        </span>
+      </li>
+    </ul>
+  </footer>
+</section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+      <script id="rendered-js">
+function launchIntoFullscreen(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
+$('img').click(function () {
+  launchIntoFullscreen(document.documentElement);
+});
+function play() {
+  $('.welcome').fadeOut(700, function () {
+    setTimeout(function () {
+      $('.format').fadeIn(700);
+    }, 1000);
+    setTimeout(function () {
+      $('.load div').animate({
+        'width': '40%' },
+      7000, 'linear').animate({
+        'width': '100%' },
+      1000, 'linear', function () {
+        $('.format').fadeOut(700, function () {
+          setTimeout(function () {
+            $('.install').fadeIn(700).css('display', 'flex');
+            var loader = document.querySelector('#svgLoaderCircle'),
+            percentagetext = document.querySelector('#svgPercentageText'),
+            copyFiles = document.querySelector('.copyFiles'),
+            installOS = document.querySelector('.installOS'),
+            config = document.querySelector('.config'),
+            progress = 820,
+            percentage = 0;
+            setInterval(function () {
+              loader.setAttribute("stroke-dashoffset", progress);
+              percentagetext.innerHTML = percentage + "%";
+              if (percentage <= 30) {
+                copyFiles.classList.add('active');
+                copyFiles.children[0].innerHTML = percentage + "%";
+                installOS.classList.remove('active');
+                installOS.classList.remove('done');
+                installOS.children[0].innerHTML = "";
+                config.classList.remove('active');
+                config.classList.remove('done');
+                config.children[0].innerHTML = "";
+              }
+              if (percentage >= 31 & percentage <= 75) {
+                copyFiles.classList.remove('active');
+                copyFiles.classList.add('done');
+                copyFiles.children[0].innerHTML = "";
+                installOS.classList.add('active');
+                installOS.children[0].innerHTML = percentage + "%";
+                config.classList.remove('active');
+                config.children[0].innerHTML = "";
+              }
+              if (percentage >= 76) {
+                copyFiles.classList.remove('active');
+                copyFiles.children[0].innerHTML = "";
+                installOS.classList.remove('active');
+                installOS.classList.add('done');
+                installOS.children[0].innerHTML = "";
+                config.classList.add('active');
+                config.children[0].innerHTML = percentage + "%";
+              }
+              percentage++;
+              progress = +progress - 8.19;
+              if (progress < 0) {
+                progress = 820;
+              }
+              if (percentage > 100) {
+                percentage = 0;
+                exitFullscreen();
+              }
+
+            }, 1500);
+
+          }, 1000);
+
+        });
+
+      });
+    }, 2000);
+  });
+}
+$('.get-started').click(function () {
+  play();
+  launchIntoFullscreen(document.documentElement);
+});
+$('.revert').click(function () {
+  play();
+  launchIntoFullscreen(document.documentElement);
+});
+    </script>
+</body>
+</html>

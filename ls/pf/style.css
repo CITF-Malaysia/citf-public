@@ -1,0 +1,91 @@
+html {
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+body {
+  padding: 15px;
+  display: block;
+  margin: auto;
+  max-width: 66ch;
+}
+
+p {
+  text-align: justify;
+}
+
+ul, ol {
+  padding-left: 1em;
+}
+
+ol li {
+  margin-bottom: 1em;
+}
+
+button {
+  padding: 11px;
+  background: rgb(95, 158, 160);
+  color: white;
+  border: 0.5px solid white;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+label {
+  display: block;
+  font-variant: small-caps;
+  margin-bottom: 5px;
+}
+
+summary {
+  font-variant: small-caps;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 0.5px solid black;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  resize: none;
+  font-family: sans-serif;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  margin-right: 0;
+}
+
+hr {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border: 0;
+  border-top: 0.5px solid rgba(200, 200, 200, 1);
+}
+
+footer hr {
+  margin-bottom: 1em;
+  border-top: 0.5px solid black;
+}
+
+footer p {
+  text-align: center;
+}
+
+*[aria-disabled="true"] {
+  pointer-events: none;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+code {
+  font-family: monospace, monospace;
+  padding: 0 3px;
+}

@@ -1,0 +1,484 @@
+<html>
+<title>KKM@BOT</title>
+<link rel="icon" href="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png"/>
+<script type="text/javascript">
+  var u = new SpeechSynthesisUtterance();
+  u.text = 'Selamad datang ke system phin thar ner gara Malaysia';
+  u.lang = 'en-US';
+  u.rate = 0.850000;
+  speechSynthesis.speak(u);
+</script>
+<head>
+<style>
+* {
+  box-sizing: border-box; }
+html {
+  background: #000;
+  background-size: cover;
+  font-size: 10px;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 100%; }
+body {
+  font: 15px arial, sans-serif;
+  background-color: #000000;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  animation: input-entry 2s ease-in;
+}
+
+#bodybox {
+  margin: auto;
+  max-width: 550px;
+  font: 15px arial, sans-serif;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  box-shadow: 5px 5px 5px red;
+  border-radius: 15px;
+}
+
+#chatborder {
+  border-style: transparent;
+  background-color: #transparent;
+  border-width: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 15px;
+  border-radius: 15px;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+.logo {
+  position: absolute;
+  top: 24px;
+  right: -16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: -1px 0 1px #111;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+
+.logo-first {
+  font-size: 19px;
+  letter-spacing: 2px;
+  color: #666;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 3px 5px 1px;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+
+.logo-second {
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: #555;
+  margin-top: 2px;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+.chatlog {
+width: 100%;
+  height: 300px;
+  display: flex;
+  background: linear-gradient(0deg, rgba(51, 153, 51, 0.1) 0%, rgba(17, 17, 17, 0) 100%);
+  border: 1px #ff0000 transparent;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+
+#chatbox {
+  font: 17px arial, sans-serif;
+  height: 22px;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-animation: entrance 400ms 800ms linear backwards 1;
+          animation: entrance 400ms 800ms linear backwards 1;
+}
+
+h1 {
+  margin: auto;
+}
+
+pre {
+  background-color: #cf5151;
+  margin-left: 20px;
+}
+@-webkit-keyframes entrance {
+  to, 20%, 40%, 60%, 80% {
+    opacity: 1;
+  }
+  from, 10%, 30%, 50%, 70%, 90% {
+    opacity: 0;
+  }
+}
+
+@keyframes logo-entry {
+  0% {
+    opacity: 0; }
+
+  80% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes circle-entry {
+  0% {
+    opacity: 0; }
+
+  20% {
+    opacity: 0; }
+
+  100% {
+    opacity: 0.4; } }
+@keyframes input-entry {
+  0% {
+    opacity: 0; }
+
+  90% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes form-entry {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    padding: 0; }
+
+  20% {
+    height: 0;
+    border: 1px solid #a44200;
+    width: 0;
+    opacity: 0;
+    padding: 0; }
+
+  40% {
+    width: 0;
+    height: 220px;
+    border: 6px solid #a43a00;
+    opacity: 1;
+    padding: 0; }
+
+  100% {
+    height: 220px;
+    width: 500px; } }
+@keyframes box-glow {
+  0% {
+    border-color: #b80000;
+    box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 black; }
+
+  100% {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 black; } }
+@keyframes text-glow {
+  0% {
+    color: #a40000;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000; }
+
+  100% {
+    color: #ff0000;
+    text-shadow: 0 0 20px rgba(0, 255, 253, 0.6), 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 black; } }
+@keyframes before-glow {
+  0% {
+    border-bottom: 10px solid #a40000; }
+
+  100% {
+    border-bottom: 10px solid #d11717; } }
+@keyframes after-glow {
+  0% {
+    border-top: 16px solid #a40000; }
+
+  100% {
+    border-top: 16px solid #ff0000; } }
+@keyframes circle1 {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+<style>
+html {
+  background: #000;
+  background-size: cover;
+  font-size: 10px;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 100%; }
+
+/* =========================================
+Goverment Logo
+========================================= */
+#logo {
+  animation: logo-entry 4s ease-in;
+  width: 550px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 40; }
+
+h1 {
+  animation: text-glow 2s ease-out infinite alternate;
+  font-family: 'Ubuntu', sans-serif;
+  color: #00a4a2;
+  font-size: 25px;
+  font-size: 4.8rem;
+  font-weight: bold;
+  position: absolute;
+  text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+  top: 50px; }
+  h1:before {
+    animation: before-glow 2s ease-out infinite alternate;
+    border-left: 535px solid transparent;
+    border-bottom: 10px solid #00a4a2;
+    content: ' ';
+    height: 0;
+    position: absolute;
+    right: -74px;
+    top: -10px;
+    width: 0; }
+  h1:after {
+    animation: after-glow 2s ease-out infinite alternate;
+    border-left: 100px solid transparent;
+    border-top: 16px solid #ffff00;
+    content: ' ';
+    height: 0;
+    position: absolute;
+    right: -85px;
+    top: 24px;
+    transform: rotate(-47deg);
+    width: 0; }
+@keyframes logo-entry {
+  0% {
+    opacity: 0; }
+
+  80% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes box-glow {
+  0% {
+    border-color: #b80000;
+    box-shadow: 0 0 5px rgba(255, 255, 153, 0.2), inset 0 0 5px rgba(255, 255, 0, 0.1), 0 2px 0 red; }
+
+  100% {
+    border-color: #b80000;
+    box-shadow: 0 0 20px rgba(255, 255, 153, 0.6), inset 0 0 10px rgba(255, 255, 0, 0.4), 0 2px 0 red; } }
+@keyframes text-glow {
+  0% {
+    color: #b80000;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000; }
+
+  100% {
+    color: #b80000;
+    text-shadow: 0 0 20px rgba(255, 255, 153, 0.6), 0 0 10px rgba(255, 255, 0, 0.4), 0 2px 0 red; } }
+@keyframes before-glow {
+  0% {
+    border-bottom: 10px solid #ffff66; }
+
+  100% {
+    border-bottom: 10px solid #ff0000; } }
+@keyframes after-glow {
+  0% {
+    border-top: 16px solid #ffff66; }
+
+  100% {
+    border-top: 16px solid #ff0000; } 
+}
+</style>
+  
+</style>
+<script>
+//links
+//http://eloquentjavascript.net/09_regexp.html
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+var messages = [], //array that hold the record of each string in chat
+  lastUserMessage = "", //keeps track of the most recent input string from the user
+  botMessage = "", //var keeps track of what the chatbot is going to say
+  botName = "Peranti phin thar", //name of the chatbot
+  talking = true; //when false the speach function doesn't work
+//
+//
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//edit this function to change what the chatbot says
+function chatbotResponse() {
+  talking = true;
+  botMessage = "Saya adalah pembantu anda! "; //the default message
+
+  if (lastUserMessage === "hi" || lastUserMessage == "hello") {
+    const hi = ["hi", "bor leh saya bhan two?", "hello"];
+    botMessage = hi[Math.floor(Math.random() * hi.length)];
+  }
+
+  if (lastUserMessage === "nama") {
+    botMessage = "Saya digelar " + botName;
+  }
+if (lastUserMessage === "kerja") {
+    botMessage = " kerja saya adalah mem bhan two anda, gelar saya sebagai " + botName;
+	}
+if (lastUserMessage === "matlamat") {
+    botMessage = "memberikan bantuan kepada anda di portal ini";
+	}
+if (lastUserMessage === "menteri") {
+    botMessage = "Perdana menteri Malaysia pada tahun dua ribu dua puluh satu adalah Tan Seri Ismail Sabri.";
+	}
+if (lastUserMessage === "permainan") {
+    botMessage = "fungsi ini tidak dibenarkan untuk system demo.";
+	}
+if (lastUserMessage === "kuliah") {
+    botMessage = "system latihan ti dark disediakan";
+	}
+if (lastUserMessage === "listing") {
+    botMessage = "sila masukkan: covid, dev, kuliah, permainan, nama, menteri, matlamat, kerja, version, hi. Taipkan dengan huruf kecil sahaja";
+	}
+if (lastUserMessage === "covid") {
+    botMessage = "Untuk mengetahui info berkaitan virus covid yang tepat, sila ke alamat web https://pustakakajian.ml. Terima Kasih!";
+	}
+if (lastUserMessage === "dev") {
+    botMessage = "Pemaju system ialah Alexander Eric, kacak lagi bergaya.";
+	}
+if (lastUserMessage === "version") {
+    botMessage = "Artificial intelligence ini adalah versi satu";
+	}
+}
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//****************************************************************
+//
+//
+//
+//this runs each time enter is pressed.
+//It controls the overall input and output
+function newEntry() {
+  //if the message from the user isn't empty then run
+  if (document.getElementById("chatbox").value != "") {
+    //pulls the value from the chatbox ands sets it to lastUserMessage
+    lastUserMessage = document.getElementById("chatbox").value;
+    //sets the chat box to be clear
+    document.getElementById("chatbox").value = "";
+    //adds the value of the chatbox to the array messages
+    messages.push(lastUserMessage);
+    //Speech(lastUserMessage);  //says what the user typed outloud
+    //sets the variable botMessage in response to lastUserMessage
+    chatbotResponse();
+    //add the chatbot's name and message to the array messages
+    messages.push("<b>" + botName + ":</b> " + botMessage);
+    // says the message using the text to speech function written below
+    Speech(botMessage);
+    //outputs the last few array elements of messages to html
+    for (var i = 1; i < 8; i++) {
+      if (messages[messages.length - i])
+        document.getElementById("chatlog" + i).innerHTML =
+          messages[messages.length - i];
+    }
+  }
+}
+
+//text to Speech
+//https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API
+function Speech(say) {
+  if ("speechSynthesis" in window && talking) {
+    var utterance = new SpeechSynthesisUtterance(say);
+    //msg.voice = voices[10]; // Note: some voices don't support altering params
+    //msg.voiceURI = 'native';
+    //utterance.volume = 1; // 0 to 1
+    //utterance.rate = 0.1; // 0.1 to 10
+    //utterance.pitch = 1; //0 to 2
+    //utterance.text = 'Hello World';
+    //utterance.lang = 'en-US';
+    speechSynthesis.speak(utterance);
+  }
+}
+
+//runs the keypress() function when a key is pressed
+document.onkeypress = keyPress;
+//if the key pressed is 'enter' runs the function newEntry()
+function keyPress(e) {
+  var x = e || window.event;
+  var key = x.keyCode || x.which;
+  if (key == 13 || key == 3) {
+    //runs this function when enter is pressed
+    newEntry();
+  }
+  if (key == 38) {
+    console.log("hi");
+    //document.getElementById("chatbox").value = lastUserMessage;
+  }
+}
+
+//clears the placeholder text ion the chatbox
+//this function is set to run when the users brings focus to the chatbox, by clicking on it
+function placeHolder() {
+  document.getElementById("chatbox").placeholder = "";
+}
+
+</script>
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+</head>
+  
+<body>
+<div id='bodybox'>
+  <div id='chatborder' content="logo"><div class="logo" div class="logo-first"></div>
+    <div class="logo-second"><h1><center><img src="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" width="40" height="40"/> KKM Bot</h1></center></div>
+</div>
+    <p id="chatlog1" class="chatloug">&nbsp;</p>
+    <input type="text" name="chat" id="chatbox" placeholder="Taipkan: listing (huruf kecil) di sini, kemudian 'enter'. . ." onfocus="placeHolder()">
+  </div>
+<center><img src="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" width="100" height="100"/></center>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+<head>
+<link rel="apple-touch-icon" type="image/png" href="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" />
+<link rel="shortcut icon" type="image/x-icon" href="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" />
+<link rel="mask-icon" type="" href="https://vectorise.net/logo/wp-content/uploads/2014/11/Logo-Kementerian-Kesihatan-Malaysia-Kami-Sedia-Membantu-New.png" color="#111" />
+<title>HELP PORTAL</title>
+  <script>
+        var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+        if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+        function mischandler() {
+            return false;
+        }
+        function mousehandler(e) {
+            var myevent = (isNS) ? e : event;
+            var eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+        }
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+    </script>
+<script type="text/javascript">
+    targetPage = "" + window.location.search;
+    if (targetPage != "" && targetPage != "undefined")
+        targetPage = targetPage.substring(1);
+    if (targetPage.indexOf(":") != -1 || (targetPage != "" && !validURL(targetPage)))
+        targetPage = "undefined";
+    function validURL(url) {
+        try {
+            url = decodeURIComponent(url);
+        }
+        catch (error) {
+            return false;
+        }
+        var pos = url.indexOf(".html");
+        if (pos == -1 || pos != url.length - 5)
+            return false;
+        var allowNumber = false;
+        var allowSep = false;
+        var seenDot = false;
+        for (var i = 0; i < url.length - 5; i++) {
+            var ch = url.charAt(i);
+            if ('a' <= ch && ch <= 'z' ||
+                    'A' <= ch && ch <= 'Z' ||
+                    ch == '$' ||
+                    ch == '_' ||
+                    ch.charCodeAt(0) > 127) {
+                allowNumber = true;
+                allowSep = true;
+            } else if ('0' <= ch && ch <= '9'
+                    || ch == '-') {
+                if (!allowNumber)
+                     return false;
+            } else if (ch == '/' || ch == '.') {
+                if (!allowSep)
+                    return false;
+                allowNumber = false;
+                allowSep = false;
+                if (ch == '.')
+                     seenDot = true;
+                if (ch == '/' && seenDot)
+                     return false;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+    function loadFrames() {
+        if (targetPage != "" && targetPage != "undefined")
+             top.classFrame.location = top.targetPage;
+    }
+</script>
+</head>
+<frameset cols="20%,80%" title="Documentation frame" onload="top.loadFrames()">
+<frameset rows="30%,70%" title="Left frames" onload="top.loadFrames()">
+<frame src="overview-frame.html" name="packageListFrame" title="All Packages">
+<frame src="allclasses-frame.html" name="packageFrame" title="All classes and interfaces (except non-static nested types)">
+</frameset>
+<frame src="https://www.mysalam.com.my/b40/info/" name="classFrame" title="Package, class and interface descriptions" scrolling="yes">
+<noframes>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<h2>Frame Alert</h2>
+</noframes>
+</frameset>
+</html>
